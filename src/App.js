@@ -8,9 +8,9 @@ import { Route, Link, Router } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-      <Route exact to = "/" component = {HomePage}/>
-      <Route exact to = "/plantselection" component = {PlantSelection}/>
-      <Route exact to = "/planner" component = {Planner}/>
+      <Route exact path = "/" component = {HomePage}/>
+      <Route exact path = "/plantselection" component = {PlantSelection}/>
+      <Route exact path = "/planner" component = {Planner}/>
     </div>
   );
 }
