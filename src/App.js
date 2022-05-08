@@ -1,7 +1,7 @@
 import "./App.css";
-import HomePage from "./HomePage";
-import PlantSelection from "./PlantSelectionPage";
-import Planner from "./PlannerViewPage";
+import HomePage from "./Pages/HomePage";
+import PlantSelection from "./Pages/PlantSelectionPage";
+import Planner from "./Pages/PlannerViewPage";
 import { Routes, Route } from "react-router-dom";
 import TempAccessButtons from "./TempAccessButtons";
 
