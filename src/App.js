@@ -4,10 +4,12 @@ import PlantSelection from "./Pages/PlantSelectionPage";
 import Planner from "./Pages/PlannerViewPage";
 import { Routes, Route } from "react-router-dom";
 import TempAccessButtons from "./TempAccessButtons";
+import Navbar from "./Components/Navbar";
 
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <TempAccessButtons />
       <Routes>
         <Route path="/" element={<HomePage />} />
