@@ -25,13 +25,17 @@ function Navbar() {
           <Button variant="contained" color="secondary">
             SIGN UP
           </Button>
-          <Button variant="contained" color="primary" fullWidth="10">
+          <Button variant="contained" color="primary">
             SIGN IN
           </Button>
         </div>
       </nav>
     </>
   );
+}
+
+export function Footer() {
+  <div className="footer-container">Copyright 2022</div>;
 }
 
 export default Navbar;

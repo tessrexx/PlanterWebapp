@@ -5,16 +5,16 @@ import Planner from "./Pages/PlannerViewPage";
 import { Routes, Route, Router } from "react-router-dom";
 import TempAccessButtons from "./TempAccessButtons";
 import Navbar from "./Components/Navbar";
-import theme from "./Components/theme";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <TempAccessButtons />
       <Routes>
         <Route exact path="/" element={<HomePage />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
