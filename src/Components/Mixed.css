@@ -1,0 +1,37 @@
+.MuiButton-root {
+  --primary: #eab970;
+}
+
+.btn {
+  padding: 8px 20px;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn--primary--filled {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn--secondary--filled {
+  background-color: var(#5e875d);
+  color: #ffffff;
+}
+
+.btn--primary--outline {
+  background-color: var(#ffffff);
+  color: #5e875d;
+  border: 2px solid #5e875d;
+}
+
+.btn--standard--size {
+  padding: 8px 20px;
+  font-size: 20px;
+  font-weight: semibold;
+}
+
+.btn--standard--size:hover {
+  transition: 250ms;
+}
