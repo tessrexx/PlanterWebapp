@@ -1,26 +1,23 @@
-.MuiButton-root {
-  --primary: #eab970;
-}
-
 .btn {
   padding: 8px 20px;
-  border-radius: 2px;
+  border-radius: 20px;
   outline: none;
   border: none;
   cursor: pointer;
 }
 
-.btn--primary--filled {
-  background-color: var(--primary);
+.btn--primary {
+  background-color: var(#eab970);
   color: #ffffff;
+  font-weight: bold;
 }
 
-.btn--secondary--filled {
+.btn--secondary {
   background-color: var(#5e875d);
   color: #ffffff;
 }
 
-.btn--primary--outline {
+.btn--outlined {
   background-color: var(#ffffff);
   color: #5e875d;
   border: 2px solid #5e875d;

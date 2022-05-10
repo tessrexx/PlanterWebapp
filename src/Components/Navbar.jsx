@@ -1,31 +1,41 @@
+//import React, { useState } from "react";
+//import { Routes, Route, Link } from "react-router-dom";
+//import { Button } from "@mui/material";
+
 import React, { useState } from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
+import { Button } from "./Button";
+import "./Navbar.css";
+import "./Mixed.css";
 
 function Navbar() {
-  const STYLES = [
-    "btn--primary--filled",
-    "btn--secondary--filled",
-    "btn--primary--outlined",
-  ];
+  // Event States
+  const [button] = useState(true);
+
+  // Function Prototypes
 
   return (
-    <nav className="Navbar">
-      <div className="navbar-container"></div>
-      <Link to="/" className="navbar-logo">
-        <img src="/logo 184x62px.png" alt="" />
-      </Link>
-      <ul className="menu-options">
-        <li className="nav-item">
-          <Button buttonStyle="btn--primary--filled">SIGN UP</Button>
-        </li>
-        <li className="nav-item">
-          <Link to="/" className="nav-links">
-            Sign Up
+    //React Fragments ie: empty tags containing multiple elements.
+    <>
+      <nav className="navbar">
+        <div className="navbar-container">
+          <Link to="/" className="navbar-logo">
+            <img src="/logo 184x62px.png" alt="" />
           </Link>
-        </li>
-      </ul>
-    </nav>
+
+          <ul className={"nav-menu"}>
+            <li className="nav-item">
+              <Link to="/sign-up"></Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/sign-in"></Link>
+            </li>
+          </ul>
+          {button && <Button buttonStyle="btn--primary">SIGN UP</Button>}
+          {button && <Button buttonStyle="btn--secondary">SIGN IN</Button>}
+        </div>
+      </nav>
+    </>
   );
 }
 
