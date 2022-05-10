@@ -1,19 +1,10 @@
-//import React, { useState } from "react";
-//import { Routes, Route, Link } from "react-router-dom";
-//import { Button } from "@mui/material";
-
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "./Button";
 import "./Navbar.css";
-import "./Mixed.css";
+import theme from "./theme";
+import { ThemeProvider, Button } from "@mui/material";
 
 function Navbar() {
-  // Event States
-  const [button] = useState(true);
-
-  // Function Prototypes
-
   return (
     //React Fragments ie: empty tags containing multiple elements.
     <>
@@ -31,8 +22,12 @@ function Navbar() {
               <Link to="/sign-in"></Link>
             </li>
           </ul>
-          {button && <Button buttonStyle="btn--primary">SIGN UP</Button>}
-          {button && <Button buttonStyle="btn--secondary">SIGN IN</Button>}
+          <Button variant="contained" color="secondary">
+            SIGN UP
+          </Button>
+          <Button variant="contained" color="primary" fullWidth="10">
+            SIGN IN
+          </Button>
         </div>
       </nav>
     </>

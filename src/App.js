@@ -5,6 +5,7 @@ import Planner from "./Pages/PlannerViewPage";
 import { Routes, Route, Router } from "react-router-dom";
 import TempAccessButtons from "./TempAccessButtons";
 import Navbar from "./Components/Navbar";
+import theme from "./Components/theme";
 
 function App() {
   return (
