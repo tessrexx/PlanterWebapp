@@ -1,10 +1,9 @@
 .navbar {
-  background: #b5cca7;
+  background-image: linear-gradient(#b5cca7, #ffffff);
   width: 100%;
-  height: 80px;
+  height: 100px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -12,7 +11,6 @@
 
 .navbar-container {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -21,6 +19,7 @@
   cursor: pointer;
   display: flex;
   align-items: left;
+  margin-left: 10px;
 }
 
 .nav-menu {
@@ -28,16 +27,13 @@
   grid-template-columns: repeat(4, auto);
   grid-gap: 10px;
   list-style: none;
-  text-align: center;
-  width: 70vw;
-  justify-content: center;
+  width: 87vw;
+  justify-content: right;
 }
 
 .nav-item {
   text-align: center;
-  padding: 1px;
   display: table;
-  margin-right: 50px;
 }
 
 @media screen and (max-width: 960px) {
@@ -58,20 +54,20 @@
     position: right;
     cursor: pointer;
     display: flex;
-    width: 2vw;
+    width: 48vw;
   }
 }
 
 /*For Footer.jsx*/
 .footer-container {
-  background-color: #b5cca7;
+  background-image: linear-gradient(#ffffff, #b5cca7);
   color: #ffffff;
+  font-weight: 600;
   width: 100%;
-  height: 50px;
+  height: 70px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   bottom: 0;
   position: fixed;
-  z-index: 999;
 }

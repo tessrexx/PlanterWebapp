@@ -6,7 +6,6 @@ import { ThemeProvider, Button } from "@mui/material";
 
 function Navbar() {
   return (
-    //React Fragments ie: empty tags containing multiple elements.
     <>
       <nav className="navbar">
         <div className="navbar-container">
@@ -17,25 +16,21 @@ function Navbar() {
           <ul className={"nav-menu"}>
             <li className="nav-item">
               <Link to="/sign-up"></Link>
+              <Button variant="contained" color="secondary">
+                SIGN UP
+              </Button>
             </li>
             <li className="nav-item">
               <Link to="/sign-in"></Link>
+              <Button variant="contained" color="primary">
+                SIGN IN
+              </Button>
             </li>
           </ul>
-          <Button variant="contained" color="secondary">
-            SIGN UP
-          </Button>
-          <Button variant="contained" color="primary">
-            SIGN IN
-          </Button>
         </div>
       </nav>
     </>
   );
-}
-
-export function Footer() {
-  <div className="footer-container">Copyright 2022</div>;
 }
 
 export default Navbar;

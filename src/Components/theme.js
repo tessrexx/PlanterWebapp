@@ -19,8 +19,7 @@ export const theme = createTheme({
         root: {
           // CSS
           borderRadius: 20,
-          padding: 5,
-          marginLeft: 15,
+          marginLeft: 10,
           width: 100,
         },
       },
