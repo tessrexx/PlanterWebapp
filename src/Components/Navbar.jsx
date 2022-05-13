@@ -4,29 +4,39 @@ import "./Navbar.css";
 import theme from "./theme";
 import { ThemeProvider, Button } from "@mui/material";
 import { useState } from "react";
-import Modal from "react-responsive-modal";
-import SignInForm from "./SignInForm"
+import SignInForm from "./SignInForm";
+import SignUpForm from "./SignUpForm";
 
 function Navbar() {
-
-  const [signUp] = useState(false)
-  const [isOpen, openSignIn] = useState(false)
+  const [isOpened, openSignUp] = useState(false);
+  const [isOpen, openSignIn] = useState(false);
 
   return (
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <Link to="/" className="navbar-logo">
-            <img src="/logo 184x62px.png" alt="" />
-          </Link>
+          <img className="navbar-logo" src="/logo 184x62px.png" alt="" />
 
           <ul className={"nav-menu"}>
             <li className="nav-item">
-              <Button variant="contained" color="secondary"> SIGN UP </Button>
+              <Button
+                variant="contained"
+                color="secondary"
+                onClick={() => openSignUp(true)}
+              >
+                SIGN UP
+              </Button>
+              {isOpened && <SignUpForm openSignUp={openSignUp} />}
             </li>
             <li className="nav-item">
-              <Button variant="contained" color="primary" onClick={() => openSignIn(true)}> SIGN IN </Button>
-              {isOpen && <SignInForm openSignIn={openSignIn}/>}
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => openSignIn(true)}
+              >
+                SIGN IN
+              </Button>
+              {isOpen && <SignInForm openSignIn={openSignIn} />}
             </li>
           </ul>
         </div>

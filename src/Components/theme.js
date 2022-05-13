@@ -1,4 +1,4 @@
-import { Bloodtype } from "@mui/icons-material";
+import { CenterFocusStrong } from "@mui/icons-material";
 import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
@@ -11,6 +11,15 @@ export const theme = createTheme({
       contrastText: "#ffffff",
     },
   },
+  typography: {
+    fontFamily: "Montserrat",
+    button: {
+      fontWeight: "bold",
+    },
+  },
+  shape: {
+    borderRadius: "30px",
+  },
   components: {
     // Name of the component
     MuiButton: {
@@ -19,16 +28,18 @@ export const theme = createTheme({
         root: {
           // CSS
           borderRadius: 20,
-          marginLeft: 10,
+          marginLeft: 5,
           width: 100,
         },
       },
     },
-  },
-  typography: {
-    fontFamily: "Montserrat",
-    button: {
-      fontWeight: "bold",
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          color: "#5e875d",
+          fontWeight: "bold",
+        },
+      },
     },
   },
 });

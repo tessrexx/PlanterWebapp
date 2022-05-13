@@ -1,16 +1,7 @@
-input,
-button {
-  appearance: none;
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 5px;
-  border: none;
-}
-
 .background {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #00000033;
   width: 100vw;
-  height: 100vh;
+  height: 190vh;
   z-index: 0;
   top: 50%;
   left: 50%;
@@ -18,31 +9,41 @@ button {
   position: absolute;
 }
 
-.centered {
+.logo {
+  margin-bottom: 20px;
+}
+
+.formInner {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.form {
-  display: block;
-  position: relative;
-  justify-content: center;
-}
-
-.formInner {
   background-color: #b5cca7;
   color: #ffffff;
-  height: 300px;
-  width: 300px;
+  height: 400px;
+  width: 400px;
   border-radius: 20px;
-  padding: 30px;
+  padding: 15px;
   z-index: 1;
+  cursor: default;
 }
 
 .formGroup {
   display: block;
   width: 300px;
   margin-bottom: 20px;
+  margin-left: 50px;
+}
+
+.password {
+  color: #ffffff;
+  font-weight: 600;
+  margin-right: 140px;
+  margin-bottom: 20px;
+}
+
+.signText {
+  color: #ffffff;
+  font-weight: 600;
+  margin-top: 20px;
 }

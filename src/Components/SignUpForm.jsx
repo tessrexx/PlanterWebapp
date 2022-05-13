@@ -3,17 +3,21 @@ import "./SignIn&UpForm.css";
 import { TextField, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const SignInForm = ({ openSignIn, SignIn, error }) => {
-  const [details, setDetails] = useState({ email: "", password: "" });
+const SignUpForm = ({ openSignUp, SignUp, error }) => {
+  const [details, setDetails] = useState({
+    email: "",
+    confirmEmail: "",
+    password: "",
+  });
 
   const submitHandler = (e) => {
     e.preventDefault();
-    SignIn(details);
+    SignUp(details);
   };
 
   return (
     <form className="modal" onSubmit={submitHandler}>
-      <div className="background" onClick={() => openSignIn(false)} />
+      <div className="background" onClick={() => openSignUp(false)} />
       <div className="formInner">
         <img className="logo" src="/logo 184x62px.png" alt="" />
         {error != "" ? <div className="error"> {error} </div> : ""}
@@ -34,6 +38,21 @@ const SignInForm = ({ openSignIn, SignIn, error }) => {
           <TextField
             fullWidth
             id="filled-basic"
+            label="Confirm Email"
+            variant="outlined"
+            type="text"
+            name="confirmEmail"
+            // Calling a function to update setDetails by passing details entered
+            onChange={(e) =>
+              setDetails({ ...details, confirmEmail: e.target.value })
+            }
+            value={details.confirmEmail}
+          />
+        </div>
+        <div className="formGroup">
+          <TextField
+            fullWidth
+            id="filled-basic"
             label="Password"
             variant="outlined"
             type="text"
@@ -45,19 +64,16 @@ const SignInForm = ({ openSignIn, SignIn, error }) => {
             value={details.password}
           />
         </div>
-        <div className="password">
-          <Link to="/">Forgot Password?</Link>
-        </div>
-        <Button variant="contained" color="primary" type="submit">
-          SIGN IN
+        <Button variant="contained" color="secondary" type="submit">
+          CONFIRM
         </Button>
         <body className="signText">
-          Don't have an account?
-          <Link to="/">Sign Up!</Link>
+          Already have an account?
+          <Link to="/">Sign In!</Link>
         </body>
       </div>
     </form>
   );
 };
 
-export default SignInForm;
+export default SignUpForm;
