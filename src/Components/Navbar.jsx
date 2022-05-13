@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Navbar.css";
 import theme from "./theme";
 import { ThemeProvider, Button } from "@mui/material";

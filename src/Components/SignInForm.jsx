@@ -46,7 +46,7 @@ const SignInForm = ({ openSignIn, SignIn, error }) => {
           />
         </div>
         <div className="password">
-          <Link to="/">Forgot Password?</Link>
+          <Link to="/" >Forgot Password?</Link>
         </div>
         <Button variant="contained" color="primary" type="submit">
           SIGN IN
