@@ -3,8 +3,15 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import theme from "./theme";
 import { ThemeProvider, Button } from "@mui/material";
+import { useState } from "react";
+import Modal from "react-responsive-modal";
+import SignInForm from "./SignInForm"
 
 function Navbar() {
+
+  const [signUp] = useState(false)
+  const [isOpen, openSignIn] = useState(false)
+
   return (
     <>
       <nav className="navbar">
@@ -15,16 +22,11 @@ function Navbar() {
 
           <ul className={"nav-menu"}>
             <li className="nav-item">
-              <Link to="/sign-up"></Link>
-              <Button variant="contained" color="secondary">
-                SIGN UP
-              </Button>
+              <Button variant="contained" color="secondary"> SIGN UP </Button>
             </li>
             <li className="nav-item">
-              <Link to="/sign-in"></Link>
-              <Button variant="contained" color="primary">
-                SIGN IN
-              </Button>
+              <Button variant="contained" color="primary" onClick={() => openSignIn(true)}> SIGN IN </Button>
+              {isOpen && <SignInForm openSignIn={openSignIn}/>}
             </li>
           </ul>
         </div>

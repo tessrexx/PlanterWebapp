@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { ThemeProvider, Button } from "@mui/material";
 import "./SignInForm.css";
 
-function SignInForm({ SignIn, error }) {
+const SignInForm = ({ openSignIn, SignIn, error }) => {
+  
   const [details, setDetails] = useState({ email: "", password: "" });
 
   const submitHandler = (e) => {
@@ -11,7 +12,9 @@ function SignInForm({ SignIn, error }) {
   };
 
   return (
-    <form onSubmit={submitHandler}>
+    <div className="background">
+    <div className="centered">
+    <form className = "modal" onSubmit={submitHandler}>
       <div className="formInner">
         <h2>SIGN IN</h2>
         {error != "" ? <div className="error"> {error} </div> : ""}
@@ -40,8 +43,11 @@ function SignInForm({ SignIn, error }) {
           />
         </div>
         <input type="submit" value="SIGN IN" />
-      </div>
+        </div>
+      
     </form>
+    </div>
+    </div>
   );
 }
 
