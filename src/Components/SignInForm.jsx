@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./SignIn&UpForm.css";
 import { TextField, Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import SignUpForm from "./SignUpForm";
 
 const SignInForm = ({ openSignIn, SignIn, error }) => {
   const [details, setDetails] = useState({ email: "", password: "" });
@@ -10,6 +11,8 @@ const SignInForm = ({ openSignIn, SignIn, error }) => {
     e.preventDefault();
     SignIn(details);
   };
+
+  const [isOpened, openSignUp] = useState(false);
 
   return (
     <form className="modal" onSubmit={submitHandler}>
@@ -53,7 +56,12 @@ const SignInForm = ({ openSignIn, SignIn, error }) => {
         </Button>
         <body className="signText">
           Don't have an account?
-          <Link to="/">Sign Up!</Link>
+          <Button
+                onClick={() => openSignUp(true)}              
+              >
+                Sign Up!
+              </Button>
+              {isOpened && <SignUpForm openSignUp={openSignUp} />}
         </body>
       </div>
     </form>
