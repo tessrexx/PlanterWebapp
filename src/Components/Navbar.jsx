@@ -7,8 +7,8 @@ import SignInForm from "./SignInForm";
 import SignUpForm from "./SignUpForm";
 
 function Navbar() {
-  const [isOpened, openSignUp] = useState(false);
-  const [isOpen, openSignIn] = useState(false);
+  const [openSignUp, setOpenSignUp] = useState(false);
+  const [openSignIn, setOpenSignIn] = useState(false);
 
   return (
     <>
@@ -21,21 +21,27 @@ function Navbar() {
               <Button
                 variant="contained"
                 color="secondary"
-                onClick={() => openSignUp(true)}
+                onClick={() => setOpenSignUp(true)}
               >
                 SIGN UP
               </Button>
-              {isOpened && <SignUpForm openSignUp={openSignUp} />}
+              <SignUpForm
+                open={openSignUp}
+                onClose={() => setOpenSignUp(false)}
+              />
             </li>
             <li className="nav-item">
               <Button
                 variant="contained"
                 color="primary"
-                onClick={() => openSignIn(true)}
+                onClick={() => setOpenSignIn(true)}
               >
                 SIGN IN
               </Button>
-              {isOpen && <SignInForm openSignIn={openSignIn} />}
+              <SignInForm
+                open={openSignIn}
+                onClose={() => setOpenSignIn(false)}
+              />
             </li>
           </ul>
         </div>

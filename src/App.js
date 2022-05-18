@@ -15,6 +15,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route exact path="/" element={<HomePage />} />
+          <Route path="/plantselection" element={<PlantSelection />} />
+          <Route path="/planner" element={<Planner />} />
         </Routes>
       </AuthContextProvider>
       <Footer />

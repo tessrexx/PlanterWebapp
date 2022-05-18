@@ -3,31 +3,36 @@ import "./SignIn&UpForm.css";
 import { TextField, Button } from "@mui/material";
 import SignInForm from "./SignInForm";
 import { UserAuth } from "../Contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
-const SignUpForm = ({ openSignUp, SignUp }) => {
+const SignUpForm = ({ open, onClose }) => {
+  // Setting createUser
+  const { createUser } = UserAuth();
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [openSignIn, setOpenSignIn] = useState(false);
+  const [openSignUp, setOpenSignUp] = useState(false);
 
-  // Setting createUser
-  const { createUser } = UserAuth();
-
+  // Submission Errors or Redirection
   const handleSubmit = async (err) => {
     err.preventDefault();
     setError("");
     try {
       await createUser(email, password);
+      navigate("/plantselection");
     } catch (err) {
       setError(err.message);
       console.log(err.message);
     }
   };
 
-  const [isOpen, openSignIn] = useState(false);
-
+  if (!open) return null;
   return (
-    <form className="modal" onSubmit={handleSubmit}>
-      <div className="background" onClick={() => openSignUp(false)} />
+    <form onSubmit={handleSubmit}>
+      <div className="background" onClick={onClose} />
       <div className="formInner">
         <img className="logo" src="/logo 184x62px.png" alt="" />
         {
@@ -76,8 +81,7 @@ const SignUpForm = ({ openSignUp, SignUp }) => {
         </Button>
         <body className="signText">
           Already have an account?
-          <Button onClick={() => openSignIn(true)}>Sign In!</Button>
-          {isOpen && <SignInForm openSignIn={openSignIn} />}
+          <Button onClick={() => setOpenSignIn(true)}>Sign In!</Button>
         </body>
       </div>
     </form>
