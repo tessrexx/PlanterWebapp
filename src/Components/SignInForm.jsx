@@ -7,19 +7,13 @@ import SignUpForm from "./SignUpForm";
 const SignInForm = ({ openSignIn, SignIn, error }) => {
   const [details, setDetails] = useState({ email: "", password: "" });
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    SignIn(details);
-  };
-
   const [isOpened, openSignUp] = useState(false);
 
   return (
-    <form className="modal" onSubmit={submitHandler}>
+    <form className="modal">
       <div className="background" onClick={() => openSignIn(false)} />
       <div className="formInner">
         <img className="logo" src="/logo 184x62px.png" alt="" />
-        {error != "" ? <div className="error"> {error} </div> : ""}
         <div className="formGroup">
           <TextField
             fullWidth
@@ -48,20 +42,17 @@ const SignInForm = ({ openSignIn, SignIn, error }) => {
             value={details.password}
           />
         </div>
-        <div className="password">
-          <Link to="/" >Forgot Password?</Link>
+        <div className="forgotPassword">
+          <Link to="/">Forgot Password?</Link>
         </div>
+        {error != "" ? <div className="error"> {error} </div> : ""}
         <Button variant="contained" color="primary" type="submit">
           SIGN IN
         </Button>
         <body className="signText">
           Don't have an account?
-          <Button
-                onClick={() => openSignUp(true)}              
-              >
-                Sign Up!
-              </Button>
-              {isOpened && <SignUpForm openSignUp={openSignUp} />}
+          <Button onClick={() => openSignUp(true)}>Sign Up!</Button>
+          {isOpened && <SignUpForm openSignUp={openSignUp} />}
         </body>
       </div>
     </form>

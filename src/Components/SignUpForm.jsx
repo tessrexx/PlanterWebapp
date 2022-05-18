@@ -1,29 +1,42 @@
 import React, { useState } from "react";
 import "./SignIn&UpForm.css";
 import { TextField, Button } from "@mui/material";
-import { Link } from "react-router-dom";
 import SignInForm from "./SignInForm";
+import { UserAuth } from "../Contexts/AuthContext";
 
-const SignUpForm = ({ openSignUp, SignUp, error }) => {
-  const [details, setDetails] = useState({
-    email: "",
-    confirmEmail: "",
-    password: "",
-  });
+const SignUpForm = ({ openSignUp, SignUp }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    SignUp(details);
+  // Setting createUser
+  const { createUser } = UserAuth();
+
+  const handleSubmit = async (err) => {
+    err.preventDefault();
+    setError("");
+    try {
+      await createUser(email, password);
+    } catch (err) {
+      setError(err.message);
+      console.log(err.message);
+    }
   };
 
   const [isOpen, openSignIn] = useState(false);
 
   return (
-    <form className="modal" onSubmit={submitHandler}>
+    <form className="modal" onSubmit={handleSubmit}>
       <div className="background" onClick={() => openSignUp(false)} />
       <div className="formInner">
         <img className="logo" src="/logo 184x62px.png" alt="" />
-        {error != "" ? <div className="error"> {error} </div> : ""}
+        {
+          error != "" ? (
+            <div className="error"> {error} </div>
+          ) : (
+            ""
+          ) /*Firebase Error Message*/
+        }
         <div className="formGroup">
           <TextField
             fullWidth
@@ -33,23 +46,7 @@ const SignUpForm = ({ openSignUp, SignUp, error }) => {
             type="text"
             name="email"
             // Calling a function to update setDetails by passing details entered
-            onChange={(e) => setDetails({ ...details, email: e.target.value })}
-            value={details.email}
-          />
-        </div>
-        <div className="formGroup">
-          <TextField
-            fullWidth
-            id="filled-basic"
-            label="Confirm Email"
-            variant="outlined"
-            type="text"
-            name="confirmEmail"
-            // Calling a function to update setDetails by passing details entered
-            onChange={(e) =>
-              setDetails({ ...details, confirmEmail: e.target.value })
-            }
-            value={details.confirmEmail}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="formGroup">
@@ -58,13 +55,20 @@ const SignUpForm = ({ openSignUp, SignUp, error }) => {
             id="filled-basic"
             label="Password"
             variant="outlined"
-            type="text"
+            type="password"
             name="password"
             // Calling a function to update setDetails by passing details entered
-            onChange={(e) =>
-              setDetails({ ...details, password: e.target.value })
-            }
-            value={details.password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <div className="formGroup">
+          <TextField
+            fullWidth
+            id="filled-basic"
+            label="Confirm Password"
+            variant="outlined"
+            type="password"
+            name="confirmPassword"
           />
         </div>
         <Button variant="contained" color="secondary" type="submit">
@@ -72,12 +76,8 @@ const SignUpForm = ({ openSignUp, SignUp, error }) => {
         </Button>
         <body className="signText">
           Already have an account?
-              <Button
-                onClick={() => openSignIn(true)}
-              >
-                Sign In!
-              </Button>
-              {isOpen && <SignInForm openSignIn={openSignIn} />}        
+          <Button onClick={() => openSignIn(true)}>Sign In!</Button>
+          {isOpen && <SignInForm openSignIn={openSignIn} />}
         </body>
       </div>
     </form>

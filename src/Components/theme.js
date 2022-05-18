@@ -1,4 +1,3 @@
-import { CenterFocusStrong } from "@mui/icons-material";
 import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
@@ -37,7 +36,15 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           color: "#5e875d",
-          fontWeight: "bold",
+          fontWeight: "500",
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          border: "#ffffff",
+          fontWeight: "500",
         },
       },
     },

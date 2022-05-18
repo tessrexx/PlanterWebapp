@@ -10,7 +10,7 @@
 }
 
 .logo {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .formInner {
@@ -31,13 +31,14 @@
 .formGroup {
   display: block;
   width: 300px;
+  margin-top: 10px;
   margin-bottom: 20px;
   margin-left: 50px;
 }
 
-.password {
+.forgotPassword {
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 300;
   margin-right: 140px;
   margin-bottom: 20px;
 }
@@ -45,5 +46,5 @@
 .signText {
   color: #ffffff;
   font-weight: 600;
-  margin-top: 20px;
+  margin-top: 5px;
 }
