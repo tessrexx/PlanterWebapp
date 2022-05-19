@@ -23,3 +23,16 @@
 .addButton Button {
   width: fit-content;
 }
+
+.searchBar {
+  width: 300px;
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .searchBar {
+    width: 250px;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+}

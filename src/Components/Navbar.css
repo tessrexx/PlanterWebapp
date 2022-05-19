@@ -20,7 +20,7 @@ body {
   list-style: none;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 500px) {
   .navbar-container {
     display: flex;
     justify-content: center;

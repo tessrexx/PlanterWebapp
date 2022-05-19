@@ -1,12 +1,13 @@
 import React from "react";
-import { Button } from "@mui/material";
+import { Button, TextField } from "@mui/material";
+import { useState } from "react";
 import "./PlantSelection.css";
 import PlantCard from "../Components/PlantCard";
 import plantData from "../Data/PlantInfo.json";
 
 function PlantSelection() {
-  const plantImage = "DEFAULTIMAGE";
-  const plantName = "PLANTNAME";
+  // State Variable
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
     <div>
@@ -22,11 +23,39 @@ function PlantSelection() {
       <Button className="plantTypeButton" variant="outlined" color="primary">
         HERB
       </Button>
+      <TextField
+        // SEARCH BAR
+        className="searchBar"
+        id="searchInput"
+        type="text"
+        placeholder="Search..."
+        onChange={(event) => {
+          setSearchTerm(event.target.value);
+        }}
+      />
 
       <div className="plantContainer">
-        {plantData.map((data) => {
-          return <PlantCard plantImage={data.image} plantName={data.title} />;
-        })}
+        {
+          // Searchbar method
+          plantData
+            .filter((val) => {
+              // Show all plants if search field empty
+              if (searchTerm == "") {
+                return val;
+              }
+              // Else-if will return any matching data searched
+              else if (
+                val.title.toLowerCase().includes(searchTerm.toLowerCase())
+              ) {
+                return val;
+              }
+            })
+            .map((data) => {
+              return (
+                <PlantCard plantImage={data.image} plantName={data.title} />
+              );
+            })
+        }
       </div>
 
       <div className="addButton">
