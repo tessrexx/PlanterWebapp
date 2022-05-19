@@ -1,17 +1,207 @@
 [
   {
     "id": "Apple",
-    "image": "${process.env.PUBLIC_URL}plantImages/apple.png",
+    "image": "plantImages/apple.png",
     "title": "Apple"
   },
   {
     "id": "Asparagus",
-    "image": "${process.env.PUBLIC_URL}plantImages/asparagus.png",
+    "image": "plantImages/asparagus.png",
     "title": "Asparagus"
   },
   {
-    "id": 3,
-    "image": "https://m.xcite.com/media/catalog/product/cache/1/small_image/350x/9df78eab33525d08d6e5fb8d27136e95/p/s/ps5_b2.jpg",
-    "title": "PlayStation 5 Console"
+    "id": "Basil",
+    "image": "plantImages/basil.png",
+    "title": "Basil"
+  },
+  {
+    "id": "Beetroot",
+    "image": "plantImages/beetroot.png",
+    "title": "Beetroot"
+  },
+  {
+    "id": "Blueberry",
+    "image": "plantImages/blueberry.png",
+    "title": "Blueberry"
+  },
+  {
+    "id": "Blackberry",
+    "image": "plantImages/blackberry.png",
+    "title": "Blackberry"
+  },
+  {
+    "id": "Bok Choi",
+    "image": "plantImages/bokchoi.png",
+    "title": "Bok Choi"
+  },
+  {
+    "id": "Broad Bean",
+    "image": "plantImages/broadbean.png",
+    "title": "Broad Bean"
+  },
+  {
+    "id": "Broccoli",
+    "image": "plantImages/broccoli.png",
+    "title": "Broccoli"
+  },
+  {
+    "id": "Capsicum",
+    "image": "plantImages/capsicum.png",
+    "title": "Capsicum"
+  },
+  {
+    "id": "Carrot",
+    "image": "plantImages/carrot.png",
+    "title": "Carrot"
+  },
+  {
+    "id": "Cauliflower",
+    "image": "plantImages/cauliflower.png",
+    "title": "Cauliflower"
+  },
+  {
+    "id": "Celery",
+    "image": "plantImages/celery.png",
+    "title": "Celery"
+  },
+  {
+    "id": "Coriander",
+    "image": "plantImages/coriander.png",
+    "title": "Coriander"
+  },
+  {
+    "id": "Courgette",
+    "image": "plantImages/courgette.png",
+    "title": "Courgette"
+  },
+  {
+    "id": "Cucumber",
+    "image": "plantImages/cucumber.png",
+    "title": "Cucumber"
+  },
+  {
+    "id": "Eggplant",
+    "image": "plantImages/eggplant.png",
+    "title": "Eggplant"
+  },
+  {
+    "id": "Feijoa",
+    "image": "plantImages/feijoa.png",
+    "title": "Feijoa"
+  },
+  {
+    "id": "Garlic",
+    "image": "plantImages/garlic.png",
+    "title": "Garlic"
+  },
+  {
+    "id": "Kale",
+    "image": "plantImages/kale.png",
+    "title": "Kale"
+  },
+  {
+    "id": "Lemon",
+    "image": "plantImages/lemon.png",
+    "title": "Lemon"
+  },
+  {
+    "id": "Lettuce",
+    "image": "plantImages/lettuce.png",
+    "title": "Lettuce"
+  },
+  {
+    "id": "Lime",
+    "image": "plantImages/lime.png",
+    "title": "Lime"
+  },
+  {
+    "id": "Mandarin",
+    "image": "plantImages/mandarin.png",
+    "title": "Mandarin"
+  },
+  {
+    "id": "Mesclun",
+    "image": "plantImages/mesclun.png",
+    "title": "Mesclun"
+  },
+  {
+    "id": "Onion",
+    "image": "plantImages/onion.png",
+    "title": "Onion"
+  },
+  {
+    "id": "Orange",
+    "image": "plantImages/orange.png",
+    "title": "Orange"
+  },
+  {
+    "id": "Parsley",
+    "image": "plantImages/parsley.png",
+    "title": "Parsley"
+  },
+  {
+    "id": "Passionfruit",
+    "image": "plantImages/passionfruit.png",
+    "title": "Passionfruit"
+  },
+  {
+    "id": "Peas",
+    "image": "plantImages/peas.png",
+    "title": "Peas"
+  },
+  {
+    "id": "Pear",
+    "image": "plantImages/pear.png",
+    "title": "Pear"
+  },
+  {
+    "id": "Potato",
+    "image": "plantImages/potato.png",
+    "title": "Potato"
+  },
+  {
+    "id": "Pumpkin",
+    "image": "plantImages/pumpkin.png",
+    "title": "Pumpkin"
+  },
+  {
+    "id": "Radish",
+    "image": "plantImages/radish.png",
+    "title": "Radish"
+  },
+  {
+    "id": "Raspberry",
+    "image": "plantImages/raspberry.png",
+    "title": "Raspberry"
+  },
+  {
+    "id": "Silverbeet",
+    "image": "plantImages/silverbeet.png",
+    "title": "Silverbeet"
+  },
+  {
+    "id": "Spinach",
+    "image": "plantImages/spinach.png",
+    "title": "Spinach"
+  },
+  {
+    "id": "Spring Onion",
+    "image": "plantImages/springonion.png",
+    "title": "SpringOnion"
+  },
+  {
+    "id": "Strawberry",
+    "image": "plantImages/strawberry.png",
+    "title": "Strawberry"
+  },
+  {
+    "id": "Sweetcorn",
+    "image": "plantImages/sweetcorn.png",
+    "title": "Sweetcorn"
+  },
+  {
+    "id": "Tomato",
+    "image": "plantImages/tomato.png",
+    "title": "Tomato"
   }
 ]
