@@ -1,0 +1,17 @@
+[
+  {
+    "id": "Apple",
+    "image": "${process.env.PUBLIC_URL}plantImages/apple.png",
+    "title": "Apple"
+  },
+  {
+    "id": "Asparagus",
+    "image": "${process.env.PUBLIC_URL}plantImages/asparagus.png",
+    "title": "Asparagus"
+  },
+  {
+    "id": 3,
+    "image": "https://m.xcite.com/media/catalog/product/cache/1/small_image/350x/9df78eab33525d08d6e5fb8d27136e95/p/s/ps5_b2.jpg",
+    "title": "PlayStation 5 Console"
+  }
+]

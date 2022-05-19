@@ -1,5 +1,6 @@
 .plantTypeButton {
   margin-top: 20px;
+  width: fit-content;
 }
 
 .plantContainer {
@@ -10,5 +11,15 @@
   display: flex;
   justify-content: space-between;
   justify-content: left;
-  flex-wrap: wrap;
+}
+
+.addButton {
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: right;
+  margin-right: 20px;
+}
+
+.addButton Button {
+  width: fit-content;
 }

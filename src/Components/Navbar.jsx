@@ -13,38 +13,36 @@ function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <div className="navbar-container">
-          <img className="navbar-logo" src="/logo 184x62px.png" alt="" />
+        <img src="/logo 184x62px.png" alt="" />
 
-          <ul className={"nav-menu"}>
-            <li className="nav-item">
-              <Button
-                variant="contained"
-                color="secondary"
-                onClick={() => setOpenSignUp(true)}
-              >
-                SIGN UP
-              </Button>
-              <SignUpForm
-                open={openSignUp}
-                onClose={() => setOpenSignUp(false)}
-              />
-            </li>
-            <li className="nav-item">
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={() => setOpenSignIn(true)}
-              >
-                SIGN IN
-              </Button>
-              <SignInForm
-                open={openSignIn}
-                onClose={() => setOpenSignIn(false)}
-              />
-            </li>
-          </ul>
-        </div>
+        <ul className={"nav-menu"}>
+          <li className="nav-item">
+            <Button
+              variant="contained"
+              color="secondary"
+              onClick={() => setOpenSignUp(true)}
+            >
+              SIGN UP
+            </Button>
+            <SignUpForm
+              open={openSignUp}
+              onClose={() => setOpenSignUp(false)}
+            />
+          </li>
+          <li className="nav-item">
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => setOpenSignIn(true)}
+            >
+              SIGN IN
+            </Button>
+            <SignInForm
+              open={openSignIn}
+              onClose={() => setOpenSignIn(false)}
+            />
+          </li>
+        </ul>
       </nav>
     </>
   );
