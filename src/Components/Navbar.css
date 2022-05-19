@@ -1,4 +1,4 @@
-body{
+body {
   margin: 0px;
 }
 
@@ -29,7 +29,6 @@ body{
 .nav-menu {
   display: grid;
   grid-template-columns: repeat(4, auto);
-  grid-gap: 10px;
   list-style: none;
   width: 87vw;
   justify-content: right;

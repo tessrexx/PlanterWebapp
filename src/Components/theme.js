@@ -27,7 +27,7 @@ export const theme = createTheme({
         root: {
           // CSS
           borderRadius: 20,
-          marginLeft: 5,
+          marginLeft: 20,
           width: 100,
         },
       },
