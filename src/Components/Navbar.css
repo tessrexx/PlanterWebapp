@@ -4,7 +4,7 @@ body {
 
 .navbar {
   background-image: linear-gradient(#b5cca7, #ffffff00);
-  padding: 5px 20px 20px 20px;
+  padding: 0.3125rem 0rem 1.25rem 0.625rem;
   width: 100%;
   height: 100px;
   display: flex;
@@ -14,8 +14,8 @@ body {
 }
 
 .nav-menu {
-  position: relative;
-  margin-right: 40px;
+  position: right;
+  margin-right: 0.625rem;
   display: flex;
   list-style: none;
 }

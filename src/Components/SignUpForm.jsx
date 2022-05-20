@@ -4,6 +4,7 @@ import { TextField, Button } from "@mui/material";
 import SignInForm from "./SignInForm";
 import { UserAuth } from "../Contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { HideImageRounded } from "@mui/icons-material";
 
 const SignUpForm = ({ open, onClose }) => {
   // Setting createUser
@@ -23,11 +24,17 @@ const SignUpForm = ({ open, onClose }) => {
     try {
       await createUser(email, password);
       navigate("/plantselection");
+      //signUpToggle(false)
     } catch (err) {
       setError(err.message);
       console.log(err.message);
     }
   };
+
+  //function signUpToggle(hidden)
+  //{
+  //  setOpenSignUp(hidden)
+  //}
 
   if (!open) return null;
   return (
@@ -82,6 +89,7 @@ const SignUpForm = ({ open, onClose }) => {
         <body className="signText">
           Already have an account?
           <Button onClick={() => setOpenSignIn(true)}>Sign In!</Button>
+          
         </body>
       </div>
     </form>

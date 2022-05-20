@@ -7,21 +7,23 @@ import { Routes, Route, Router } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import { AuthContextProvider } from "./Contexts/AuthContext";
+import PageLayout from "./Components/PageLayout";
 
 function App() {
   return (
     <div className="App">
-      <AuthContextProvider>
-        <Navbar />
+      <AuthContextProvider>      
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/plantselection" element={<PlantSelection />} />
           <Route path="/planner" element={<Planner />} />
+          <Route path="/layout" element={<PageLayout/>} />
         </Routes>
-      </AuthContextProvider>
-      <Footer />
+      </AuthContextProvider>    
     </div>
   );
 }
 
 export default App;
+
+// <Navbar />  <Footer />

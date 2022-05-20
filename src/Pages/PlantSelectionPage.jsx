@@ -4,13 +4,21 @@ import { useState } from "react";
 import "./PlantSelection.css";
 import PlantCard from "../Components/PlantCard";
 import plantData from "../Data/PlantInfo.json";
+import Footer from '../Components/Footer';
+import Navbar from '../Components/Navbar';
+import '../Components/PageLayout.css'
 
 function PlantSelection() {
   // State Variable
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
+    <div className="layout-container">
+      <Navbar/>
     <div>
+    <div className='layout-main'>
+    <div className='layout-left-right-flex'> 
+    <div className='layout-left'> 
       <Button className="plantTypeButton" variant="contained" color="secondary">
         ALL
       </Button>
@@ -23,6 +31,8 @@ function PlantSelection() {
       <Button className="plantTypeButton" variant="outlined" color="primary">
         HERB
       </Button>
+      </div>
+      <div className='layout-right'> 
       <TextField
         // SEARCH BAR
         className="searchBar"
@@ -33,7 +43,9 @@ function PlantSelection() {
           setSearchTerm(event.target.value);
         }}
       />
-
+      </div>
+      </div>
+      <div className='layout-body'> 
       <div className="plantContainer">
         {
           // Searchbar method
@@ -63,6 +75,11 @@ function PlantSelection() {
           ADD TO PLANTER
         </Button>
       </div>
+      </div>
+      </div>
+      <Footer/>
+    </div>
+   
     </div>
   );
 }
