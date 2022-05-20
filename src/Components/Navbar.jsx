@@ -13,7 +13,7 @@ function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <img src="/logo 184x62px.png" alt="" />
+        <img className="nav-logo" src="/logo 184x62px.png" alt="" />
 
         <ul className={"nav-menu"}>
           <li className="nav-item">

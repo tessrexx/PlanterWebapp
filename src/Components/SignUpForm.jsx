@@ -4,7 +4,6 @@ import { TextField, Button } from "@mui/material";
 import SignInForm from "./SignInForm";
 import { UserAuth } from "../Contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { HideImageRounded } from "@mui/icons-material";
 
 const SignUpForm = ({ open, onClose }) => {
   // Setting createUser
@@ -38,61 +37,61 @@ const SignUpForm = ({ open, onClose }) => {
 
   if (!open) return null;
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="background" onClick={onClose} />
-      <div className="formInner">
-        <img className="logo" src="/logo 184x62px.png" alt="" />
-        {
-          error != "" ? (
-            <div className="error"> {error} </div>
-          ) : (
-            ""
-          ) /*Firebase Error Message*/
-        }
-        <div className="formGroup">
-          <TextField
-            fullWidth
-            id="filled-basic"
-            label="Email"
-            variant="outlined"
-            type="text"
-            name="email"
-            // Calling a function to update setDetails by passing details entered
-            onChange={(e) => setEmail(e.target.value)}
-          />
+    <div className="background" onClick={onClose}>
+      <form onSubmit={handleSubmit}>
+        <div className="formContainer">
+          <img className="logo" src="/logo 184x62px.png" alt="" />
+          {
+            error != "" ? (
+              <div className="error"> {error} </div>
+            ) : (
+              ""
+            ) /*Firebase Error Message*/
+          }
+          <div className="formGroup">
+            <TextField
+              fullWidth
+              id="filled-basic"
+              label="Email"
+              variant="outlined"
+              type="text"
+              name="email"
+              // Calling a function to update setDetails by passing details entered
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="formGroup">
+            <TextField
+              fullWidth
+              id="filled-basic"
+              label="Password"
+              variant="outlined"
+              type="password"
+              name="password"
+              // Calling a function to update setDetails by passing details entered
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="formGroup">
+            <TextField
+              fullWidth
+              id="filled-basic"
+              label="Confirm Password"
+              variant="outlined"
+              type="password"
+              name="confirmPassword"
+            />
+          </div>
+          <Button variant="contained" color="secondary" type="submit">
+            CONFIRM
+          </Button>
+          <body className="signText">
+            Already have an account?
+            <Button onClick={() => setOpenSignIn(true)}>Sign In!</Button>
+          </body>
         </div>
-        <div className="formGroup">
-          <TextField
-            fullWidth
-            id="filled-basic"
-            label="Password"
-            variant="outlined"
-            type="password"
-            name="password"
-            // Calling a function to update setDetails by passing details entered
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div className="formGroup">
-          <TextField
-            fullWidth
-            id="filled-basic"
-            label="Confirm Password"
-            variant="outlined"
-            type="password"
-            name="confirmPassword"
-          />
-        </div>
-        <Button variant="contained" color="secondary" type="submit">
-          CONFIRM
-        </Button>
-        <body className="signText">
-          Already have an account?
-          <Button onClick={() => setOpenSignIn(true)}>Sign In!</Button>
-          
-        </body>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 

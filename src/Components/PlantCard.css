@@ -5,8 +5,8 @@
   background-color: #5e865d;
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
-  margin-left: 20px;
+  margin-bottom: 1.25rem;
+  margin-left: 1.25rem;
   align-items: center;
   border-radius: 10px;
 }

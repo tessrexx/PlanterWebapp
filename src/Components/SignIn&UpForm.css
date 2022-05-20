@@ -2,18 +2,18 @@
   background-color: #00000033;
   width: 100vw;
   height: 190vh;
-  z-index: 0;
+  z-index: 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  position: absolute;
+  position: fixed;
 }
 
 .logo {
-  margin-bottom: 10px;
+  margin-bottom: 0.6rem;
 }
 
-.formInner {
+.formContainer {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -23,24 +23,24 @@
   height: 400px;
   width: 400px;
   border-radius: 20px;
-  padding: 15px;
+  padding: 0.9rem;
   z-index: 1;
   cursor: default;
 }
 
 .formGroup {
-  display: block;
-  width: 300px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  margin-left: 50px;
+  position: flex;
+  width: 350px;
+  margin-top: 0.6rem;
+  margin-bottom: 1.25rem;
+  justify-content: flex-end;
 }
 
 .forgotPassword {
   color: #ffffff;
   font-weight: 300;
   margin-right: 140px;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .signText {

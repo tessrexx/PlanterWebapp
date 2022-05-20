@@ -30,48 +30,49 @@ const SignInForm = ({ open, onClose }) => {
   if (!open) return null;
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="background" onClick={onClose} />
-      <div className="formInner">
-        <img className="logo" src="/logo 184x62px.png" alt="" />
-        {error != "" ? <div className="error"> {error} </div> : ""}
-        <div className="formGroup">
-          <TextField
-            fullWidth
-            id="filled-basic"
-            label="Email"
-            variant="outlined"
-            type="text"
-            name="email"
-            // Calling a function to update setDetails by passing details entered
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="formGroup">
-          <TextField
-            fullWidth
-            id="filled-basic"
-            label="Password"
-            variant="outlined"
-            type="password"
-            name="password"
-            // Calling a function to update setDetails by passing details entered
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div className="forgotPassword">
-          <Link to="/">Forgot Password?</Link>
-        </div>
+    <div className="background" onClick={onClose}>
+      <form onSubmit={handleSubmit}>
+        <div className="formInner">
+          <img className="logo" src="/logo 184x62px.png" alt="" />
+          {error != "" ? <div className="error"> {error} </div> : ""}
+          <div className="formGroup">
+            <TextField
+              fullWidth
+              id="filled-basic"
+              label="Email"
+              variant="outlined"
+              type="text"
+              name="email"
+              // Calling a function to update setDetails by passing details entered
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="formGroup">
+            <TextField
+              fullWidth
+              id="filled-basic"
+              label="Password"
+              variant="outlined"
+              type="password"
+              name="password"
+              // Calling a function to update setDetails by passing details entered
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="forgotPassword">
+            <Link to="/">Forgot Password?</Link>
+          </div>
 
-        <Button variant="contained" color="primary" type="submit">
-          SIGN IN
-        </Button>
-        <body className="signText">
-          Don't have an account?
-          <Button onClick={() => setOpenSignUp(true)}>Sign Up!</Button>
-        </body>
-      </div>
-    </form>
+          <Button variant="contained" color="primary" type="submit">
+            SIGN IN
+          </Button>
+          <body className="signText">
+            Don't have an account?
+            <Button onClick={() => setOpenSignUp(true)}>Sign Up!</Button>
+          </body>
+        </div>
+      </form>
+    </div>
   );
 };
 

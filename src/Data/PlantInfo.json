@@ -2,206 +2,206 @@
   {
     "id": "Apple",
     "image": "plantImages/apple.png",
-    "title": "Apple"
+    "type": "fruit"
   },
   {
     "id": "Asparagus",
     "image": "plantImages/asparagus.png",
-    "title": "Asparagus"
+    "type": "vegetable"
   },
   {
     "id": "Basil",
     "image": "plantImages/basil.png",
-    "title": "Basil"
+    "type": "herb"
   },
   {
     "id": "Beetroot",
     "image": "plantImages/beetroot.png",
-    "title": "Beetroot"
+    "type": "vegetable"
   },
   {
     "id": "Blueberry",
     "image": "plantImages/blueberry.png",
-    "title": "Blueberry"
+    "type": "fruit"
   },
   {
     "id": "Blackberry",
     "image": "plantImages/blackberry.png",
-    "title": "Blackberry"
+    "type": "fruit"
   },
   {
     "id": "Bok Choi",
     "image": "plantImages/bokchoi.png",
-    "title": "Bok Choi"
+    "type": "vegetable"
   },
   {
     "id": "Broad Bean",
     "image": "plantImages/broadbean.png",
-    "title": "Broad Bean"
+    "type": "vegetable"
   },
   {
     "id": "Broccoli",
     "image": "plantImages/broccoli.png",
-    "title": "Broccoli"
+    "type": "vegetable"
   },
   {
     "id": "Capsicum",
     "image": "plantImages/capsicum.png",
-    "title": "Capsicum"
+    "type": "fruit"
   },
   {
     "id": "Carrot",
     "image": "plantImages/carrot.png",
-    "title": "Carrot"
+    "type": "vegetable"
   },
   {
     "id": "Cauliflower",
     "image": "plantImages/cauliflower.png",
-    "title": "Cauliflower"
+    "type": "vegetable"
   },
   {
     "id": "Celery",
     "image": "plantImages/celery.png",
-    "title": "Celery"
+    "type": "vegetable"
   },
   {
     "id": "Coriander",
     "image": "plantImages/coriander.png",
-    "title": "Coriander"
+    "type": "herb"
   },
   {
     "id": "Courgette",
     "image": "plantImages/courgette.png",
-    "title": "Courgette"
+    "type": "vegetable"
   },
   {
     "id": "Cucumber",
     "image": "plantImages/cucumber.png",
-    "title": "Cucumber"
+    "type": "vegetable"
   },
   {
     "id": "Eggplant",
     "image": "plantImages/eggplant.png",
-    "title": "Eggplant"
+    "type": "vegetable"
   },
   {
     "id": "Feijoa",
     "image": "plantImages/feijoa.png",
-    "title": "Feijoa"
+    "type": "fruit"
   },
   {
     "id": "Garlic",
     "image": "plantImages/garlic.png",
-    "title": "Garlic"
+    "type": "vegetable"
   },
   {
     "id": "Kale",
     "image": "plantImages/kale.png",
-    "title": "Kale"
+    "type": "vegetable"
   },
   {
     "id": "Lemon",
     "image": "plantImages/lemon.png",
-    "title": "Lemon"
+    "type": "fruit"
   },
   {
     "id": "Lettuce",
     "image": "plantImages/lettuce.png",
-    "title": "Lettuce"
+    "type": "vegetable"
   },
   {
     "id": "Lime",
     "image": "plantImages/lime.png",
-    "title": "Lime"
+    "type": "fruit"
   },
   {
     "id": "Mandarin",
     "image": "plantImages/mandarin.png",
-    "title": "Mandarin"
+    "type": "fruit"
   },
   {
     "id": "Mesclun",
     "image": "plantImages/mesclun.png",
-    "title": "Mesclun"
+    "type": "vegetable"
   },
   {
     "id": "Onion",
     "image": "plantImages/onion.png",
-    "title": "Onion"
+    "type": "vegetable"
   },
   {
     "id": "Orange",
     "image": "plantImages/orange.png",
-    "title": "Orange"
+    "type": "fruit"
   },
   {
     "id": "Parsley",
     "image": "plantImages/parsley.png",
-    "title": "Parsley"
+    "type": "herb"
   },
   {
     "id": "Passionfruit",
     "image": "plantImages/passionfruit.png",
-    "title": "Passionfruit"
+    "type": "fruit"
   },
   {
     "id": "Peas",
     "image": "plantImages/peas.png",
-    "title": "Peas"
+    "type": "vegetable"
   },
   {
     "id": "Pear",
     "image": "plantImages/pear.png",
-    "title": "Pear"
+    "type": "fruit"
   },
   {
     "id": "Potato",
     "image": "plantImages/potato.png",
-    "title": "Potato"
+    "type": "vegetable"
   },
   {
     "id": "Pumpkin",
     "image": "plantImages/pumpkin.png",
-    "title": "Pumpkin"
+    "type": "vegetable"
   },
   {
     "id": "Radish",
     "image": "plantImages/radish.png",
-    "title": "Radish"
+    "type": "vegetable"
   },
   {
     "id": "Raspberry",
     "image": "plantImages/raspberry.png",
-    "title": "Raspberry"
+    "type": "fruit"
   },
   {
     "id": "Silverbeet",
     "image": "plantImages/silverbeet.png",
-    "title": "Silverbeet"
+    "type": "vegetable"
   },
   {
     "id": "Spinach",
     "image": "plantImages/spinach.png",
-    "title": "Spinach"
+    "type": "vegetable"
   },
   {
     "id": "Spring Onion",
     "image": "plantImages/springonion.png",
-    "title": "SpringOnion"
+    "type": "vegetable"
   },
   {
     "id": "Strawberry",
     "image": "plantImages/strawberry.png",
-    "title": "Strawberry"
+    "type": "fruit"
   },
   {
     "id": "Sweetcorn",
     "image": "plantImages/sweetcorn.png",
-    "title": "Sweetcorn"
+    "type": "vegetable"
   },
   {
     "id": "Tomato",
     "image": "plantImages/tomato.png",
-    "title": "Tomato"
+    "type": "fruit"
   }
 ]
