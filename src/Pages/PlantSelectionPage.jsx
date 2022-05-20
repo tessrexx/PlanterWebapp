@@ -1,16 +1,25 @@
 import React from "react";
 import { Button, TextField } from "@mui/material";
 import { useState } from "react";
-import "./PlantSelection.css";
-import PlantCard from "../Components/PlantCard";
 import plantData from "../Data/PlantInfo.json";
+import PlantCard from "../Components/PlantCard";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
+import "./PlantSelection.css";
 import "../Components/PageLayout.css";
 
 function PlantSelection() {
   // State Variable
   const [searchTerm, setSearchTerm] = useState("");
+  const [data, setData] = useState(plantData);
+
+  //Function
+  const filterResult = (plantTypes) => {
+    const result = plantData.filter((currentData) => {
+      return currentData.type === plantTypes;
+    });
+    setData(result);
+  };
 
   return (
     <div className="layout-container">
@@ -23,6 +32,7 @@ function PlantSelection() {
                 className="plantTypeButton"
                 variant="contained"
                 color="secondary"
+                onClick={() => setData(plantData)}
               >
                 ALL
               </Button>
@@ -30,6 +40,7 @@ function PlantSelection() {
                 className="plantTypeButton"
                 variant="outlined"
                 color="primary"
+                onClick={() => filterResult("vegetable")}
               >
                 VEGETABLE
               </Button>
@@ -37,6 +48,7 @@ function PlantSelection() {
                 className="plantTypeButton"
                 variant="outlined"
                 color="primary"
+                onClick={() => filterResult("fruit")}
               >
                 FRUIT
               </Button>
@@ -44,6 +56,7 @@ function PlantSelection() {
                 className="plantTypeButton"
                 variant="outlined"
                 color="primary"
+                onClick={() => filterResult("herb")}
               >
                 HERB
               </Button>
@@ -63,29 +76,12 @@ function PlantSelection() {
           </div>
           <div className="layout-body">
             <div className="plantContainer">
-              {
-                // Searchbar method
-                plantData
-                  .filter((val) => {
-                    // Show all plants if search field empty
-                    if (searchTerm == "") {
-                      return val;
-                    }
-                    // Else-if will return any matching data searched
-                    else if (
-                      val.title.toLowerCase().includes(searchTerm.toLowerCase())
-                    ) {
-                      return val;
-                    }
-                  })
-                  .map((data) => {
-                    return (
-                      <PlantCard plantImage={data.image} plantName={data.id} />
-                    );
-                  })
-              }
+              {data.map((values) => {
+                return (
+                  <PlantCard plantImage={values.image} plantName={values.id} />
+                );
+              })}
             </div>
-
             <div className="addButton">
               <Button variant="contained" color="secondary">
                 ADD TO PLANTER
