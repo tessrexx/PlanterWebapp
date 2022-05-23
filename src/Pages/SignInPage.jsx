@@ -1,20 +1,26 @@
 import React, { useState } from "react";
-import "./SignIn&UpForm.css";
+import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
+import "../Components/SignIn&UpForm.css";
 import { TextField, Button } from "@mui/material";
-import { Link } from "react-router-dom";
-import SignUpForm from "./SignUpForm";
 import { UserAuth } from "../Contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
-const SignInForm = ({ open, onClose }) => {
+function SignInPage() {
+  // Setting createUser
   const { signIn } = UserAuth();
   const navigate = useNavigate();
+  // States for sign up info
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [openSignUp, setOpenSignUp] = useState(false);
 
-  // Submission Errors or Redirection
+  const textFieldStyle = {
+    variant: "outlined",
+    color: "#ffffff",
+  };
+
+  // Submission Errors or Redirection to Planner Page
   const handleSubmit = async (err) => {
     err.preventDefault();
     setError("");
@@ -27,20 +33,21 @@ const SignInForm = ({ open, onClose }) => {
     }
   };
 
-  if (!open) return null;
-
   return (
-    <div className="background" onClick={onClose}>
-      <form onSubmit={handleSubmit}>
-        <div className="formInner">
-          <img className="logo" src="/logo 184x62px.png" alt="" />
-          {error != "" ? <div className="error"> {error} </div> : ""}
+    <div>
+      <Navbar />
+      <div className="formContainer">
+        <img className="logo" src="/logo 184x62px.png" alt="" />
+        <form onSubmit={handleSubmit}>
+          <h2>SIGN IN</h2>
+          <p>
+            Don't have an account? <Link to="/signup">Sign Up!</Link>
+          </p>
           <div className="formGroup">
             <TextField
+              style={textFieldStyle}
               fullWidth
-              id="filled-basic"
               label="Email"
-              variant="outlined"
               type="text"
               name="email"
               // Calling a function to update setDetails by passing details entered
@@ -49,8 +56,8 @@ const SignInForm = ({ open, onClose }) => {
           </div>
           <div className="formGroup">
             <TextField
+              style={textFieldStyle}
               fullWidth
-              id="filled-basic"
               label="Password"
               variant="outlined"
               type="password"
@@ -62,18 +69,24 @@ const SignInForm = ({ open, onClose }) => {
           <div className="forgotPassword">
             <Link to="/">Forgot Password?</Link>
           </div>
+          {
+            error != "" ? (
+              <div className="error"> {error} </div>
+            ) : (
+              ""
+            ) /*Firebase Error Message*/
+          }
 
-          <Button variant="contained" color="primary" type="submit">
-            SIGN IN
-          </Button>
-          <body className="signText">
-            Don't have an account?
-            <Button onClick={() => setOpenSignUp(true)}>Sign Up!</Button>
-          </body>
-        </div>
-      </form>
+          <div className="submitButton">
+            <Button variant="contained" color="secondary" type="submit">
+              SIGN IN
+            </Button>
+          </div>
+        </form>
+      </div>
+      <Footer />
     </div>
   );
-};
+}
 
-export default SignInForm;
+export default SignInPage;

@@ -16,6 +16,15 @@ export const AuthContextProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
+  //useEffect(() => {
+  //  const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+  //    setUser(currentUser);
+  //  });
+  //  return () => {
+  //    unsubscribe();
+  //  };
+  //});
+
   const signIn = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };

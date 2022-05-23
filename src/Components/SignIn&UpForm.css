@@ -1,50 +1,50 @@
-.background {
-  background-color: #00000033;
-  width: 100vw;
-  height: 190vh;
-  z-index: 1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: fixed;
-}
-
 .logo {
-  margin-bottom: 0.6rem;
+  margin-left: 150px;
 }
 
 .formContainer {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #b5cca7;
+  height: 30rem;
+  width: 30rem;
   color: #ffffff;
-  height: 400px;
-  width: 400px;
+  background-color: #b5cca7;
+  filter: drop-shadow(5px 5px 10px rgba(145, 145, 145, 0.493));
   border-radius: 20px;
-  padding: 0.9rem;
+  padding: 1.25rem;
   z-index: 1;
   cursor: default;
 }
 
+form {
+  padding: 5px 15px 15px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .formGroup {
-  position: flex;
-  width: 350px;
-  margin-top: 0.6rem;
-  margin-bottom: 1.25rem;
-  justify-content: flex-end;
+  width: 450px;
+  padding: 15px 15px 15px 15px;
 }
 
 .forgotPassword {
   color: #ffffff;
   font-weight: 300;
-  margin-right: 140px;
-  margin-bottom: 1.25rem;
+
+  margin-left: -290px;
 }
 
-.signText {
-  color: #ffffff;
+.submitButton {
+  padding-top: 20px;
+  margin-left: -20px;
+}
+
+.error {
+  padding: 15px 15px 0px 10px;
+  color: #a54646;
   font-weight: 600;
-  margin-top: 5px;
+  font-style: italic;
 }
