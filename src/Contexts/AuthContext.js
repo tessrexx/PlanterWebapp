@@ -12,14 +12,17 @@ const UserContext = createContext();
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
 
+  // Creates user
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
+  // Signs in user
   const signIn = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  // Signs out user
   const logout = () => {
     return signOut(auth);
   };
@@ -33,6 +36,7 @@ export const AuthContextProvider = ({ children }) => {
     };
   });*/
 
+  // Sets user authenitcation as true
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) setUser(user);

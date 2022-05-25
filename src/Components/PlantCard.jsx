@@ -1,6 +1,5 @@
-import React from "react";
 import "./PlantCard.css";
-import { Checkbox } from "@mui/material";
+import React from "react";
 
 //component
 const PlantCard = ({ plantClassName, plantImage, plantName }) => {

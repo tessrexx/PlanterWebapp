@@ -1,12 +1,11 @@
-import React from "react";
+import "./PlantSelection.css";
+import "../Components/PageLayout.css";
 import { Button, TextField } from "@mui/material";
-import { useState } from "react";
+import { React, useState } from "react";
 import plantData from "../Data/PlantInfo.json";
 import PlantCard from "../Components/PlantCard";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
-import "./PlantSelection.css";
-import "../Components/PageLayout.css";
 
 function PlantSelection() {
   // State Variable

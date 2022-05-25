@@ -23,6 +23,11 @@ body {
   list-style: none;
 }
 
+.user-nav {
+  cursor: pointer;
+  padding-left: 20px;
+}
+
 /*Removes link underline*/
 a:link {
   text-decoration: none;

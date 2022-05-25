@@ -1,11 +1,8 @@
-import React from "react";
 import "./Navbar.css";
-import theme from "./theme";
-import { ThemeProvider, Button } from "@mui/material";
-import { useState, useEffect } from "react";
+import { React } from "react";
+import { Button } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../Contexts/AuthContext";
-import { auth } from "../firebase";
 
 function Navbar() {
   const { user, logout } = UserAuth();
@@ -30,19 +27,31 @@ function Navbar() {
 
         <ul className={"nav-menu"}>
           {user ? (
-            <li>
-              <Button onClick={handleLogout}>SIGN OUT</Button>
-            </li>
+            <>
+              <li className="user-nav">
+                <Link to="/planner">
+                  <img src="Icons/planter.png" />
+                </Link>
+              </li>
+              <li className="user-nav">
+                <Link to="/userdetails">
+                  <img src="Icons/details.png" />
+                </Link>
+              </li>
+              <li className="user-nav">
+                <img src="Icons/signout.png" onClick={handleLogout} />
+              </li>
+            </>
           ) : (
             <>
-              <li className="nav-item">
+              <li className="public-nav">
                 <Link to="/signup">
                   <Button variant="contained" color="secondary">
                     SIGN UP
                   </Button>
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="public-nav">
                 <Link to="/signin">
                   <Button variant="contained" color="primary">
                     SIGN IN

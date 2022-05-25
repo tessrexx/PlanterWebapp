@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import Footer from "../Components/Footer";
-import Navbar from "../Components/Navbar";
 import "../Components/SignIn&UpForm.css";
+import { React, useState } from "react";
 import { TextField, Button } from "@mui/material";
 import { UserAuth } from "../Contexts/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
+import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
 
 function SignInPage({ setIsAuth }) {
   // Setting createUser
@@ -14,11 +14,6 @@ function SignInPage({ setIsAuth }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
-  const textFieldStyle = {
-    variant: "outlined",
-    color: "#ffffff",
-  };
 
   // Submission Errors or Redirection to Planner Page
   const handleSubmit = async (err) => {
@@ -45,7 +40,6 @@ function SignInPage({ setIsAuth }) {
           </p>
           <div className="formGroup">
             <TextField
-              style={textFieldStyle}
               fullWidth
               label="Email"
               type="text"
@@ -56,7 +50,6 @@ function SignInPage({ setIsAuth }) {
           </div>
           <div className="formGroup">
             <TextField
-              style={textFieldStyle}
               fullWidth
               label="Password"
               variant="outlined"
