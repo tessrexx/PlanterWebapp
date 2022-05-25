@@ -2,7 +2,6 @@ import "./UserDetails.css";
 import { React, useState } from "react";
 import { TextField, Button } from "@mui/material";
 import { UserAuth } from "../Contexts/AuthContext";
-import { useNavigate, Link } from "react-router-dom";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import { getAuth, updateEmail } from "firebase/auth";
