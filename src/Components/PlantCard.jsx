@@ -2,6 +2,7 @@ import "./PlantCard.css";
 import React from "react";
 import { IconButton } from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 //component
 const PlantCard = ({ plantClassName, plantImage, plantName }) => {

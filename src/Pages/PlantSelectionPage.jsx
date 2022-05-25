@@ -6,6 +6,7 @@ import plantData from "../Data/PlantInfo.json";
 import PlantCard from "../Components/PlantCard";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
+import { Link } from "react-router-dom";
 
 function PlantSelection() {
   // State Variable
@@ -19,27 +20,6 @@ function PlantSelection() {
     });
     setData(result);
   };
-
-  function TabGroup() {
-    const [active, setActive] = useState(types[0]);
-    return (
-      <>
-        <div>
-          {types.map((type) => (
-            <Tab
-              key={type}
-              active={active === type}
-              onClick={() => setActive(type)}
-            >
-              {type}
-            </Tab>
-          ))}
-        </div>
-      </>
-    );
-  }
-
-  const types = ["ALL", "VEGETABLE", "FRUIT", "HERB"];
 
   return (
     <div className="layout-container">
@@ -102,11 +82,11 @@ function PlantSelection() {
                 );
               })}
             </div>
-            <div className="addButton">
+            <Link to="/planner" className="addButton">
               <Button variant="contained" color="secondary">
                 ADD TO PLANTER
               </Button>
-            </div>
+            </Link>
           </div>
         </div>
         <Footer />

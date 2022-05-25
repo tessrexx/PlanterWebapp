@@ -24,12 +24,13 @@
   width: 450px;
 }
 
-button:focus {
+button.plantTypeButton:focus {
   background-color: #eab970;
+  border-color: #eab970;
   color: #ffffff;
 }
 
-button:focus:hover {
+button.plantTypeButton:focus:hover {
   background-color: #eab970;
   color: #ffffff;
 }
