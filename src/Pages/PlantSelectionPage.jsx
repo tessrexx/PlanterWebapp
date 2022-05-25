@@ -1,6 +1,6 @@
 import "./PlantSelection.css";
 import "../Components/PageLayout.css";
-import { Button, TextField } from "@mui/material";
+import { Button, Tab, TextField } from "@mui/material";
 import { React, useState } from "react";
 import plantData from "../Data/PlantInfo.json";
 import PlantCard from "../Components/PlantCard";
@@ -20,6 +20,27 @@ function PlantSelection() {
     setData(result);
   };
 
+  function TabGroup() {
+    const [active, setActive] = useState(types[0]);
+    return (
+      <>
+        <div>
+          {types.map((type) => (
+            <Tab
+              key={type}
+              active={active === type}
+              onClick={() => setActive(type)}
+            >
+              {type}
+            </Tab>
+          ))}
+        </div>
+      </>
+    );
+  }
+
+  const types = ["ALL", "VEGETABLE", "FRUIT", "HERB"];
+
   return (
     <div className="layout-container">
       <Navbar />
@@ -29,8 +50,8 @@ function PlantSelection() {
             <div className="layout-left">
               <Button
                 className="plantTypeButton"
-                variant="contained"
-                color="secondary"
+                variant="outlined"
+                color="primary"
                 onClick={() => setData(plantData)}
               >
                 ALL
