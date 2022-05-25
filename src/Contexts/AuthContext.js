@@ -16,22 +16,33 @@ export const AuthContextProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  //useEffect(() => {
-  //  const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-  //    setUser(currentUser);
-  //  });
-  //  return () => {
-  //    unsubscribe();
-  //  };
-  //});
-
   const signIn = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  const logout = () => {
+    return signOut(auth);
+  };
+
+  /*useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => {
+      unsubscribe();
+    };
+  });*/
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) setUser(user);
+      else setUser(null);
+    });
+  });
+
   return (
     // Export values
-    <UserContext.Provider value={{ createUser, user, signIn }}>
+    <UserContext.Provider value={{ createUser, user, signIn, logout }}>
       {children}
     </UserContext.Provider>
   );

@@ -6,7 +6,7 @@ import { TextField, Button } from "@mui/material";
 import { UserAuth } from "../Contexts/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
 
-function SignInPage() {
+function SignInPage({ setIsAuth }) {
   // Setting createUser
   const { signIn } = UserAuth();
   const navigate = useNavigate();

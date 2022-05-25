@@ -1,13 +1,11 @@
 import "./App.css";
-import React from "react";
+import { React, useState } from "react";
 import HomePage from "./Pages/HomePage";
 import SignUpPage from "./Pages/SignUpPage";
 import SignInPage from "./Pages/SignInPage";
 import PlantSelection from "./Pages/PlantSelectionPage";
 import Planner from "./Pages/PlannerViewPage";
 import { Routes, Route, Router } from "react-router-dom";
-import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
 import { AuthContextProvider } from "./Contexts/AuthContext";
 import PageLayout from "./Components/PageLayout";
 
@@ -29,5 +27,3 @@ function App() {
 }
 
 export default App;
-
-// <Navbar />  <Footer />
