@@ -29,7 +29,7 @@ function SignInPage({ setIsAuth }) {
   };
 
   return (
-    <div>
+    <div className="background">
       <Navbar />
       <div className="formContainer">
         <img className="logo" src="/logo 184x62px.png" alt="" />

@@ -43,7 +43,6 @@ a:link {
   .nav-menu {
     position: right;
     display: flex;
-    width: 50vw;
   }
 }
 
