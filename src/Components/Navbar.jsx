@@ -30,16 +30,16 @@ function Navbar() {
             <>
               <li className="user-nav">
                 <Link to="/planner">
-                  <img src="Icons/planter.png" />
+                  <img src="IconsandImages/planter.png" />
                 </Link>
               </li>
               <li className="user-nav">
                 <Link to="/userdetails">
-                  <img src="Icons/details.png" />
+                  <img src="IconsandImages/details.png" />
                 </Link>
               </li>
               <li className="user-nav">
-                <img src="Icons/signout.png" onClick={handleLogout} />
+                <img src="IconsandImages/signout.png" onClick={handleLogout} />
               </li>
             </>
           ) : (

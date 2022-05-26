@@ -35,6 +35,6 @@
   color: #ffffff;
 }
 
-.active {
+button:current {
   background-color: black;
 }

@@ -58,5 +58,6 @@ a:link {
   justify-content: center;
   align-items: flex-end;
   position: fixed;
+  margin-top: 20px;
   bottom: 0;
 }
