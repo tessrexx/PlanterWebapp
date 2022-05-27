@@ -57,6 +57,19 @@ export const theme = createTheme({
         },
       },
     },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          borderRadius: "30px",
+          textAlign: "center",
+          fontSize: 18,
+          transition: "all .5s",
+          padding: "10px 15px",
+          color: "#eab970",
+          margin: "5px 10px",
+        },
+      },
+    },
   },
 });
 
