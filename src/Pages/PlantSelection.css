@@ -1,25 +1,3 @@
-/* Category button css */
-.plantTypeButton {
-  margin-top: 1.25rem;
-  width: fit-content;
-}
-
-button.plantTypeButton:focus {
-  background-color: #eab970;
-  border-color: #eab970;
-  color: #ffffff;
-}
-
-button.plantTypeButton:focus:hover {
-  background-color: #eab970;
-  color: #ffffff;
-}
-
-/* Searchbar css */
-.searchBar {
-  width: 450px;
-}
-
 /* Plant cards container css */
 .plantContainer {
   width: 100%;

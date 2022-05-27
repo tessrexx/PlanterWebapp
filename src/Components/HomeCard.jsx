@@ -3,7 +3,7 @@ import React from "react";
 // Infile CSS Import
 import "./HomeCard.css";
 
-// Function for info cards on home page
+// Component for info cards on home page
 // Displays template for website features
 const HomeCard = ({ title, image, info }) => {
   // Output
