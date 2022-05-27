@@ -1,12 +1,18 @@
+// API Imports
 import React from "react";
+// Infile CSS Imports
+import "./Navbar.css";
 
+// Function for footer component used at the base of each page
+// Displays copyright message
 function Footer() {
+  // Output
   return (
     <div className="footer-container">
       <p>Copyright Planter 2022</p>
     </div>
   );
-  // CSS is in Navbar.css
 }
 
+// Export from module
 export default Footer;

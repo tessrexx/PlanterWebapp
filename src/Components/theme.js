@@ -1,5 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 
+// App theme & overrides
 export const theme = createTheme({
   palette: {
     primary: {
@@ -16,11 +17,9 @@ export const theme = createTheme({
       fontWeight: "bold",
     },
   },
-  shape: {
-    borderRadius: "30px",
-  },
+  // Mui Componenet Overrides
   components: {
-    // Name of the component
+    // Button Style Override
     MuiButton: {
       styleOverrides: {
         // Name of the slot
@@ -31,11 +30,13 @@ export const theme = createTheme({
         },
       },
     },
+    // Textfield Style Overrides
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
           color: "#5e875d",
           fontWeight: "500",
+          borderRadius: 40,
         },
       },
     },
@@ -47,6 +48,7 @@ export const theme = createTheme({
         },
       },
     },
+    // Checkbox Style Override
     MuiCheckbox: {
       styleOverrides: {
         root: {
@@ -57,6 +59,7 @@ export const theme = createTheme({
         },
       },
     },
+    // Tab Style Override
     MuiTab: {
       styleOverrides: {
         root: {

@@ -1,14 +1,18 @@
-import "./App.css";
+// API Imports
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { AuthContextProvider } from "./Contexts/AuthContext";
+// In-file CSS & Component Imports
+import "./App.css";
 import HomePage from "./Pages/HomePage";
 import SignUpPage from "./Pages/SignUpPage";
 import SignInPage from "./Pages/SignInPage";
 import PlantSelection from "./Pages/PlantSelectionPage";
 import Planner from "./Pages/PlannerViewPage";
 import UserDetails from "./Pages/UserDetails";
+import { AuthContextProvider } from "./Contexts/AuthContext";
 
+// App function
+// Contains routing for each page used in app
 function App() {
   return (
     <div className="App">

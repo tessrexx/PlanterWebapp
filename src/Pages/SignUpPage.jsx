@@ -1,12 +1,17 @@
-import "../Components/SignIn&UpForm.css";
+// API Imports
 import React from "react";
 import { useState } from "react";
-import { TextField, Button } from "@mui/material";
-import { UserAuth } from "../Contexts/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
-import Footer from "../Components/Footer";
+// MUI Library & Component Imports
+import { TextField, Button } from "@mui/material";
+// In-file CSS & Component Imports
+import "../Components/SignIn&UpForm.css";
+import { UserAuth } from "../Contexts/AuthContext";
 import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 
+// Function for /signup page
+// Contains form for user to create an account and become an authenticated user
 function SignUpPage() {
   // Setting createUser
   const { createUser } = UserAuth();
@@ -23,13 +28,13 @@ function SignUpPage() {
     try {
       await createUser(email, password);
       navigate("/plantselection");
-      //signUpToggle(false)
     } catch (err) {
       setError(err.message);
       console.log(err.message);
     }
   };
 
+  // Output
   return (
     <div
       className="background"
@@ -83,4 +88,5 @@ function SignUpPage() {
   );
 }
 
+// Export from module
 export default SignUpPage;

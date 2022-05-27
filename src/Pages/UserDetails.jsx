@@ -1,13 +1,21 @@
-import "./UserDetails.css";
-import { React, useState } from "react";
+// API Imports
+import React from "react";
+import { getAuth, updateEmail } from "firebase/auth";
+// MUI Library & Component Imports
 import { TextField, Button } from "@mui/material";
 import { UserAuth } from "../Contexts/AuthContext";
-import Footer from "../Components/Footer";
+// In-file CSS & Component Imports
+import "./UserDetails.css";
 import Navbar from "../Components/Navbar";
-import { getAuth, updateEmail } from "firebase/auth";
+import Footer from "../Components/Footer";
 
+// Function for /userdetails page
+// Contains users email address with an option to update this & their password
 function UserDetails() {
+  // User authentication state
   const { user } = UserAuth();
+
+  // Output
   return (
     <div>
       <Navbar />
@@ -53,4 +61,5 @@ function UserDetails() {
   );
 }
 
+// Export from module
 export default UserDetails;

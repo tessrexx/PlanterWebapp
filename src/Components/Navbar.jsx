@@ -1,13 +1,20 @@
-import "./Navbar.css";
+// API Imports
 import React from "react";
-import { Button } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
+// MUI Library & Component Imports
+import { Button } from "@mui/material";
+// Infile CSS & Component Imports
+import "./Navbar.css";
 import { UserAuth } from "../Contexts/AuthContext";
 
+// Function for navbar component used at the top of each page
+// Allows user access to sign up & sign in pages, their details, and sign out
 function Navbar() {
+  // Consts for user authentication & navigation
   const { user, logout } = UserAuth();
   const navigate = useNavigate();
 
+  // Handles user logout and redirects to home page
   const handleLogout = async () => {
     try {
       await logout();
@@ -18,6 +25,7 @@ function Navbar() {
     }
   };
 
+  // Output
   return (
     <>
       <nav className="navbar">
@@ -70,4 +78,5 @@ function Navbar() {
   );
 }
 
+// Export from module
 export default Navbar;

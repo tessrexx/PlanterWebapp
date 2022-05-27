@@ -1,12 +1,15 @@
+/* Background image container css */
 .background {
   width: 100%;
   height: 100vh;
 }
 
+/* Logo css */
 .logo {
   margin-left: 150px;
 }
 
+/* Form container css */
 .formContainer {
   position: absolute;
   top: 50%;
@@ -23,6 +26,7 @@
   cursor: default;
 }
 
+/* Form css */
 form {
   padding: 5px 15px 15px 15px;
   display: flex;
@@ -30,11 +34,13 @@ form {
   align-items: center;
 }
 
+/* Textfield container css */
 .formGroup {
   width: 450px;
   padding: 15px 15px 15px 15px;
 }
 
+/* Forgot password text css */
 .forgotPassword {
   color: #ffffff;
   font-weight: 300;
@@ -42,11 +48,13 @@ form {
   margin-left: -290px;
 }
 
+/* Button css */
 .submitButton {
   padding-top: 20px;
   margin-left: -20px;
 }
 
+/* Error message css */
 .error {
   padding: 15px 15px 0px 10px;
   color: #a54646;

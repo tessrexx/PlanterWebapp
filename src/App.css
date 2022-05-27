@@ -1,3 +1,5 @@
+/* Custom scrollbar css */
+
 ::-webkit-scrollbar {
   width: 10px;
 }

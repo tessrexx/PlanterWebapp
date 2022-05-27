@@ -1,18 +1,27 @@
-import "./PlannerView.css";
+// API Imports
 import React from "react";
 import { useState } from "react";
+// MUI Library & Component Imports
 import { Button, IconButton, Tab, Box } from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
-import Footer from "../Components/Footer";
+// In-file CSS & Component Imports
+import "./PlannerView.css";
 import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 
+// Function for page /planner
+// Contains the users selected plants and displays them in a yearly & monthly view
 function Planner() {
+  // Tab selection set/state
   const [value, setValue] = useState("1");
 
+  // Tab selection change handler function
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  // Output
   return (
     <div>
       <Navbar />
@@ -32,4 +41,6 @@ function Planner() {
     </div>
   );
 }
+
+// Export from module
 export default Planner;

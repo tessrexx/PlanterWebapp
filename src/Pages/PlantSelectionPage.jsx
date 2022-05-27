@@ -1,20 +1,25 @@
+// API Imports
+import React from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+// Temp Plant Data File Import
+import plantData from "../Data/PlantInfo.json";
+// MUI Library & Component Imports
+import { Button, TextField } from "@mui/material";
+// Infile CSS & Component Imports
 import "./PlantSelection.css";
 import "../Components/PageLayout.css";
-import React from "react";
-import { Button, TextField } from "@mui/material";
-import { useState } from "react";
-import plantData from "../Data/PlantInfo.json";
 import PlantCard from "../Components/PlantCard";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
-import { Link } from "react-router-dom";
 
+// Function for page /plantselection
+// Contains plants that users can select for their planner along with category filter tabs
 function PlantSelection() {
-  // State Variable
-  const [searchTerm, setSearchTerm] = useState("");
+  // Filter data set/state
   const [data, setData] = useState(plantData);
 
-  //Function
+  // Filter data function
   const filterResult = (plantTypes) => {
     const result = plantData.filter((currentData) => {
       return currentData.type === plantTypes;
@@ -22,6 +27,7 @@ function PlantSelection() {
     setData(result);
   };
 
+  // Output
   return (
     <div className="layout-container">
       <Navbar />
@@ -64,14 +70,10 @@ function PlantSelection() {
             </div>
             <div className="layout-right">
               <TextField
-                // SEARCH BAR
                 className="searchBar"
                 id="searchInput"
                 type="text"
                 placeholder="Search..."
-                onChange={(event) => {
-                  setSearchTerm(event.target.value);
-                }}
               />
             </div>
           </div>
@@ -95,4 +97,6 @@ function PlantSelection() {
     </div>
   );
 }
+
+// Export from module
 export default PlantSelection;

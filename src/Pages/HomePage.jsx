@@ -1,11 +1,16 @@
-import "./HomePage.css";
+// API Imports
 import React from "react";
+// MUI Library & Component Imports
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
+// In-file CSS & Component Imports
+import "./HomePage.css";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import HomeCard from "../Components/HomeCard";
 
+// Function for home page
+// Displays app features
 function HomePage() {
   return (
     <div
@@ -52,4 +57,6 @@ function HomePage() {
     </div>
   );
 }
+
+// Export from module
 export default HomePage;

@@ -1,7 +1,9 @@
+/* css to move page margin */
 body {
   margin: 0px;
 }
 
+/* Nav container css */
 .navbar {
   background-image: linear-gradient(#b5cca7, #ffffff00);
   width: 100%;
@@ -12,10 +14,12 @@ body {
   z-index: 999;
 }
 
+/* Nav logo css */
 .nav-logo {
   padding-left: 1.25rem;
 }
 
+/* Nav login menu css */
 .nav-menu {
   padding: 0rem 1.25rem 1.25rem 1.25rem;
   position: right;
@@ -23,16 +27,18 @@ body {
   list-style: none;
 }
 
+/* Nav logged in menu css */
 .user-nav {
   cursor: pointer;
   padding-left: 20px;
 }
 
-/*Removes link underline*/
+/* Removes link underline */
 a:link {
   text-decoration: none;
 }
 
+/* Responsive css */
 @media screen and (max-width: 500px) {
   .navbar-container {
     display: flex;
@@ -46,7 +52,7 @@ a:link {
   }
 }
 
-/*For Footer.jsx*/
+/* Css for Footer.jsx */
 .footer-container {
   background-image: linear-gradient(#ffffff00, #b5cca7);
   color: #ffffff;

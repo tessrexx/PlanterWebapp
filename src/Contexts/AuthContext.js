@@ -1,3 +1,4 @@
+// API Imports
 import React from "react";
 import { createContext, useContext, useEffect, useState } from "react";
 import {
@@ -7,6 +8,8 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import { auth } from "../firebase";
+
+// AuthContext files handles user authentication throughout the app & firebase
 
 const UserContext = createContext();
 

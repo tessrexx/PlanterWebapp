@@ -1,12 +1,17 @@
+/* Template layout page */
+
+/* Layout container css */
 .layout-container {
   width: 100%;
 }
 
+/* Layout overall css */
 .layout-main {
   padding-top: 1.25rem;
   width: 100%;
 }
 
+/* Layout left & right container css */
 .layout-left-right-flex {
   display: flex;
   flex-direction: row;
@@ -14,11 +19,13 @@
   justify-content: space-between;
 }
 
+/* Layout left css */
 .layout-left {
   width: 80%;
   padding-bottom: 1.25rem;
 }
 
+/* Layout right css */
 .layout-right {
   display: flex;
   flex-direction: column;
@@ -27,11 +34,13 @@
   width: 80%;
 }
 
+/* Layout body css */
 .layout-body {
   padding-top: 2.23rem;
   margin: 0px;
 }
 
+/* Responsive css */
 @media screen and (max-width: 985px) {
   .layout-left-right-flex {
     display: flex;

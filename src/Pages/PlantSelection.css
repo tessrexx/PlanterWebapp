@@ -1,27 +1,7 @@
+/* Category button css */
 .plantTypeButton {
   margin-top: 1.25rem;
   width: fit-content;
-}
-
-.plantContainer {
-  /*padding: 2.5rem 1.25rem 25rem 0rem;*/
-  width: 100%;
-  margin: auto;
-  flex-wrap: wrap;
-  display: flex;
-  justify-content: space-between;
-  justify-content: left;
-}
-
-.addButton {
-  padding-bottom: 100px;
-  display: flex;
-  justify-content: right;
-  margin-right: 20px;
-}
-
-.searchBar {
-  width: 450px;
 }
 
 button.plantTypeButton:focus {
@@ -33,4 +13,27 @@ button.plantTypeButton:focus {
 button.plantTypeButton:focus:hover {
   background-color: #eab970;
   color: #ffffff;
+}
+
+/* Searchbar css */
+.searchBar {
+  width: 450px;
+}
+
+/* Plant cards container css */
+.plantContainer {
+  width: 100%;
+  margin: auto;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  justify-content: left;
+}
+
+/* Add to planner button css */
+.addButton {
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: right;
+  margin-right: 20px;
 }

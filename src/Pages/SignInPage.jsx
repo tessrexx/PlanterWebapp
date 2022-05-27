@@ -1,14 +1,19 @@
-import "../Components/SignIn&UpForm.css";
+// API Imports
 import React from "react";
 import { useState } from "react";
-import { TextField, Button } from "@mui/material";
-import { UserAuth } from "../Contexts/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
-import Footer from "../Components/Footer";
+// MUI Library & Component Imports
+import { TextField, Button } from "@mui/material";
+// In-file CSS & Component Imports
+import "../Components/SignIn&UpForm.css";
+import { UserAuth } from "../Contexts/AuthContext";
 import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 
+// Function for /signin page
+// Contains form for user to sign in and be authenticated
 function SignInPage({ setIsAuth }) {
-  // Setting createUser
+  // Setting user
   const { signIn } = UserAuth();
   const navigate = useNavigate();
   // States for sign up info
@@ -29,6 +34,7 @@ function SignInPage({ setIsAuth }) {
     }
   };
 
+  // Output
   return (
     <div
       className="background"
@@ -86,4 +92,5 @@ function SignInPage({ setIsAuth }) {
   );
 }
 
+// Export from module
 export default SignInPage;
