@@ -1,5 +1,6 @@
 import "../Components/SignIn&UpForm.css";
-import { React, useState } from "react";
+import React from "react";
+import { useState } from "react";
 import { TextField, Button } from "@mui/material";
 import { UserAuth } from "../Contexts/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
@@ -30,7 +31,12 @@ function SignUpPage() {
   };
 
   return (
-    <div className="background">
+    <div
+      className="background"
+      style={{
+        backgroundImage: `url(/IconsandImages/background.png`,
+      }}
+    >
       <Navbar />
       <div className="formContainer">
         <img className="logo" src="/logo 184x62px.png" alt="" />
@@ -60,13 +66,11 @@ function SignUpPage() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          {
-            error != "" ? (
-              <div className="error"> {error} </div>
-            ) : (
-              ""
-            ) /*Firebase Error Message*/
-          }
+          {error !== "" ? (
+            <div className="error"> {error} </div>
+          ) : (
+            ""
+          ) /*Firebase Error Message*/}
           <div className="submitButton">
             <Button variant="contained" color="secondary" type="submit">
               CONFIRM

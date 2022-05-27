@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import { React } from "react";
+import React from "react";
 import { Button } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../Contexts/AuthContext";
@@ -30,16 +30,20 @@ function Navbar() {
             <>
               <li className="user-nav">
                 <Link to="/planner">
-                  <img src="IconsandImages/planter.png" />
+                  <img src="IconsandImages/planter.png" alt="" />
                 </Link>
               </li>
               <li className="user-nav">
                 <Link to="/userdetails">
-                  <img src="IconsandImages/details.png" />
+                  <img src="IconsandImages/details.png" alt="" />
                 </Link>
               </li>
               <li className="user-nav">
-                <img src="IconsandImages/signout.png" onClick={handleLogout} />
+                <img
+                  src="IconsandImages/signout.png"
+                  alt=""
+                  onClick={handleLogout}
+                />
               </li>
             </>
           ) : (

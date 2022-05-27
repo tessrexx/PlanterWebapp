@@ -1,7 +1,8 @@
 import "./PlantSelection.css";
 import "../Components/PageLayout.css";
-import { Button, Tab, TextField } from "@mui/material";
-import { React, useState } from "react";
+import React from "react";
+import { Button, TextField } from "@mui/material";
+import { useState } from "react";
 import plantData from "../Data/PlantInfo.json";
 import PlantCard from "../Components/PlantCard";
 import Footer from "../Components/Footer";

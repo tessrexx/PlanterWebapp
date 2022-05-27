@@ -1,14 +1,19 @@
 import "./HomePage.css";
+import React from "react";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import React from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import HomeCard from "../Components/HomeCard";
 
 function HomePage() {
   return (
-    <div className="background">
+    <div
+      className="background"
+      style={{
+        backgroundImage: `url(/IconsandImages/background.png`,
+      }}
+    >
       <Navbar />
       <h1>The New Zealand Plant Planner made for you</h1>
       <p className="blurb">

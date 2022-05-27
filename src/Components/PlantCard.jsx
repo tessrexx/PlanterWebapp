@@ -1,18 +1,19 @@
 import "./PlantCard.css";
 import React from "react";
-import { IconButton } from "@mui/material";
-import InfoIcon from "@mui/icons-material/Info";
+import { Checkbox } from "@mui/material";
+import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 //component
 const PlantCard = ({ plantClassName, plantImage, plantName }) => {
   return (
     <div className="card">
-      <img className="image" src={plantImage} />
+      <img className="image" src={plantImage} alt="" />
       <div className="details">
-        <IconButton aria-label="info" disableRipple>
-          <InfoIcon className="infoIcon" />
-        </IconButton>
+        <Checkbox
+          icon={<CircleOutlinedIcon />}
+          checkedIcon={<CheckCircleIcon />}
+        />
         <p className="name">{plantName}</p>{" "}
       </div>
     </div>
