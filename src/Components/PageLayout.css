@@ -31,7 +31,7 @@
   flex-direction: column;
   align-items: flex-end;
   padding-right: 1.25rem;
-  width: 80%;
+  width: 99%;
 }
 
 /* Layout body css */
@@ -49,11 +49,5 @@
   }
   .layout-left {
     width: 100%;
-  }
-  .layout-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 85%;
   }
 }

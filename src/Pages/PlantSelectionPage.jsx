@@ -111,7 +111,7 @@ function PlantSelection() {
               </div>
             </TabPanel>
           </TabContext>
-          <div className="layout-body">
+          <div className="layout-right">
             <Link to="/planner" className="addButton">
               <Button variant="contained" color="secondary">
                 ADD TO PLANTER
