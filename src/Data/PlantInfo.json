@@ -2,206 +2,329 @@
   {
     "id": "Apple",
     "image": "plantImages/apple.png",
-    "type": "fruit"
+    "roundImage": "plantImages/appleround.png",
+    "type": "fruit",
+    "harvest": "2-4 years",
+    "months": "May, Jun, Jul, Aug, Sep"
   },
   {
     "id": "Asparagus",
     "image": "plantImages/asparagus.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/asparagusround.png",
+    "type": "vegetable",
+    "harvest": "2 years",
+    "months": "Aug, Sep, Oct, Nov"
   },
   {
     "id": "Basil",
     "image": "plantImages/basil.png",
-    "type": "herb"
+    "roundimage": "plantImages/basilround.png",
+    "type": "herb",
+    "harvest": "1-2 months",
+    "months": "Jan, Oct, Nov, Dec"
   },
   {
     "id": "Beetroot",
     "image": "plantImages/beetroot.png",
-    "type": "vegetable"
-  },
-  {
-    "id": "Blueberry",
-    "image": "plantImages/blueberry.png",
-    "type": "fruit"
+    "roundimage": "plantImages/beetrootround.png",
+    "type": "vegetable",
+    "harvest": "3-4 months",
+    "months": "Jan, Feb, Mar, Apr, Jul, Aug, Sep, Oct, Nov, Dec"
   },
   {
     "id": "Blackberry",
     "image": "plantImages/blackberry.png",
-    "type": "fruit"
+    "roundimage": "plantImages/blackberryround.png",
+    "type": "fruit",
+    "harvest": "1 year",
+    "months": "May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"
   },
   {
-    "id": "Bok Choi",
+    "id": "Blueberry",
+    "image": "plantImages/blueberry.png",
+    "roundimage": "plantImages/blueberryround.png",
+    "type": "fruit",
+    "harvest": "2-3 months",
+    "months": "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"
+  },
+  {
+    "id": "BokChoi",
     "image": "plantImages/bokchoi.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/blueberryround.png",
+    "type": "vegetable",
+    "harvest": "1-2 months",
+    "months": "Mar, Apr, Aug, Sep, Oct, Nov"
   },
   {
-    "id": "Broad Bean",
+    "id": "BroadBean",
     "image": "plantImages/broadbean.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/broadbeanround.png",
+    "type": "vegetable",
+    "harvest": "3-5 months",
+    "months": "Mar, Apr, Jun, Jul"
   },
   {
     "id": "Broccoli",
     "image": "plantImages/broccoli.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/broccoliround.png",
+    "type": "vegetable",
+    "harvest": "2-3 months",
+    "months": "Feb, Mar, Apr, Sep, Oct, Nov"
   },
   {
     "id": "Capsicum",
     "image": "plantImages/capsicum.png",
-    "type": "fruit"
+    "roundimage": "plantImages/capsicumround.png",
+    "type": "fruit",
+    "harvest": "3 months",
+    "months": "Oct, Nov, Dec"
   },
   {
     "id": "Carrot",
     "image": "plantImages/carrot.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/carrotround.png",
+    "type": "vegetable",
+    "harvest": "2 months",
+    "months": "Jan, Feb, Sep, Oct, Nov, Dec"
   },
   {
     "id": "Cauliflower",
     "image": "plantImages/cauliflower.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/cauliflowerround.png",
+    "type": "vegetable",
+    "harvest": "3-4 months",
+    "months": "Feb, Mar, Apr, Aug, Sep, Oct"
   },
   {
     "id": "Celery",
     "image": "plantImages/celery.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/celeryround.png",
+    "type": "vegetable",
+    "harvest": "3 months",
+    "months": "Jan, Sep, Oct, Nov, Dec"
   },
   {
     "id": "Coriander",
     "image": "plantImages/coriander.png",
-    "type": "herb"
+    "roundimage": "plantImages/corianderround.png",
+    "type": "herb",
+    "harvest": "1 month",
+    "months": "Jan, Sep, Oct, Nov, Dec"
   },
   {
     "id": "Courgette",
     "image": "plantImages/courgette.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/courgetteround.png",
+    "type": "vegetable",
+    "harvest": "2-3 months",
+    "months": "Jan, Oct, Nov, Dec"
   },
   {
     "id": "Cucumber",
     "image": "plantImages/cucumber.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/cucumberround.png",
+    "type": "vegetable",
+    "harvest": "2-3 months",
+    "months": "Jan, Oct, Nov, Dec"
   },
   {
     "id": "Eggplant",
     "image": "plantImages/eggplant.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/eggplantround.png",
+    "type": "vegetable",
+    "harvest": "3-4 months",
+    "months": "Sep, Oct, Nov, Dec"
   },
   {
     "id": "Feijoa",
     "image": "plantImages/feijoa.png",
-    "type": "fruit"
+    "roundimage": "plantImages/feijoaround.png",
+    "type": "fruit",
+    "harvest": "2-3 years",
+    "months": "Mar, Apr, May, Aug, Sep, Oct, Nov"
   },
   {
     "id": "Garlic",
     "image": "plantImages/garlic.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/garlicround.png",
+    "type": "vegetable",
+    "harvest": "6 months",
+    "months": "May, Jun, Jul"
   },
   {
     "id": "Kale",
     "image": "plantImages/kale.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/kaleround.png",
+    "type": "vegetable",
+    "harvest": "2 months",
+    "months": "Mar, Apr, May, Jun, Jul, Aug, Sep"
   },
   {
     "id": "Lemon",
     "image": "plantImages/lemon.png",
-    "type": "fruit"
+    "roundimage": "plantImages/lemonround.png",
+    "type": "fruit",
+    "harvest": "2-4 years",
+    "months": "Mar, Apr, May, Aug, Sep, Oct, Nov"
   },
   {
     "id": "Lettuce",
     "image": "plantImages/lettuce.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/lettuceround.png",
+    "type": "vegetable",
+    "harvest": "2 months",
+    "months": "Jan, Feb, Mar, Apr, May, Sep, Oct, Nov, Dec"
   },
   {
     "id": "Lime",
     "image": "plantImages/lime.png",
-    "type": "fruit"
+    "roundimage": "plantImages/limeround.png",
+    "type": "fruit",
+    "harvest": "2-4 years",
+    "months": "Mar, Apr, May, Aug, Sep, Oct, Nov"
   },
   {
     "id": "Mandarin",
     "image": "plantImages/mandarin.png",
-    "type": "fruit"
+    "roundimage": "plantImages/mandarinround.png",
+    "type": "fruit",
+    "harvest": "2-4 years",
+    "months": "Mar, Apr, May, Aug, Sep, Oct, Nov"
   },
   {
     "id": "Mesclun",
     "image": "plantImages/mesclun.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/mesclunround.png",
+    "type": "vegetable",
+    "harvest": "1-2 months",
+    "months": "Jan, Feb, Mar, Apr, Sep, Oct, Nov, Dec"
   },
   {
     "id": "Onion",
     "image": "plantImages/onion.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/onionround.png",
+    "type": "vegetable",
+    "harvest": "3-6 months",
+    "months": "Feb, Mar, Apr, May, Jun, Jul, Sep"
   },
   {
     "id": "Orange",
     "image": "plantImages/orange.png",
-    "type": "fruit"
+    "roundimage": "plantImages/orangeround.png",
+    "type": "fruit",
+    "harvest": "2-4 years",
+    "months": "Mar, Apr, May, Aug, Sep, Oct, Nov"
   },
   {
     "id": "Parsley",
     "image": "plantImages/parsley.png",
-    "type": "herb"
+    "roundimage": "plantImages/parsleyround.png",
+    "type": "herb",
+    "harvest": "2-3 months",
+    "months": "Jan, Feb, Mar, Apr, Sep, Oct, Nov, Dec"
   },
   {
     "id": "Passionfruit",
     "image": "plantImages/passionfruit.png",
-    "type": "fruit"
+    "roundimage": "plantImages/passionfruitround.png",
+    "type": "fruit",
+    "harvest": "1-2 years",
+    "months": "Oct, Nov, Dec"
   },
   {
     "id": "Peas",
     "image": "plantImages/peas.png",
-    "type": "vegetable"
+    "imageround": "plantImages/peasround.png",
+    "type": "vegetable",
+    "harvest": "1-2 months",
+    "months": "May, Jun, Jul, Aug, Sep, Oct"
   },
   {
     "id": "Pear",
     "image": "plantImages/pear.png",
-    "type": "fruit"
+    "roundimage": "plantImages/pearround.png",
+    "type": "fruit",
+    "harvest": "2-4 years",
+    "months": "May, Jun, Jul, Aug, Sep"
   },
   {
     "id": "Potato",
     "image": "plantImages/potato.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/potatoround.png",
+    "type": "vegetable",
+    "harvest": "3-6 months",
+    "months": "Jan, Sep, Oct, Nov, Dec"
   },
   {
     "id": "Pumpkin",
     "image": "plantImages/pumpkin.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/pumpkinround.png",
+    "type": "vegetable",
+    "harvest": "3-6 months",
+    "months": "Oct, Nov, Dec"
   },
   {
     "id": "Radish",
     "image": "plantImages/radish.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/radishround.png",
+    "type": "vegetable",
+    "harvest": "1-2 months",
+    "months": "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"
   },
   {
     "id": "Raspberry",
     "image": "plantImages/raspberry.png",
-    "type": "fruit"
+    "roundimage": "plantImages/raspberryround.png",
+    "type": "fruit",
+    "harvest": "1 year",
+    "months": "May, Jun, Jul, Aug, Sep, Oct, Nov"
   },
   {
     "id": "Silverbeet",
     "image": "plantImages/silverbeet.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/silverbeetround.png",
+    "type": "vegetable",
+    "harvest": "1-2 months",
+    "months": "Jan, Feb, Mar, Aug, Sep, Oct, Nov, Dec"
   },
   {
     "id": "Spinach",
     "image": "plantImages/spinach.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/spinachround.png",
+    "type": "vegetable",
+    "harvest": "1-2 months",
+    "months": "Mar, Apr, May, Jun, Jul, Aug, Sep"
   },
   {
     "id": "SpringOnion",
     "image": "plantImages/springonion.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/springonionround.png",
+    "type": "vegetable",
+    "harvest": "2-3 months",
+    "months": "Oct, Nov, Dec"
   },
   {
     "id": "Strawberry",
     "image": "plantImages/strawberry.png",
-    "type": "fruit"
+    "roundimage": "plantImages/strawberryround.png",
+    "type": "fruit",
+    "harvest": "5-6 months",
+    "months": "Jul, Aug, Sep, Oct, Nov"
   },
   {
     "id": "Sweetcorn",
     "image": "plantImages/sweetcorn.png",
-    "type": "vegetable"
+    "roundimage": "plantImages/sweetcornround.png",
+    "type": "vegetable",
+    "harvest": "3-4 months",
+    "months": "Oct, Nov, Dec"
   },
   {
     "id": "Tomato",
     "image": "plantImages/tomato.png",
-    "type": "fruit"
+    "roundimage": "plantImages/tomatoround.png",
+    "type": "fruit",
+    "harvest": "2-3 months",
+    "months": "Jan, Oct, Nov, Dec"
   }
 ]
