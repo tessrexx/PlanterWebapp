@@ -10,6 +10,7 @@ import { TabContext, TabList, TabPanel } from "@mui/lab";
 import "./PlannerView.css";
 import Navbar from "../Components/Navbar";
 import YearlyPlannerTable from "../Components/YearlyPlannerTable";
+import MonthlyPlannerTable from "../Components/MonthlyPlannerTable";
 import Footer from "../Components/Footer";
 
 // Function for page /planner
@@ -38,7 +39,9 @@ function Planner() {
         <TabPanel value="1">
           <YearlyPlannerTable />
         </TabPanel>
-        <TabPanel value="2">This Month View</TabPanel>
+        <TabPanel value="2">
+          <MonthlyPlannerTable />
+        </TabPanel>
         <TabPanel value="3">Next Month View</TabPanel>
       </TabContext>
       <div className="layout-right">

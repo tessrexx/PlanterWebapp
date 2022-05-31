@@ -48,7 +48,7 @@ function PlantSelection() {
                 <Tab
                   label="VEGETABLE"
                   value="2"
-                  onClick={() => filterResult("vegetable")}
+                  onLoad={() => filterResult("vegetable")}
                 />
                 <Tab
                   label="FRUIT"
