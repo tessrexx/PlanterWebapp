@@ -73,6 +73,14 @@ export const theme = createTheme({
         },
       },
     },
+    // Table Style Override
+    MuiTableContainer: {
+      styleOverrides: {
+        root: {
+          borderRadius: "15px",
+        },
+      },
+    },
   },
 });
 

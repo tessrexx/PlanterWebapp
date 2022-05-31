@@ -1,0 +1,17 @@
+.headerLabels {
+  border-radius: 20px;
+  background-color: #5e875d !important;
+  color: #ffffff !important;
+  text-align: center !important;
+  font-weight: 700 !important;
+}
+
+.plantName {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
+.imageContainer {
+  padding-right: 5px;
+}

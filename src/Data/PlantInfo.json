@@ -2,7 +2,7 @@
   {
     "id": "Apple",
     "image": "plantImages/apple.png",
-    "roundImage": "plantImages/appleround.png",
+    "roundimage": "plantImages/appleround.png",
     "type": "fruit",
     "harvest": "2-4 years",
     "months": "May, Jun, Jul, Aug, Sep"
@@ -50,7 +50,7 @@
   {
     "id": "BokChoi",
     "image": "plantImages/bokchoi.png",
-    "roundimage": "plantImages/blueberryround.png",
+    "roundimage": "plantImages/bokchoiround.png",
     "type": "vegetable",
     "harvest": "1-2 months",
     "months": "Mar, Apr, Aug, Sep, Oct, Nov"
@@ -58,7 +58,7 @@
   {
     "id": "BroadBean",
     "image": "plantImages/broadbean.png",
-    "roundimage": "plantImages/broadbeanround.png",
+    "roundimage": "plantImages/broadbeansround.png",
     "type": "vegetable",
     "harvest": "3-5 months",
     "months": "Mar, Apr, Jun, Jul"
@@ -234,7 +234,7 @@
   {
     "id": "Peas",
     "image": "plantImages/peas.png",
-    "imageround": "plantImages/peasround.png",
+    "roundimage": "plantImages/peasround.png",
     "type": "vegetable",
     "harvest": "1-2 months",
     "months": "May, Jun, Jul, Aug, Sep, Oct"
