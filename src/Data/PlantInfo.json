@@ -5,7 +5,11 @@
     "roundimage": "plantImages/appleround.png",
     "type": "fruit",
     "harvest": "2-4 years",
-    "months": "May, Jun, Jul, Aug, Sep"
+    "may": "IconsandImages/planting.png",
+    "jun": "IconsandImages/planting.png",
+    "jul": "IconsandImages/planting.png",
+    "aug": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png"
   },
   {
     "id": "Asparagus",
@@ -13,7 +17,10 @@
     "roundimage": "plantImages/asparagusround.png",
     "type": "vegetable",
     "harvest": "2 years",
-    "months": "Aug, Sep, Oct, Nov"
+    "aug": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png"
   },
   {
     "id": "Basil",
@@ -21,7 +28,10 @@
     "roundimage": "plantImages/basilround.png",
     "type": "herb",
     "harvest": "1-2 months",
-    "months": "Jan, Oct, Nov, Dec"
+    "jan": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   },
   {
     "id": "Beetroot",
@@ -29,7 +39,16 @@
     "roundimage": "plantImages/beetrootround.png",
     "type": "vegetable",
     "harvest": "3-4 months",
-    "months": "Jan, Feb, Mar, Apr, Jul, Aug, Sep, Oct, Nov, Dec"
+    "jan": "IconsandImages/planting.png",
+    "feb": "IconsandImages/planting.png",
+    "mar": "IconsandImages/planting.png",
+    "apr": "IconsandImages/planting.png",
+    "jul": "IconsandImages/planting.png",
+    "aug": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   },
   {
     "id": "Blackberry",
@@ -37,7 +56,14 @@
     "roundimage": "plantImages/blackberryround.png",
     "type": "fruit",
     "harvest": "1 year",
-    "months": "May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"
+    "may": "IconsandImages/planting.png",
+    "jun": "IconsandImages/planting.png",
+    "jul": "IconsandImages/planting.png",
+    "aug": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   },
   {
     "id": "Blueberry",
@@ -45,7 +71,18 @@
     "roundimage": "plantImages/blueberryround.png",
     "type": "fruit",
     "harvest": "2-3 months",
-    "months": "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"
+    "jan": "IconsandImages/planting.png",
+    "feb": "IconsandImages/planting.png",
+    "mar": "IconsandImages/planting.png",
+    "apr": "IconsandImages/planting.png",
+    "may": "IconsandImages/planting.png",
+    "jun": "IconsandImages/planting.png",
+    "jul": "IconsandImages/planting.png",
+    "aug": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   },
   {
     "id": "BokChoi",
@@ -53,7 +90,12 @@
     "roundimage": "plantImages/bokchoiround.png",
     "type": "vegetable",
     "harvest": "1-2 months",
-    "months": "Mar, Apr, Aug, Sep, Oct, Nov"
+    "mar": "IconsandImages/planting.png",
+    "apr": "IconsandImages/planting.png",
+    "aug": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png"
   },
   {
     "id": "BroadBean",
@@ -61,7 +103,11 @@
     "roundimage": "plantImages/broadbeansround.png",
     "type": "vegetable",
     "harvest": "3-5 months",
-    "months": "Mar, Apr, Jun, Jul"
+    "mar": "IconsandImages/planting.png",
+    "apr": "IconsandImages/planting.png",
+    "may": "IconsandImages/planting.png",
+    "jun": "IconsandImages/planting.png",
+    "jul": "IconsandImages/planting.png"
   },
   {
     "id": "Broccoli",
@@ -69,7 +115,12 @@
     "roundimage": "plantImages/broccoliround.png",
     "type": "vegetable",
     "harvest": "2-3 months",
-    "months": "Feb, Mar, Apr, Sep, Oct, Nov"
+    "feb": "IconsandImages/planting.png",
+    "mar": "IconsandImages/planting.png",
+    "apr": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png"
   },
   {
     "id": "Capsicum",
@@ -77,7 +128,9 @@
     "roundimage": "plantImages/capsicumround.png",
     "type": "fruit",
     "harvest": "3 months",
-    "months": "Oct, Nov, Dec"
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   },
   {
     "id": "Carrot",
@@ -85,7 +138,12 @@
     "roundimage": "plantImages/carrotround.png",
     "type": "vegetable",
     "harvest": "2 months",
-    "months": "Jan, Feb, Sep, Oct, Nov, Dec"
+    "jan": "IconsandImages/planting.png",
+    "feb": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   },
   {
     "id": "Cauliflower",
@@ -93,7 +151,12 @@
     "roundimage": "plantImages/cauliflowerround.png",
     "type": "vegetable",
     "harvest": "3-4 months",
-    "months": "Feb, Mar, Apr, Aug, Sep, Oct"
+    "feb": "IconsandImages/planting.png",
+    "mar": "IconsandImages/planting.png",
+    "apr": "IconsandImages/planting.png",
+    "aug": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png"
   },
   {
     "id": "Celery",
@@ -101,7 +164,11 @@
     "roundimage": "plantImages/celeryround.png",
     "type": "vegetable",
     "harvest": "3 months",
-    "months": "Jan, Sep, Oct, Nov, Dec"
+    "jan": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   },
   {
     "id": "Coriander",
@@ -109,7 +176,11 @@
     "roundimage": "plantImages/corianderround.png",
     "type": "herb",
     "harvest": "1 month",
-    "months": "Jan, Sep, Oct, Nov, Dec"
+    "jan": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   },
   {
     "id": "Courgette",
@@ -117,7 +188,10 @@
     "roundimage": "plantImages/courgetteround.png",
     "type": "vegetable",
     "harvest": "2-3 months",
-    "months": "Jan, Oct, Nov, Dec"
+    "jan": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   },
   {
     "id": "Cucumber",
@@ -125,7 +199,10 @@
     "roundimage": "plantImages/cucumberround.png",
     "type": "vegetable",
     "harvest": "2-3 months",
-    "months": "Jan, Oct, Nov, Dec"
+    "jan": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   },
   {
     "id": "Eggplant",
@@ -133,7 +210,10 @@
     "roundimage": "plantImages/eggplantround.png",
     "type": "vegetable",
     "harvest": "3-4 months",
-    "months": "Sep, Oct, Nov, Dec"
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   },
   {
     "id": "Feijoa",
@@ -141,7 +221,13 @@
     "roundimage": "plantImages/feijoaround.png",
     "type": "fruit",
     "harvest": "2-3 years",
-    "months": "Mar, Apr, May, Aug, Sep, Oct, Nov"
+    "mar": "IconsandImages/planting.png",
+    "apr": "IconsandImages/planting.png",
+    "may": "IconsandImages/planting.png",
+    "aug": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png"
   },
   {
     "id": "Garlic",
@@ -149,7 +235,9 @@
     "roundimage": "plantImages/garlicround.png",
     "type": "vegetable",
     "harvest": "6 months",
-    "months": "May, Jun, Jul"
+    "may": "IconsandImages/planting.png",
+    "jun": "IconsandImages/planting.png",
+    "jul": "IconsandImages/planting.png"
   },
   {
     "id": "Kale",
@@ -157,7 +245,13 @@
     "roundimage": "plantImages/kaleround.png",
     "type": "vegetable",
     "harvest": "2 months",
-    "months": "Mar, Apr, May, Jun, Jul, Aug, Sep"
+    "mar": "IconsandImages/planting.png",
+    "apr": "IconsandImages/planting.png",
+    "may": "IconsandImages/planting.png",
+    "jun": "IconsandImages/planting.png",
+    "jul": "IconsandImages/planting.png",
+    "aug": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png"
   },
   {
     "id": "Lemon",
@@ -165,7 +259,13 @@
     "roundimage": "plantImages/lemonround.png",
     "type": "fruit",
     "harvest": "2-4 years",
-    "months": "Mar, Apr, May, Aug, Sep, Oct, Nov"
+    "mar": "IconsandImages/planting.png",
+    "apr": "IconsandImages/planting.png",
+    "may": "IconsandImages/planting.png",
+    "aug": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png"
   },
   {
     "id": "Lettuce",
@@ -173,7 +273,15 @@
     "roundimage": "plantImages/lettuceround.png",
     "type": "vegetable",
     "harvest": "2 months",
-    "months": "Jan, Feb, Mar, Apr, May, Sep, Oct, Nov, Dec"
+    "jan": "IconsandImages/planting.png",
+    "feb": "IconsandImages/planting.png",
+    "mar": "IconsandImages/planting.png",
+    "apr": "IconsandImages/planting.png",
+    "may": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   },
   {
     "id": "Lime",
@@ -181,7 +289,13 @@
     "roundimage": "plantImages/limeround.png",
     "type": "fruit",
     "harvest": "2-4 years",
-    "months": "Mar, Apr, May, Aug, Sep, Oct, Nov"
+    "mar": "IconsandImages/planting.png",
+    "apr": "IconsandImages/planting.png",
+    "may": "IconsandImages/planting.png",
+    "aug": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png"
   },
   {
     "id": "Mandarin",
@@ -189,7 +303,13 @@
     "roundimage": "plantImages/mandarinround.png",
     "type": "fruit",
     "harvest": "2-4 years",
-    "months": "Mar, Apr, May, Aug, Sep, Oct, Nov"
+    "mar": "IconsandImages/planting.png",
+    "apr": "IconsandImages/planting.png",
+    "may": "IconsandImages/planting.png",
+    "aug": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png"
   },
   {
     "id": "Mesclun",
@@ -197,7 +317,14 @@
     "roundimage": "plantImages/mesclunround.png",
     "type": "vegetable",
     "harvest": "1-2 months",
-    "months": "Jan, Feb, Mar, Apr, Sep, Oct, Nov, Dec"
+    "jan": "IconsandImages/planting.png",
+    "feb": "IconsandImages/planting.png",
+    "mar": "IconsandImages/planting.png",
+    "apr": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   },
   {
     "id": "Onion",
@@ -205,7 +332,13 @@
     "roundimage": "plantImages/onionround.png",
     "type": "vegetable",
     "harvest": "3-6 months",
-    "months": "Feb, Mar, Apr, May, Jun, Jul, Sep"
+    "feb": "IconsandImages/planting.png",
+    "mar": "IconsandImages/planting.png",
+    "apr": "IconsandImages/planting.png",
+    "may": "IconsandImages/planting.png",
+    "jun": "IconsandImages/planting.png",
+    "jul": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png"
   },
   {
     "id": "Orange",
@@ -213,7 +346,13 @@
     "roundimage": "plantImages/orangeround.png",
     "type": "fruit",
     "harvest": "2-4 years",
-    "months": "Mar, Apr, May, Aug, Sep, Oct, Nov"
+    "mar": "IconsandImages/planting.png",
+    "apr": "IconsandImages/planting.png",
+    "may": "IconsandImages/planting.png",
+    "aug": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png"
   },
   {
     "id": "Parsley",
@@ -221,7 +360,14 @@
     "roundimage": "plantImages/parsleyround.png",
     "type": "herb",
     "harvest": "2-3 months",
-    "months": "Jan, Feb, Mar, Apr, Sep, Oct, Nov, Dec"
+    "jan": "IconsandImages/planting.png",
+    "feb": "IconsandImages/planting.png",
+    "mar": "IconsandImages/planting.png",
+    "apr": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   },
   {
     "id": "Passionfruit",
@@ -229,7 +375,9 @@
     "roundimage": "plantImages/passionfruitround.png",
     "type": "fruit",
     "harvest": "1-2 years",
-    "months": "Oct, Nov, Dec"
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   },
   {
     "id": "Peas",
@@ -237,7 +385,12 @@
     "roundimage": "plantImages/peasround.png",
     "type": "vegetable",
     "harvest": "1-2 months",
-    "months": "May, Jun, Jul, Aug, Sep, Oct"
+    "may": "IconsandImages/planting.png",
+    "jun": "IconsandImages/planting.png",
+    "jul": "IconsandImages/planting.png",
+    "aug": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png"
   },
   {
     "id": "Pear",
@@ -245,7 +398,11 @@
     "roundimage": "plantImages/pearround.png",
     "type": "fruit",
     "harvest": "2-4 years",
-    "months": "May, Jun, Jul, Aug, Sep"
+    "may": "IconsandImages/planting.png",
+    "jun": "IconsandImages/planting.png",
+    "jul": "IconsandImages/planting.png",
+    "aug": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png"
   },
   {
     "id": "Potato",
@@ -253,7 +410,11 @@
     "roundimage": "plantImages/potatoround.png",
     "type": "vegetable",
     "harvest": "3-6 months",
-    "months": "Jan, Sep, Oct, Nov, Dec"
+    "jan": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   },
   {
     "id": "Pumpkin",
@@ -261,7 +422,9 @@
     "roundimage": "plantImages/pumpkinround.png",
     "type": "vegetable",
     "harvest": "3-6 months",
-    "months": "Oct, Nov, Dec"
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   },
   {
     "id": "Radish",
@@ -269,7 +432,18 @@
     "roundimage": "plantImages/radishround.png",
     "type": "vegetable",
     "harvest": "1-2 months",
-    "months": "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"
+    "jan": "IconsandImages/planting.png",
+    "feb": "IconsandImages/planting.png",
+    "mar": "IconsandImages/planting.png",
+    "apr": "IconsandImages/planting.png",
+    "may": "IconsandImages/planting.png",
+    "jun": "IconsandImages/planting.png",
+    "jul": "IconsandImages/planting.png",
+    "aug": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   },
   {
     "id": "Raspberry",
@@ -277,7 +451,13 @@
     "roundimage": "plantImages/raspberryround.png",
     "type": "fruit",
     "harvest": "1 year",
-    "months": "May, Jun, Jul, Aug, Sep, Oct, Nov"
+    "may": "IconsandImages/planting.png",
+    "jun": "IconsandImages/planting.png",
+    "jul": "IconsandImages/planting.png",
+    "aug": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png"
   },
   {
     "id": "Silverbeet",
@@ -285,7 +465,14 @@
     "roundimage": "plantImages/silverbeetround.png",
     "type": "vegetable",
     "harvest": "1-2 months",
-    "months": "Jan, Feb, Mar, Aug, Sep, Oct, Nov, Dec"
+    "jan": "IconsandImages/planting.png",
+    "feb": "IconsandImages/planting.png",
+    "mar": "IconsandImages/planting.png",
+    "aug": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   },
   {
     "id": "Spinach",
@@ -293,7 +480,13 @@
     "roundimage": "plantImages/spinachround.png",
     "type": "vegetable",
     "harvest": "1-2 months",
-    "months": "Mar, Apr, May, Jun, Jul, Aug, Sep"
+    "mar": "IconsandImages/planting.png",
+    "apr": "IconsandImages/planting.png",
+    "may": "IconsandImages/planting.png",
+    "jun": "IconsandImages/planting.png",
+    "jul": "IconsandImages/planting.png",
+    "aug": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png"
   },
   {
     "id": "SpringOnion",
@@ -301,7 +494,9 @@
     "roundimage": "plantImages/springonionround.png",
     "type": "vegetable",
     "harvest": "2-3 months",
-    "months": "Oct, Nov, Dec"
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   },
   {
     "id": "Strawberry",
@@ -309,7 +504,11 @@
     "roundimage": "plantImages/strawberryround.png",
     "type": "fruit",
     "harvest": "5-6 months",
-    "months": "Jul, Aug, Sep, Oct, Nov"
+    "jul": "IconsandImages/planting.png",
+    "aug": "IconsandImages/planting.png",
+    "sep": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png"
   },
   {
     "id": "Sweetcorn",
@@ -317,7 +516,9 @@
     "roundimage": "plantImages/sweetcornround.png",
     "type": "vegetable",
     "harvest": "3-4 months",
-    "months": "Oct, Nov, Dec"
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   },
   {
     "id": "Tomato",
@@ -325,6 +526,9 @@
     "roundimage": "plantImages/tomatoround.png",
     "type": "fruit",
     "harvest": "2-3 months",
-    "months": "Jan, Oct, Nov, Dec"
+    "jan": "IconsandImages/planting.png",
+    "oct": "IconsandImages/planting.png",
+    "nov": "IconsandImages/planting.png",
+    "dec": "IconsandImages/planting.png"
   }
 ]

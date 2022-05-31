@@ -11,16 +11,10 @@ import {
   Paper,
   TableRow,
 } from "@mui/material";
-import { makeStyles } from "@material-ui/styles";
 import "./PlannerTable.css";
 // Temp Plant Data File Import
 import plantData from "../Data/PlantInfo.json";
-import theme from "./theme";
-import { CenterFocusStrong } from "@mui/icons-material";
 
-const useStyles = makeStyles((theme) => ({
-  TableContainer: { borderRadius: 15 },
-}));
 
 const PlannerTable = () => {
   // Filter data set/state
@@ -32,7 +26,18 @@ const PlannerTable = () => {
         <TableHead>
           <TableRow>
             <TableCell className="headerLabels">PLANTS</TableCell>
-            <TableCell>PLANTING MONTHS</TableCell>
+            <TableCell className="monthLabels">JAN</TableCell>
+            <TableCell className="monthLabels">FEB</TableCell>
+            <TableCell className="monthLabels">MAR</TableCell>
+            <TableCell className="monthLabels">APR</TableCell>
+            <TableCell className="monthLabels">MAY</TableCell>
+            <TableCell className="monthLabels">JUN</TableCell>
+            <TableCell className="monthLabels">JUL</TableCell>
+            <TableCell className="monthLabels">AUG</TableCell>
+            <TableCell className="monthLabels">SEP</TableCell>
+            <TableCell className="monthLabels">OCT</TableCell>
+            <TableCell className="monthLabels">NOV</TableCell>
+            <TableCell className="monthLabels">DEC</TableCell>
             <TableCell className="headerLabels">HARVEST</TableCell>
           </TableRow>
         </TableHead>
@@ -42,9 +47,20 @@ const PlannerTable = () => {
               <TableCell className="plantName">
                 <img src={row.roundimage} alt="" className="imageContainer" />
                 {row.id}
-              </TableCell>
-              <TableCell>{row.months}</TableCell>
-              <TableCell>{row.harvest}</TableCell>
+              </TableCell>    
+              <TableCell className="monthlyPlantStart"><img src={row.jan} alt=""/></TableCell>
+              <TableCell className="monthlyPlant"><img src={row.feb} alt=""/></TableCell>
+              <TableCell className="monthlyPlant"><img src={row.mar} alt=""/></TableCell>
+              <TableCell className="monthlyPlant"><img src={row.apr} alt=""/></TableCell>
+              <TableCell className="monthlyPlant"><img src={row.may} alt=""/></TableCell>
+              <TableCell className="monthlyPlant"><img src={row.jun} alt=""/></TableCell>
+              <TableCell className="monthlyPlant"><img src={row.jul} alt=""/></TableCell>
+              <TableCell className="monthlyPlant"><img src={row.aug} alt=""/></TableCell>
+              <TableCell className="monthlyPlant"><img src={row.sep} alt=""/></TableCell>
+              <TableCell className="monthlyPlant"><img src={row.oct} alt=""/></TableCell>
+              <TableCell className="monthlyPlant"><img src={row.nov} alt=""/></TableCell>
+              <TableCell className="monthlyPlantEnd"><img src={row.dec} alt=""/></TableCell>
+              <TableCell className="harvestTime">{row.harvest}</TableCell>
             </TableRow>
           ))}
         </TableBody>
