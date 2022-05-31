@@ -78,17 +78,17 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: "15px",
-          //boxShadow: "none",
+          boxShadow: "0px 2px 4px 0px rgba(0, 0, 0, 0.25)",
         },
       },
     },
-    MuiTableCell:{
-      styleOverrides:{
-        root:{
-            borderBottom: "none",
-        }
-      }
-    }
+    MuiTableCell: {
+      styleOverrides: {
+        root: {
+          borderBottom: "none",
+        },
+      },
+    },
   },
 });
 

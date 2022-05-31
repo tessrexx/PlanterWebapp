@@ -1,0 +1,71 @@
+/* Main table css */
+table {
+  border-collapse: separate !important;
+  border-spacing: 0px 15px !important;
+  border-collapse: none !important;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Header(plant & harvest) css */
+.headerLabels {
+  color: #5e875d !important;
+  text-align: center !important;
+  font-weight: 700 !important;
+}
+
+/* Month header css */
+.monthLabels {
+  color: #7e9f7e !important;
+  font-weight: 700 !important;
+}
+
+/* Plant name and image container css */
+.plantName {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  background-color: #5e875d !important;
+}
+
+/* Seperate image container css */
+.imageContainer {
+  padding-right: 20px;
+}
+
+/* Planting images container css */
+.monthlyPlant {
+  background-color: #d0e8de !important;
+}
+
+/* Harvest time container */
+.harvestTime {
+  text-align: center !important;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  background-color: #5e875d !important;
+}
+
+/* Responsive css */
+@media screen and (max-width: 1300px) {
+  .plantName {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    background-color: #5e875d !important;
+  }
+
+  .imageContainer {
+    padding-right: 0px;
+  }
+}
