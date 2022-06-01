@@ -27,11 +27,11 @@ const MonthlyPlannerTable = () => {
         <TableHead>
           <TableRow>
             <TableCell className="headerLabels">PLANTS</TableCell>
-            <TableCell className="monthLabels">
+            <TableCell className="centerLabels">
               PLANTING RECOMMENDATION
             </TableCell>
             <TableCell className="infoIconColumn"></TableCell>
-            <TableCell className="monthLabels">HARVEST</TableCell>
+            <TableCell className="headerLabels">HARVEST</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -44,12 +44,12 @@ const MonthlyPlannerTable = () => {
               />
               Apple
             </TableCell>
-            <TableCell className="info">
+            <TableCell className="plantTips">
               Plant seeds directly in the garden after a month and a half of
               cold stratification
             </TableCell>
-            <TableCell className="info">
-              <IconButton aria-label="info" disableRipple>
+            <TableCell className="plantTips">
+              <IconButton disableRipple>
                 <InfoOutlinedIcon className="infoIcon" />
               </IconButton>
             </TableCell>
@@ -64,12 +64,12 @@ const MonthlyPlannerTable = () => {
               />
               Blackbery
             </TableCell>
-            <TableCell className="info">
+            <TableCell className="plantTips">
               Plant seeds into seed trays after 3 - 4 months of cold
               stratification
             </TableCell>
-            <TableCell className="info">
-              <IconButton aria-label="info" disableRipple>
+            <TableCell className="plantTips">
+              <IconButton disableRipple>
                 <InfoOutlinedIcon className="infoIcon" />
               </IconButton>
             </TableCell>
@@ -84,11 +84,11 @@ const MonthlyPlannerTable = () => {
               />
               Blueberry
             </TableCell>
-            <TableCell className="info">
+            <TableCell className="plantTips">
               Plant seeds into seed trays after 3 months of cold stratification
             </TableCell>
-            <TableCell className="info">
-              <IconButton aria-label="info" disableRipple>
+            <TableCell className="plantTips">
+              <IconButton disableRipple>
                 <InfoOutlinedIcon className="infoIcon" />
               </IconButton>
             </TableCell>

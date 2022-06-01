@@ -35,7 +35,7 @@ function HomePage() {
       </div>
       <div className="cardContainer">
         <HomeCard
-          image={"IconsandImages/placeholder.png"}
+          image={"IconsandImages/yearlyplanner.png"}
           title={"YEARLY PLANNER"}
           info={
             "View the planting months for your favourite fruit and vegetables all year round"
@@ -49,7 +49,7 @@ function HomePage() {
           }
         />
         <HomeCard
-          image={"IconsandImages/placeholder.png"}
+          image={"IconsandImages/monthlyplanner.png"}
           title={"MONTHLY PLANNING"}
           info={
             "Sign in to your account to save your Planter and stay prepared for the months to come"

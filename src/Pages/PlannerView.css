@@ -1,3 +1,17 @@
+body {
+  margin-bottom: 2rem;
+}
+
+/* Flip card container css */
+.flipCardContainer {
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 /* Edit planner button css */
 .editButton {
   justify-content: right;
