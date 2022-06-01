@@ -12,12 +12,17 @@ import {
   TableCell,
   Paper,
   TableRow,
+  IconButton,
+  Accordion,
 } from "@mui/material";
-import { IconButton } from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 // Infile CSS & Component Imports
 import "./YearlyPlannerTable.css";
 import InfoModal from "./InfoModal";
+import { ExpandMore } from "@mui/icons-material";
 
 // Component for monthly planner view
 // Displays user's selected plants, ideal planting months, and estimated harvesting times
@@ -33,17 +38,12 @@ const MonthlyPlannerTable = () => {
           <TableHead>
             <TableRow>
               <TableCell className="headerLabels">PLANTS</TableCell>
-
               <TableCell className="centerLabels">
                 PLANTING RECOMMENDATION
               </TableCell>
-
-              <TableCell className="infoIconColumn"></TableCell>
-
               <TableCell className="headerLabels">HARVEST</TableCell>
             </TableRow>
           </TableHead>
-
           <TableBody>
             {data.map((row) => (
               <TableRow>
@@ -51,17 +51,23 @@ const MonthlyPlannerTable = () => {
                   <img src={row.roundimage} alt="" className="imageContainer" />
                   {row.id}
                 </TableCell>
-
                 <TableCell className="plantTips">
-                  {row.plantingRecommendation}
+                  <Accordion>
+                    <AccordionSummary
+                      className="plantTips"
+                      expandIcon={<ExpandMoreIcon />}
+                    >
+                      {row.plantingRecommendation}
+                    </AccordionSummary>
+                    <AccordionDetails className="plantTips">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Suspendisse malesuada lacus ex, sit amet blandit leo
+                        lobortis eget.
+                      </p>
+                    </AccordionDetails>
+                  </Accordion>
                 </TableCell>
-
-                <TableCell className="plantTips">
-                  <IconButton disableRipple onClick={() => setOpen(true)}>
-                    <InfoOutlinedIcon className="infoIcon" />
-                  </IconButton>
-                </TableCell>
-
                 <TableCell className="harvestTime">{row.harvest}</TableCell>
               </TableRow>
             ))}
