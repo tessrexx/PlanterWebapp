@@ -1,0 +1,25 @@
+.modalBackground {
+  background-color: #00000033;
+  width: 100vw;
+  height: 100%;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+}
+
+.modal {
+  background-color: #5e865d;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  height: 400px;
+  width: 400px;
+  border-radius: 20px;
+  padding: 15px;
+  z-index: 6;
+  cursor: default;
+}
