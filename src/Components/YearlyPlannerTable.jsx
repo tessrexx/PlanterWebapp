@@ -47,8 +47,10 @@ const YearlyPlannerTable = () => {
           {data.map((row) => (
             <TableRow key={row.id}>
               <TableCell className="plantName">
-                <img src={row.roundimage} alt="" className="imageContainer" />
-                {row.id}
+                <div className="imageAndNameContainer">
+                  <img src={row.roundimage} alt="" className="imageContainer" />
+                  {row.id}
+                </div>
               </TableCell>
               <TableCell className="monthlyPlant">
                 <img src={row.jan} alt="" />

@@ -14,7 +14,7 @@ import {
   TableRow,
   IconButton,
   Accordion,
-  Divider
+  Divider,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -49,8 +49,15 @@ const MonthlyPlannerTable = () => {
             {data.map((row) => (
               <TableRow>
                 <TableCell className="plantName">
-                  <img src={row.roundimage} alt="" className="imageContainer" />
-                  {row.id}  
+                  <div className="imageAndNameContainer">
+                    <img
+                      src={row.roundimage}
+                      alt=""
+                      className="imageContainer"
+                    />
+
+                    {row.id}
+                  </div>
                 </TableCell>
                 <TableCell className="plantTips">
                   <Accordion>
@@ -61,17 +68,19 @@ const MonthlyPlannerTable = () => {
                       {row.plantingRecommendation}
                     </AccordionSummary>
                     <AccordionDetails className="plantTips">
-                      <Divider><h3 className="helpfulTitle">HELPFUL TIPS</h3></Divider>
+                      <Divider>
+                        <h3 className="helpfulTitle">HELPFUL TIPS</h3>
+                      </Divider>
                       {row.generalInfo1}
-                      <Divider className="tipDiv"/>
+                      <Divider className="tipDiv" />
                       {row.generalInfo2}
-                      <Divider variant="middle" className="tipDiv"/>
+                      <Divider variant="middle" className="tipDiv" />
                       {row.generalInfo3}
-                      <Divider variant="middle" className="tipDiv"/>
+                      <Divider variant="middle" className="tipDiv" />
                       {row.generalInfo4}
-                      <Divider variant="middle" className="tipDiv"/>
+                      <Divider variant="middle" className="tipDiv" />
                       {row.generalInfo5}
-                      <Divider variant="middle" className="tipDiv"/> 
+                      <Divider variant="middle" className="tipDiv" />
                     </AccordionDetails>
                   </Accordion>
                 </TableCell>

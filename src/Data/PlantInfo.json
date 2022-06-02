@@ -11,10 +11,10 @@
     "jul": "IconsandImages/planting.png",
     "aug": "IconsandImages/planting.png",
     "sep": "IconsandImages/planting.png",
-    "generalInfo1": "Add a layer of citrus and fruit mix to plant into. In New Zealand winter is the optimum time to plant apple trees.", 
-    "generalInfo2": "Feed your apples in spring and summer to encourage maximum flowering and fruiting.", 
-    "generalInfo3": "Mulch and water well, particularly over the warmer months.", 
-    "generalInfo4": "Well watered, well nourished apple trees will have a better chance of keeping insect pests and diseases at bay.", 
+    "generalInfo1": "Add a layer of citrus and fruit mix to plant into. In New Zealand winter is the optimum time to plant apple trees.",
+    "generalInfo2": "Feed your apples in spring and summer to encourage maximum flowering and fruiting.",
+    "generalInfo3": "Mulch and water well, particularly over the warmer months.",
+    "generalInfo4": "Well watered, well nourished apple trees will have a better chance of keeping insect pests and diseases at bay.",
     "generalInfo5": "When pruning be sure to remove all diseased, damaged or dead wood. Remove any branches that are crossing or rubbing. Cut away any branches that are growing back into the center of the tree."
   },
   {
@@ -27,12 +27,11 @@
     "sep": "IconsandImages/planting.png",
     "oct": "IconsandImages/planting.png",
     "nov": "IconsandImages/planting.png",
-    "generalInfo1": "Plant asparagus from July to December in warm areas and from September to December in cooler areas.", 
-    "generalInfo2": "Feed asparagus in spring with vegetable food and water regularly.", 
-    "generalInfo3": "Cut back the ferny foliage in autumn. Harvest asparagus grown from crowns after two seasons.", 
-    "generalInfo4": "If planting quite a few crowns dig trenches in the soil to plant in. Plant crowns with their roots facing down 15cm deep and 30cm apart. Rows should be spaced at least 50cm apart.", 
-    "generalInfo5": "When pruning be sure to remove all diseased, damaged or dead wood. Remove any branches that are crossing or rubbing. Cut away any branches that are growing back into the center of the tree.",
-    "generalInfo6": "Cut asparagus off at ground level with a sharp knife. Don't be tempted to rip it out of the ground as you will more than likely pull out the whole crown."
+    "generalInfo1": "Plant asparagus from July to December in warm areas and from September to December in cooler areas.",
+    "generalInfo2": "Feed asparagus in spring with vegetable food and water regularly.",
+    "generalInfo3": "Cut back the ferny foliage in autumn. Harvest asparagus grown from crowns after two seasons.",
+    "generalInfo4": "If planting quite a few crowns dig trenches in the soil to plant in. Plant crowns with their roots facing down 15cm deep and 30cm apart. Rows should be spaced at least 50cm apart.",
+    "generalInfo5": "Cut asparagus off at ground level with a sharp knife. Don't be tempted to rip it out of the ground as you will more than likely pull out the whole crown."
   },
   {
     "id": "Basil",
@@ -43,7 +42,11 @@
     "jan": "IconsandImages/planting.png",
     "oct": "IconsandImages/planting.png",
     "nov": "IconsandImages/planting.png",
-    "dec": "IconsandImages/planting.png"
+    "dec": "IconsandImages/planting.png",
+    "generalInfo1": "Choose a sunny spot close to your kitchen for easy access. Basil is best planted in late spring, summer and autumn as it needs warmth.",
+    "generalInfo2": "Water your basil consistently and pick regularly to help avoid it going to seed.",
+    "generalInfo3": "Over summer basil is prone to go to seed. To avoid, water your basil consistently, regularly pick, remove flowers and remove parts of the plant that go to seed.",
+    "generalInfo4": "If your basil does go to seed there is an upside – the flowers are great for beneficial insects like bees, and if you let them fully dry out you can collect the seeds for next season!"
   },
   {
     "id": "Beetroot",
@@ -60,7 +63,12 @@
     "sep": "IconsandImages/planting.png",
     "oct": "IconsandImages/planting.png",
     "nov": "IconsandImages/planting.png",
-    "dec": "IconsandImages/planting.png"
+    "dec": "IconsandImages/planting.png",
+    "generalInfo1": "Plant beetroot in rows about 50cm apart.",
+    "generalInfo2": "Feed beetroot with vegetable food throughout the growing season.",
+    "generalInfo3": "Beetroot is a root crop that takes approximately three to four months to mature. Beetroot is a fairly easy crop to grow as long as the soil is well cultivated prior to planting. They don't enjoy wet, boggy or shady soils.",
+    "generalInfo4": "Beetroot need phosphorus to develop, if there is too much nitrogen there will be plenty of foliage but not a lot of root development.",
+    "generalInfo5": "Harvest when the beetroot is the size you like to eat. You can see how big the top of the beet is before you dig it up from the ground. Dig them gently out of the soil, harvesting at separate intervals down the rows to allow smaller beets to develop. If you leave beetroot to get too large it can become a little tough."
   },
   {
     "id": "Blackberry",

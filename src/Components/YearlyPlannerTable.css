@@ -21,16 +21,20 @@ table {
   font-weight: 700 !important;
 }
 
-/* Plant name and image container css */
+/* Plant name and image cell css */
 .plantName {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
   font-weight: 600 !important;
   color: #ffffff !important;
   background-color: #5e875d !important;
+}
+
+/* Plant name and image container css */
+.imageAndNameContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 /* Separate image container css */
@@ -55,18 +59,14 @@ table {
 
 /* Responsive css */
 @media screen and (max-width: 1300px) {
-  .plantName {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-  font-weight: 600 !important;
-  color: #ffffff !important;
-  background-color: #5e875d !important;
-
+  /* Plant name and image container css */
+  .imageAndNameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
+  /* Separate image container css */
   .imageContainer {
     padding-right: 0px;
   }
@@ -87,11 +87,11 @@ table {
   border-radius: 0px !important;
 }
 
-.helpfulTitle{
+.helpfulTitle {
   color: #ffffff;
 }
 
-.tipDiv{
+.tipDiv {
   margin-top: 20px !important;
   margin-bottom: 20px !important;
 }
