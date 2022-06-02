@@ -14,6 +14,7 @@ import {
   TableRow,
   IconButton,
   Accordion,
+  Divider
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -49,7 +50,7 @@ const MonthlyPlannerTable = () => {
               <TableRow>
                 <TableCell className="plantName">
                   <img src={row.roundimage} alt="" className="imageContainer" />
-                  {row.id}
+                  {row.id}  
                 </TableCell>
                 <TableCell className="plantTips">
                   <Accordion>
@@ -60,11 +61,17 @@ const MonthlyPlannerTable = () => {
                       {row.plantingRecommendation}
                     </AccordionSummary>
                     <AccordionDetails className="plantTips">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Suspendisse malesuada lacus ex, sit amet blandit leo
-                        lobortis eget.
-                      </p>
+                      <Divider><h3 className="helpfulTitle">HELPFUL TIPS</h3></Divider>
+                      {row.generalInfo1}
+                      <Divider className="tipDiv"/>
+                      {row.generalInfo2}
+                      <Divider variant="middle" className="tipDiv"/>
+                      {row.generalInfo3}
+                      <Divider variant="middle" className="tipDiv"/>
+                      {row.generalInfo4}
+                      <Divider variant="middle" className="tipDiv"/>
+                      {row.generalInfo5}
+                      <Divider variant="middle" className="tipDiv"/> 
                     </AccordionDetails>
                   </Accordion>
                 </TableCell>

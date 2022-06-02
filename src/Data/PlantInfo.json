@@ -10,7 +10,12 @@
     "jun": "IconsandImages/planting.png",
     "jul": "IconsandImages/planting.png",
     "aug": "IconsandImages/planting.png",
-    "sep": "IconsandImages/planting.png"
+    "sep": "IconsandImages/planting.png",
+    "generalInfo1": "Add a layer of citrus and fruit mix to plant into. In New Zealand winter is the optimum time to plant apple trees.", 
+    "generalInfo2": "Feed your apples in spring and summer to encourage maximum flowering and fruiting.", 
+    "generalInfo3": "Mulch and water well, particularly over the warmer months.", 
+    "generalInfo4": "Well watered, well nourished apple trees will have a better chance of keeping insect pests and diseases at bay.", 
+    "generalInfo5": "When pruning be sure to remove all diseased, damaged or dead wood. Remove any branches that are crossing or rubbing. Cut away any branches that are growing back into the center of the tree."
   },
   {
     "id": "Asparagus",
@@ -21,7 +26,13 @@
     "aug": "IconsandImages/planting.png",
     "sep": "IconsandImages/planting.png",
     "oct": "IconsandImages/planting.png",
-    "nov": "IconsandImages/planting.png"
+    "nov": "IconsandImages/planting.png",
+    "generalInfo1": "Plant asparagus from July to December in warm areas and from September to December in cooler areas.", 
+    "generalInfo2": "Feed asparagus in spring with vegetable food and water regularly.", 
+    "generalInfo3": "Cut back the ferny foliage in autumn. Harvest asparagus grown from crowns after two seasons.", 
+    "generalInfo4": "If planting quite a few crowns dig trenches in the soil to plant in. Plant crowns with their roots facing down 15cm deep and 30cm apart. Rows should be spaced at least 50cm apart.", 
+    "generalInfo5": "When pruning be sure to remove all diseased, damaged or dead wood. Remove any branches that are crossing or rubbing. Cut away any branches that are growing back into the center of the tree.",
+    "generalInfo6": "Cut asparagus off at ground level with a sharp knife. Don't be tempted to rip it out of the ground as you will more than likely pull out the whole crown."
   },
   {
     "id": "Basil",

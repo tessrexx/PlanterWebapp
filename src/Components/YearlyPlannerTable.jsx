@@ -28,18 +28,18 @@ const YearlyPlannerTable = () => {
         <TableHead>
           <TableRow>
             <TableCell className="headerLabels">PLANTS</TableCell>
-            <TableCell className="monthLabels">JAN</TableCell>
-            <TableCell className="monthLabels">FEB</TableCell>
-            <TableCell className="monthLabels">MAR</TableCell>
-            <TableCell className="monthLabels">APR</TableCell>
-            <TableCell className="monthLabels">MAY</TableCell>
-            <TableCell className="monthLabels">JUN</TableCell>
-            <TableCell className="monthLabels">JUL</TableCell>
-            <TableCell className="monthLabels">AUG</TableCell>
-            <TableCell className="monthLabels">SEP</TableCell>
-            <TableCell className="monthLabels">OCT</TableCell>
-            <TableCell className="monthLabels">NOV</TableCell>
-            <TableCell className="monthLabels">DEC</TableCell>
+            <TableCell className="centerLabels">JAN</TableCell>
+            <TableCell className="centerLabels">FEB</TableCell>
+            <TableCell className="centerLabels">MAR</TableCell>
+            <TableCell className="centerLabels">APR</TableCell>
+            <TableCell className="centerLabels">MAY</TableCell>
+            <TableCell className="centerLabels">JUN</TableCell>
+            <TableCell className="centerLabels">JUL</TableCell>
+            <TableCell className="centerLabels">AUG</TableCell>
+            <TableCell className="centerLabels">SEP</TableCell>
+            <TableCell className="centerLabels">OCT</TableCell>
+            <TableCell className="centerLabels">NOV</TableCell>
+            <TableCell className="im">DEC</TableCell>
             <TableCell className="headerLabels">HARVEST</TableCell>
           </TableRow>
         </TableHead>

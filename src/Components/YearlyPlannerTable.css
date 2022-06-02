@@ -33,7 +33,7 @@ table {
   background-color: #5e875d !important;
 }
 
-/* Seperate image container css */
+/* Separate image container css */
 .imageContainer {
   padding-right: 20px;
 }
@@ -60,10 +60,11 @@ table {
     flex-direction: column !important;
     align-items: center !important;
     border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-    font-weight: 600 !important;
-    color: #ffffff !important;
-    background-color: #5e875d !important;
+  border-bottom-left-radius: 30px;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  background-color: #5e875d !important;
+
   }
 
   .imageContainer {
@@ -74,6 +75,7 @@ table {
 /* THIS MONTH VIEW CSS */
 /* Info container css */
 .plantTips {
+  text-align: center;
   background-color: #d0e8de !important;
   color: #5e875d !important;
   font-weight: 600 !important;
@@ -83,4 +85,13 @@ table {
 
 .accordian {
   border-radius: 0px !important;
+}
+
+.helpfulTitle{
+  color: #ffffff;
+}
+
+.tipDiv{
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
 }
