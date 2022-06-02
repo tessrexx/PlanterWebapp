@@ -22,6 +22,7 @@ const YearlyPlannerTable = () => {
   // Filter data set/state
   const [data, setData] = useState(plantData);
 
+  // Output
   return (
     <TableContainer component={Paper} sx={{ maxHeight: "70vh" }}>
       <Table stickyHeader>
@@ -97,4 +98,5 @@ const YearlyPlannerTable = () => {
   );
 };
 
+// Export from module
 export default YearlyPlannerTable;

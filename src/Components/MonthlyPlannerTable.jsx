@@ -12,26 +12,22 @@ import {
   TableCell,
   Paper,
   TableRow,
-  IconButton,
   Accordion,
   Divider,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 // Infile CSS & Component Imports
 import "./YearlyPlannerTable.css";
-import InfoModal from "./InfoModal";
-import { ExpandMore } from "@mui/icons-material";
 
 // Component for monthly planner view
 // Displays user's selected plants, ideal planting months, and estimated harvesting times
 const MonthlyPlannerTable = () => {
-  const [open, setOpen] = useState(false);
   // Filter data set/state
   const [data, setData] = useState(plantData);
 
+  // Output
   return (
     <>
       <TableContainer component={Paper} sx={{ maxHeight: "70vh" }}>
@@ -80,7 +76,6 @@ const MonthlyPlannerTable = () => {
                       {row.generalInfo4}
                       <Divider variant="middle" className="tipDiv" />
                       {row.generalInfo5}
-                      <Divider variant="middle" className="tipDiv" />
                     </AccordionDetails>
                   </Accordion>
                 </TableCell>
@@ -90,10 +85,9 @@ const MonthlyPlannerTable = () => {
           </TableBody>
         </Table>
       </TableContainer>
-
-      {open && <InfoModal setOpen={setOpen} />}
     </>
   );
 };
 
+// Export from module
 export default MonthlyPlannerTable;

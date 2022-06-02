@@ -12,6 +12,7 @@ import HomeCard from "../Components/HomeCard";
 // Function for home page
 // Displays app features
 function HomePage() {
+  //Output
   return (
     <>
       <div

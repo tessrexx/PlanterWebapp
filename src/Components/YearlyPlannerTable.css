@@ -83,14 +83,18 @@ table {
   border-radius: 0px !important;
 }
 
+/* Planting tip dropdown css */
 .accordian {
   border-radius: 0px !important;
 }
 
+/* Planting tip inner title css */
 .helpfulTitle {
   color: #ffffff;
+  font-size: 20px;
 }
 
+/* Divider css */
 .tipDiv {
   margin-top: 20px !important;
   margin-bottom: 20px !important;
