@@ -44,20 +44,58 @@ form {
 .forgotPassword {
   color: #ffffff;
   font-weight: 300;
-
+  margin-bottom: -15px;
   margin-left: -290px;
+  cursor: pointer;
 }
 
 /* Button css */
 .submitButton {
-  padding-top: 20px;
+  padding-top: 10px;
   margin-left: -20px;
 }
 
 /* Error message css */
 .error {
-  padding: 15px 15px 0px 10px;
+  padding: 10px 10px 0px 10px;
   color: #a54646;
   font-weight: 600;
   font-style: italic;
+}
+
+/* Forgot Password css */
+.popupBackground {
+  background-color: #00000033;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.resetContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 150px;
+  width: 600px;
+  color: #ffffff;
+  background-color: #b5cca7;
+  filter: drop-shadow(5px 5px 10px rgba(145, 145, 145, 0.493));
+  border-radius: 20px;
+  padding: 1.25rem;
+  z-index: 6;
+  cursor: default;
+}
+
+.resetTitle {
+  margin-left: 20px;
+}
+
+.resetModal {
+  display: flex;
+  flex-direction: row;
 }

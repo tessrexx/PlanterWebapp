@@ -1,9 +1,8 @@
 // API Imports
-import React from "react";
-import { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 // MUI Library & Component Imports
-import { TextField, Button } from "@mui/material";
+import { TextField, Button, Alert } from "@mui/material";
 // In-file CSS & Component Imports
 import "../Components/SignIn&UpForm.css";
 import { UserAuth } from "../Contexts/AuthContext";
@@ -14,12 +13,16 @@ import Footer from "../Components/Footer";
 // Contains form for user to sign in and be authenticated
 function SignInPage({ setIsAuth }) {
   // Setting user
-  const { signIn } = UserAuth();
+  const { signIn, forgotPassword } = UserAuth();
+  const emailRef = useRef();
   const navigate = useNavigate();
   // States for sign up info
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
+  // create state `open` with default as false
+  const [open, setOpen] = useState(false);
 
   // Submission Errors or Redirection to Planner Page
   const handleSubmit = async (err) => {
@@ -32,6 +35,14 @@ function SignInPage({ setIsAuth }) {
       setError(err.message);
       console.log(err.message);
     }
+  };
+
+  const forgotPasswordHandler = () => {
+    const email = emailRef.current.value;
+    if (email)
+      forgotPassword(email).then(() => {
+        emailRef.current.value = "";
+      });
   };
 
   // Output
@@ -54,8 +65,8 @@ function SignInPage({ setIsAuth }) {
             <TextField
               fullWidth
               label="Email"
-              type="text"
-              name="email"
+              type="email"
+              value={email}
               // Calling a function to update setDetails by passing details entered
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -66,19 +77,54 @@ function SignInPage({ setIsAuth }) {
               label="Password"
               variant="outlined"
               type="password"
-              name="password"
               // Calling a function to update setDetails by passing details entered
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="forgotPassword">
-            <Link to="/">Forgot Password?</Link>
+            <Button disableRipple="true" onClick={() => setOpen(true)}>
+              Forgot Password?
+            </Button>
           </div>
-          {error !== "" ? (
-            <div className="error"> {error} </div>
-          ) : (
-            ""
-          ) /*Firebase Error Message*/}
+
+          {open && (
+            <div>
+              <div className="popupBackground" onClick={() => setOpen(false)} />
+              <div className="resetContainer">
+                <h3 className="resetTitle">RESET PASSWORD</h3>
+                <form className="resetModal">
+                  <TextField
+                    fullWidth
+                    label="Email"
+                    type="email"
+                    ref={emailRef}
+                  />
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    type="submit"
+                    onClick={forgotPasswordHandler}
+                  >
+                    Submit
+                  </Button>
+                  {
+                    error !== "" ? (
+                      <div className="error"> {error} </div>
+                    ) : (
+                      ""
+                    ) /*Firebase Error Message*/
+                  }
+                </form>
+              </div>
+            </div>
+          )}
+          {
+            error !== "" ? (
+              <div className="error"> {error} </div>
+            ) : (
+              ""
+            ) /*Firebase Error Message*/
+          }
 
           <div className="submitButton">
             <Button variant="contained" color="secondary" type="submit">
