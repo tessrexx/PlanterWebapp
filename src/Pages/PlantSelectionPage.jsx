@@ -3,9 +3,8 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 // Temp Plant Data File Import
-import plantData from "../Data/PlantInfo.json";
-import {db} from "../firebase"
-import {doc, getDoc} from 'firebase/firestore'
+import { db } from "../firebase";
+import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 // MUI Library & Component Imports
 import { Button, TextField, Tab, Box } from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
@@ -22,6 +21,7 @@ function PlantSelection() {
   // Filter data set/state
   //const [data, setData] = useState(plantData);
   const [plants, setPlants] = useState([]);
+  const plantCollectioRef = collection(db, "plants");
   // Tab selection set/state
   const [value, setValue] = useState("1");
 
@@ -33,18 +33,14 @@ function PlantSelection() {
     setData(result);
   };*/
 
+  // Called when page renders
   useEffect(() => {
-    async function fetchPlants(){
-      const docRef = doc(db, "plants")
-      const docSnap = await getDoc(docRef)
-
-      if(docSnap.exists()){
-        setPlants(Object.keys(docSnap.data()).map(key=>({name: key, status:docSnap.data()[key]})))
-        console.log([docSnap.data()])
-      }
-    }
-    fetchPlants()
-  },[])
+    const fetchPlants = async () => {
+      const data = await getDocs(plantCollectioRef);
+      setPlants(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    fetchPlants();
+  }, []);
 
   // Tab selection change handler function
   const handleChange = (event, newValue) => {
@@ -60,7 +56,7 @@ function PlantSelection() {
           <TabContext value={value}>
             <Box>
               <TabList onChange={handleChange}>
-                <Tab label="ALL" value="1"/>
+                <Tab label="ALL" value="1" />
                 <Tab
                   label="VEGETABLE"
                   value="2"
@@ -80,32 +76,26 @@ function PlantSelection() {
             </Box>
             <TabPanel value="1">
               <div className="plantContainer">
-                {plants.map((plant)=>{
+                {plants.map((plant) => {
                   return (
-                    <div key={plant.id}>
-                    <PlantCard
-                    plantName={plant.name} 
-                    plantImage={plant.image}
-                    />
+                    <div>
+                      <PlantCard
+                        plantName={plant.name}
+                        plantImage={plant.image}
+                      />
                     </div>
-                  )
+                  );
                 })}
               </div>
             </TabPanel>
             <TabPanel value="2">
-              <div className="plantContainer">
-                
-              </div>
+              <div className="plantContainer"></div>
             </TabPanel>
             <TabPanel value="3">
-              <div className="plantContainer">
-                
-              </div>
+              <div className="plantContainer"></div>
             </TabPanel>
             <TabPanel value="4">
-              <div className="plantContainer">
-                
-              </div>
+              <div className="plantContainer"></div>
             </TabPanel>
           </TabContext>
           <div className="layout-right">
