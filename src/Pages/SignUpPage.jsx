@@ -3,6 +3,15 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 // MUI Library & Component Imports
+import { db } from "../firebase";
+import {
+  collection,
+  doc,
+  setDoc,
+  getDoc,
+  getDocs,
+  onSnapshot,
+} from "firebase/firestore";
 import { TextField, Button } from "@mui/material";
 // In-file CSS & Component Imports
 import "../Components/SignIn&UpForm.css";
@@ -21,12 +30,33 @@ function SignUpPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  const addUserToFirestore = async () => {
+    try {
+      await setDoc(doc(db, "users", localStorage.getItem("uid")), {
+        userid: localStorage.getItem("uid"),
+        userEmail: localStorage.getItem("email"),
+      }).then(() => {
+        onSnapshot(doc(db, "users", localStorage.getItem("uid")), (doc) => {
+          console.log("Current data from LOGIN: ", doc.data());
+        });
+      });
+      // Waiting to catch errors
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   // Submission Errors or Redirection to Plant Selection Page
   const handleSubmit = async (err) => {
     err.preventDefault();
     setError("");
     try {
-      await createUser(email, password);
+      await createUser(email, password).then((credentials) => {
+        const user = credentials.user;
+        localStorage.setItem("uid", user.uid);
+        localStorage.setItem("email", user.email);
+      });
+      addUserToFirestore();
       navigate("/plantselection");
     } catch (err) {
       setError(err.message);
@@ -71,11 +101,13 @@ function SignUpPage() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          {error !== "" ? (
-            <div className="error"> {error} </div>
-          ) : (
-            ""
-          ) /*Firebase Error Message*/}
+          {
+            error !== "" ? (
+              <div className="error"> {error} </div>
+            ) : (
+              ""
+            ) /*Firebase Error Message*/
+          }
           <div className="submitButton">
             <Button variant="contained" color="secondary" type="submit">
               CONFIRM
