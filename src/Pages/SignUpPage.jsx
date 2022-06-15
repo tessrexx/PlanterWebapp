@@ -33,7 +33,7 @@ function SignUpPage() {
   const addUserToFirestore = async () => {
     try {
       await setDoc(doc(db, "users", localStorage.getItem("uid")), {
-        userid: localStorage.getItem("uid"),
+        userID: localStorage.getItem("uid"),
         userEmail: localStorage.getItem("email"),
       }).then(() => {
         onSnapshot(doc(db, "users", localStorage.getItem("uid")), (doc) => {

@@ -2,11 +2,19 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// Temp Plant Data File Import
-import { db } from "../firebase";
-import { collection, doc, getDoc, getDocs } from "firebase/firestore";
+// Firebase/Firestore Import
+import { auth, db } from "../firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  onSnapshot,
+  setDoc,
+} from "firebase/firestore";
 // MUI Library & Component Imports
-import { Button, TextField, Tab, Box } from "@mui/material";
+import { Button, Tab, Box } from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 // Infile CSS & Component Imports
 import "./PlantSelection.css";
@@ -18,9 +26,9 @@ import Navbar from "../Components/Navbar";
 // Function for page /plantselection
 // Contains plants that users can select for their planner along with category filter tabs
 function PlantSelection() {
-  // Filter data set/state
-  //const [data, setData] = useState(plantData);
+  // Data set/state
   const [plants, setPlants] = useState([]);
+  // Firestore database variable
   const plantCollectioRef = collection(db, "plants");
   // Tab selection set/state
   const [value, setValue] = useState("1");
@@ -45,6 +53,39 @@ function PlantSelection() {
   // Tab selection change handler function
   const handleChange = (event, newValue) => {
     setValue(newValue);
+  };
+
+  // Get current user id and return in to const
+  const uid = GetUserUid();
+  function GetUserUid() {
+    const [uid, setUid] = useState("");
+    useEffect(() => {
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          setUid(user.uid);
+        }
+      });
+    }, []);
+    return uid;
+  }
+
+  // Add selected plant to user's planner collection
+  let Plant;
+  const addToPlanner = async (plant) => {
+    try {
+      console.log(plant);
+      Plant = plant;
+      await setDoc(doc(db, "users", uid, "planner", plant), {
+        name: plant,
+      }).then(() => {
+        onSnapshot(doc(db, "users", uid, "planner", plant), (doc) => {
+          console.log("record added");
+        });
+      });
+      // Waiting to catch errors
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   // Output
@@ -82,6 +123,7 @@ function PlantSelection() {
                       <PlantCard
                         plantName={plant.name}
                         plantImage={plant.image}
+                        addToPlanner={addToPlanner}
                       />
                     </div>
                   );
@@ -101,7 +143,7 @@ function PlantSelection() {
           <div className="layout-right">
             <Link to="/planner" className="addButton">
               <Button variant="contained" color="secondary">
-                ADD TO PLANTER
+                GO TO PLANTER
               </Button>
             </Link>
           </div>
