@@ -8,7 +8,6 @@ import { onAuthStateChanged } from "firebase/auth";
 import {
   collection,
   doc,
-  getDoc,
   getDocs,
   onSnapshot,
   setDoc,
@@ -29,7 +28,7 @@ function PlantSelection() {
   // Data set/state
   const [plants, setPlants] = useState([]);
   // Firestore database variable
-  const plantCollectioRef = collection(db, "plants");
+  const plantCollectionRef = collection(db, "plants");
   // Tab selection set/state
   const [value, setValue] = useState("1");
 
@@ -44,7 +43,7 @@ function PlantSelection() {
   // Called when page renders
   useEffect(() => {
     const fetchPlants = async () => {
-      const data = await getDocs(plantCollectioRef);
+      const data = await getDocs(plantCollectionRef);
       setPlants(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     fetchPlants();

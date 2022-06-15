@@ -8,13 +8,18 @@ import "../Components/SignIn&UpForm.css";
 import { UserAuth } from "../Contexts/AuthContext";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import { sendPasswordResetEmail } from "firebase/auth";
+// Toastify Alerts
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // Function for /signin page
 // Contains form for user to sign in and be authenticated
 function SignInPage({ setIsAuth }) {
   // Setting user
-  const { signIn, forgotPassword } = UserAuth();
-  const emailRef = useRef();
+  const { signIn, auth } = UserAuth();
+  const emailRef = useRef("");
+
   const navigate = useNavigate();
   // States for sign up info
   const [email, setEmail] = useState("");
@@ -30,20 +35,40 @@ function SignInPage({ setIsAuth }) {
     setError("");
     try {
       await signIn(email, password);
+      toast.success("Welcome back!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+      });
       navigate("/planner");
     } catch (err) {
-      setError(err.message);
+      toast.error(err.message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+      });
       console.log(err.message);
     }
   };
 
-  const forgotPasswordHandler = () => {
-    const email = emailRef.current.value;
-    if (email)
-      forgotPassword(email).then(() => {
-        emailRef.current.value = "";
+  // Forgot Password Function
+  function forgotPasswordHandler() {
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        console.log("success");
+      })
+      .catch(() => {
+        console.log("nope");
       });
-  };
+  }
 
   // Output
   return (
@@ -54,6 +79,18 @@ function SignInPage({ setIsAuth }) {
       }}
     >
       <Navbar />
+      <ToastContainer
+        position="top-right"
+        theme="colored"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable={false}
+        pauseOnHover={false}
+      />
       <div className="formContainer">
         <img className="logo" src="/logo 184x62px.png" alt="" />
         <form onSubmit={handleSubmit}>
@@ -95,37 +132,21 @@ function SignInPage({ setIsAuth }) {
                 <form className="resetModal">
                   <TextField
                     fullWidth
-                    label="Email"
+                    placeholder="Email"
                     type="email"
                     ref={emailRef}
                   />
                   <Button
                     variant="contained"
                     color="primary"
-                    type="submit"
                     onClick={forgotPasswordHandler}
                   >
                     Submit
                   </Button>
-                  {
-                    error !== "" ? (
-                      <div className="error"> {error} </div>
-                    ) : (
-                      ""
-                    ) /*Firebase Error Message*/
-                  }
                 </form>
               </div>
             </div>
           )}
-          {
-            error !== "" ? (
-              <div className="error"> {error} </div>
-            ) : (
-              ""
-            ) /*Firebase Error Message*/
-          }
-
           <div className="submitButton">
             <Button variant="contained" color="secondary" type="submit">
               SIGN IN

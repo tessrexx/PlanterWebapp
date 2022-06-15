@@ -18,6 +18,9 @@ import "../Components/SignIn&UpForm.css";
 import { UserAuth } from "../Contexts/AuthContext";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+// Toastify Alerts
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // Function for /signup page
 // Contains form for user to create an account and become an authenticated user
@@ -52,6 +55,15 @@ function SignUpPage() {
     setError("");
     try {
       await createUser(email, password).then((credentials) => {
+        toast.success("Welcome to Planter!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+        });
         const user = credentials.user;
         localStorage.setItem("uid", user.uid);
         localStorage.setItem("email", user.email);
@@ -59,7 +71,15 @@ function SignUpPage() {
       addUserToFirestore();
       navigate("/plantselection");
     } catch (err) {
-      setError(err.message);
+      toast.error(err.message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+      });
       console.log(err.message);
     }
   };
@@ -73,6 +93,19 @@ function SignUpPage() {
       }}
     >
       <Navbar />
+      <ToastContainer
+        position="top-right"
+        theme="colored"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable={false}
+        pauseOnHover={false}
+      />
+
       <div className="formContainer">
         <img className="logo" src="/logo 184x62px.png" alt="" />
         <form onSubmit={handleSubmit}>
@@ -101,13 +134,6 @@ function SignUpPage() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          {
-            error !== "" ? (
-              <div className="error"> {error} </div>
-            ) : (
-              ""
-            ) /*Firebase Error Message*/
-          }
           <div className="submitButton">
             <Button variant="contained" color="secondary" type="submit">
               CONFIRM

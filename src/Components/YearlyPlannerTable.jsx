@@ -1,8 +1,16 @@
 // API Imports
 import React from "react";
-import { useState } from "react";
-// Temp Plant Data File Import
-import plantData from "../Data/PlantInfo.json";
+import { useState, useEffect } from "react";
+// Firebase/Firestore Import
+import { auth, db } from "../firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import {
+  collection,
+  doc,
+  getDocs,
+  onSnapshot,
+  setDoc,
+} from "firebase/firestore";
 // MUI Library & Component Imports
 import {
   TableContainer,
@@ -19,8 +27,35 @@ import "./YearlyPlannerTable.css";
 // Component for yearly planner view
 // Displays user's selected plants, ideal planting months, and estimated harvesting times
 const YearlyPlannerTable = () => {
-  // Filter data set/state
-  const [data, setData] = useState(plantData);
+  // Data set/state
+  const [userPlants, setUserPlants] = useState([]);
+
+  // Firestore database variable
+  const plantCollectionRef = collection(db, "plants");
+  const userSelectionRef = collection(db, "users"); // ***** DEBUGGING NEEDED
+
+  // Get current user id and return in to const
+  const uid = GetUserUid();
+  function GetUserUid() {
+    const [uid, setUid] = useState("");
+    useEffect(() => {
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          setUid(user.uid);
+        }
+      });
+    }, []);
+    return uid;
+  }
+
+  // Called when page renders // ***** DEBUGGING NEEDED
+  useEffect(() => {
+    const fetchUserPlants = async () => {
+      const data = await getDocs(userSelectionRef);
+      setUserPlants(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    fetchUserPlants();
+  }, []);
 
   // Output
   return (
@@ -40,56 +75,56 @@ const YearlyPlannerTable = () => {
             <TableCell className="centerLabels">SEP</TableCell>
             <TableCell className="centerLabels">OCT</TableCell>
             <TableCell className="centerLabels">NOV</TableCell>
-            <TableCell className="im">DEC</TableCell>
+            <TableCell className="centerLabels">DEC</TableCell>
             <TableCell className="headerLabels">HARVEST</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.map((row) => (
-            <TableRow key={row.id}>
+          {userPlants.map((plant) => (
+            <TableRow>
               <TableCell className="plantName">
                 <div className="imageAndNameContainer">
-                  <img src={row.roundimage} alt="" className="imageContainer" />
-                  {row.id}
+                  <img src={""} alt="" className="imageContainer" />
+                  {plant.name}
                 </div>
               </TableCell>
               <TableCell className="monthlyPlant">
-                <img src={row.jan} alt="" />
+                <img src={""} alt="" />
               </TableCell>
               <TableCell className="monthlyPlant">
-                <img src={row.feb} alt="" />
+                <img src={""} alt="" />
               </TableCell>
               <TableCell className="monthlyPlant">
-                <img src={row.mar} alt="" />
+                <img src={""} alt="" />
               </TableCell>
               <TableCell className="monthlyPlant">
-                <img src={row.apr} alt="" />
+                <img src={""} alt="" />
               </TableCell>
               <TableCell className="monthlyPlant">
-                <img src={row.may} alt="" />
+                <img src={""} alt="" />
               </TableCell>
               <TableCell className="monthlyPlant">
-                <img src={row.jun} alt="" />
+                <img src={""} alt="" />
               </TableCell>
               <TableCell className="monthlyPlant">
-                <img src={row.jul} alt="" />
+                <img src={""} alt="" />
               </TableCell>
               <TableCell className="monthlyPlant">
-                <img src={row.aug} alt="" />
+                <img src={""} alt="" />
               </TableCell>
               <TableCell className="monthlyPlant">
-                <img src={row.sep} alt="" />
+                <img src={""} alt="" />
               </TableCell>
               <TableCell className="monthlyPlant">
-                <img src={row.oct} alt="" />
+                <img src={""} alt="" />
               </TableCell>
               <TableCell className="monthlyPlant">
-                <img src={row.nov} alt="" />
+                <img src={""} alt="" />
               </TableCell>
               <TableCell className="monthlyPlant">
-                <img src={row.dec} alt="" />
+                <img src={""} alt="" />
               </TableCell>
-              <TableCell className="harvestTime">{row.harvest}</TableCell>
+              <TableCell className="harvestTime">{""}</TableCell>
             </TableRow>
           ))}
         </TableBody>

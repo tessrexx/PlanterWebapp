@@ -10,7 +10,7 @@ import "./PlantCard.css";
 // Component for plant cards on selection page
 // Displays template for plants
 const PlantCard = ({ plantImage, plantName, addToPlanner }) => {
-  // called when checkbox checked
+  // Called when checkbox checked
   const handleAddToPlanner = () => {
     addToPlanner(plantName, plantImage);
   };

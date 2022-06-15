@@ -1,5 +1,5 @@
 // API Imports
-import React from "react";
+import React, { useRef } from "react";
 import { getAuth, updateEmail } from "firebase/auth";
 // MUI Library & Component Imports
 import { TextField, Button } from "@mui/material";
@@ -14,6 +14,18 @@ import Footer from "../Components/Footer";
 function UserDetails() {
   // User authentication state
   const { user } = UserAuth();
+  const emailRef = useRef("");
+
+  /*const auth = getAuth();
+  updateEmail(auth.currentUser, emailRef.current.value)
+    .then(() => {
+      // Email updated!
+      console.log("success");
+    })
+    .catch((error) => {
+      // An error occurred
+      console.log("nope");
+    });*/
 
   // Output
   return (
@@ -28,6 +40,7 @@ function UserDetails() {
             <TextField
               fullWidth
               label={user && user.email}
+              ref={emailRef}
               type="text"
               name="email"
             />

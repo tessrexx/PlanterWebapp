@@ -28,9 +28,9 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   // Forgot Password
-  const forgotPassword = (email) => {
+  /*  const forgotPassword = (email) => {
     return sendPasswordResetEmail(auth, email);
-  };
+  };*/
 
   // Signs out user
   const logout = () => {
@@ -56,9 +56,7 @@ export const AuthContextProvider = ({ children }) => {
 
   return (
     // Export values
-    <UserContext.Provider
-      value={{ createUser, user, signIn, forgotPassword, logout }}
-    >
+    <UserContext.Provider value={{ createUser, user, signIn, logout }}>
       {children}
     </UserContext.Provider>
   );
