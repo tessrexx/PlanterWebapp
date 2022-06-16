@@ -79,7 +79,7 @@ const YearlyPlannerTable = () => {
   const [mergedPlants, setMergedPlants] = useState([]);
 
   // ** TESTING how to compare doc id's and display info
-  const DataMash = async () => {
+  function DataMash(){
     console.log("maybe...");
     for (var i = 0; i < plantData.length; i++) {
       for (var j = 0; j < userPlants.length; j++) {
@@ -87,7 +87,7 @@ const YearlyPlannerTable = () => {
           console.log("yusssssss");
           //console.log(plantData[i].id);
           //mergeUserData = plantData[i].id;
-          mergeUserData.push(
+          mergeUserData.push([
             plantData[i].id,
             plantData[i].roundimage,
             plantData[i].jan,
@@ -103,7 +103,7 @@ const YearlyPlannerTable = () => {
             plantData[i].nov,
             plantData[i].dec,
             plantData[i].harvest
-          );
+          ]);
           console.log(mergeUserData);
         } else {
           console.log("nope");
@@ -111,6 +111,7 @@ const YearlyPlannerTable = () => {
       }
     }
     setMergedPlants(mergeUserData);
+    //console.log(mergedPlants)
   };
 
   // Output
@@ -137,7 +138,7 @@ const YearlyPlannerTable = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {userPlants.map((plant) => (
+            {mergeUserData.map((plant) => (
               <TableRow>
                 <TableCell className="plantName">
                   <div className="imageAndNameContainer">
