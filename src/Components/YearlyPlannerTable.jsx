@@ -110,7 +110,10 @@ const YearlyPlannerTable = () => {
         }
       }
     }
-    setMergedPlants(mergeUserData);
+    const temp = [...mergeUserData];
+    setMergedPlants(temp);
+    console.log(temp)
+    console.log("fuck")
     //console.log(mergedPlants)
   };
 
@@ -138,12 +141,12 @@ const YearlyPlannerTable = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {mergeUserData.map((plant) => (
+            {mergedPlants.map((plant) => (
               <TableRow>
                 <TableCell className="plantName">
                   <div className="imageAndNameContainer">
                     <img src={""} alt="" className="imageContainer" />
-                    {plant.id}
+                    {plant[0]}
                   </div>
                 </TableCell>
                 <TableCell className="monthlyPlant">
@@ -182,7 +185,7 @@ const YearlyPlannerTable = () => {
                 <TableCell className="monthlyPlant">
                   <img src={""} alt="" />
                 </TableCell>
-                <TableCell className="harvestTime">{""}</TableCell>
+                <TableCell className="harvestTime">{plant[14]}</TableCell>
               </TableRow>
             ))}
           </TableBody>
