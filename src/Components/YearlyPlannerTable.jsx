@@ -10,6 +10,7 @@ import {
   getDocs,
   onSnapshot,
   setDoc,
+  query,
 } from "firebase/firestore";
 // MUI Library & Component Imports
 import {
@@ -32,7 +33,6 @@ const YearlyPlannerTable = () => {
 
   // Firestore database variable
   const plantCollectionRef = collection(db, "plants");
-  const userSelectionRef = collection(db, "users"); // ***** DEBUGGING NEEDED
 
   // Get current user id and return in to const
   const uid = GetUserUid();
@@ -48,13 +48,26 @@ const YearlyPlannerTable = () => {
     return uid;
   }
 
-  // Called when page renders // ***** DEBUGGING NEEDED
+  // Called when page renders, reads user's plant selection in to yearly planner
   useEffect(() => {
-    const fetchUserPlants = async () => {
-      const data = await getDocs(userSelectionRef);
-      setUserPlants(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    const getData = async () => {
+      const q = query(collection(db, "users"));
+      const snapshot = await getDocs(q);
+      const data = snapshot.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      data.map(async (elem) => {
+        const workQ = query(collection(db, `users/${elem.id}/planner`));
+        const plannerDetails = await getDocs(workQ);
+        const planner = plannerDetails.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }));
+        setUserPlants(planner);
+      });
     };
-    fetchUserPlants();
+    getData();
   }, []);
 
   // Output
@@ -84,7 +97,11 @@ const YearlyPlannerTable = () => {
             <TableRow>
               <TableCell className="plantName">
                 <div className="imageAndNameContainer">
-                  <img src={""} alt="" className="imageContainer" />
+                  <img
+                    src={plant.roundimage}
+                    alt=""
+                    className="imageContainer"
+                  />
                   {plant.name}
                 </div>
               </TableCell>

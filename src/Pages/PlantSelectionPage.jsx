@@ -2,6 +2,8 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+// Temp Plant Data File Import
+import plantData from "../Data/PlantInfo.json";
 // Firebase/Firestore Import
 import { auth, db } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
@@ -13,7 +15,7 @@ import {
   setDoc,
 } from "firebase/firestore";
 // MUI Library & Component Imports
-import { Button, Tab, Box } from "@mui/material";
+import { Button, Tab, Box, Hidden } from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 // Infile CSS & Component Imports
 import "./PlantSelection.css";
@@ -25,6 +27,8 @@ import Navbar from "../Components/Navbar";
 // Function for page /plantselection
 // Contains plants that users can select for their planner along with category filter tabs
 function PlantSelection() {
+  // Filter data set/state
+  const [data, setData] = useState(plantData);
   // Data set/state
   const [plants, setPlants] = useState([]);
   // Firestore database variable
@@ -33,21 +37,21 @@ function PlantSelection() {
   const [value, setValue] = useState("1");
 
   // Filter data function
-  /*const filterResult = (plantTypes) => {
+  const filterResult = (plantTypes) => {
     const result = plantData.filter((currentData) => {
       return currentData.type === plantTypes;
     });
     setData(result);
-  };*/
+  };
 
   // Called when page renders
-  useEffect(() => {
+  /*useEffect(() => {
     const fetchPlants = async () => {
       const data = await getDocs(plantCollectionRef);
       setPlants(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     fetchPlants();
-  }, []);
+  }, []);*/
 
   // Tab selection change handler function
   const handleChange = (event, newValue) => {
@@ -69,13 +73,15 @@ function PlantSelection() {
   }
 
   // Add selected plant to user's planner collection
-  let Plant;
-  const addToPlanner = async (plant) => {
+
+  const addToPlanner = async (plant, plantImage, plantRoundImage) => {
     try {
-      console.log(plant);
-      Plant = plant;
+      console.log(plant, plantImage, plantRoundImage);
+
       await setDoc(doc(db, "users", uid, "planner", plant), {
         name: plant,
+        image: plantImage,
+        roundimage: plantRoundImage,
       }).then(() => {
         onSnapshot(doc(db, "users", uid, "planner", plant), (doc) => {
           console.log("record added");
@@ -96,11 +102,11 @@ function PlantSelection() {
           <TabContext value={value}>
             <Box>
               <TabList onChange={handleChange}>
-                <Tab label="ALL" value="1" />
+                <Tab label="ALL" value="1" onClick={() => setData(plantData)} />
                 <Tab
                   label="VEGETABLE"
                   value="2"
-                  //onClick={() => filterResult("vegetable")}
+                  onClick={() => filterResult("vegetable")}
                 />
                 <Tab
                   label="FRUIT"
@@ -116,21 +122,30 @@ function PlantSelection() {
             </Box>
             <TabPanel value="1">
               <div className="plantContainer">
-                {plants.map((plant) => {
+                {data.map((values) => {
                   return (
-                    <div>
-                      <PlantCard
-                        plantName={plant.name}
-                        plantImage={plant.image}
-                        addToPlanner={addToPlanner}
-                      />
-                    </div>
+                    <PlantCard
+                      plantImage={values.image}
+                      plantName={values.id}
+                      addToPlanner={addToPlanner}
+                      plantRoundImage={values.roundimage}
+                    />
                   );
                 })}
               </div>
             </TabPanel>
             <TabPanel value="2">
-              <div className="plantContainer"></div>
+              <div className="plantContainer">
+                {data.map((values) => {
+                  return (
+                    <PlantCard
+                      plantImage={values.image}
+                      plantName={values.id}
+                      addToPlanner={addToPlanner}
+                    />
+                  );
+                })}
+              </div>
             </TabPanel>
             <TabPanel value="3">
               <div className="plantContainer"></div>
