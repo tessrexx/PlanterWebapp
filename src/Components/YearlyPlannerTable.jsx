@@ -82,7 +82,7 @@ const YearlyPlannerTable = () => {
 
   let mergeUserData = [];
 
-  // ** TESTING how to compare doc id's and display info
+  // ** TESTING how to compare doc id's and display info *** Debug needed
   const DataMash = async () => {
     console.log("maybe...");
     for (var i = 0; i < plantData.length; i++) {
