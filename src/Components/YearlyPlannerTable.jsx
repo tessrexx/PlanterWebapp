@@ -26,7 +26,6 @@ import {
 } from "@mui/material";
 // Infile CSS & Component Imports
 import "./YearlyPlannerTable.css";
-
 // Component for yearly planner view
 // Displays user's selected plants, ideal planting months, and estimated harvesting times
 const YearlyPlannerTable = () => {
@@ -35,12 +34,8 @@ const YearlyPlannerTable = () => {
   // Filter data set/state
   const [data, setData] = useState(plantData);
 
-  // Data set/state
-  const [mergedPlants, setMergedPlants] = useState([]);
-
   // Firestore database variable
   const plantCollectionRef = collection(db, "plants");
-
   // Get current user id and return in to const
   const uid = GetUserUid();
   function GetUserUid() {
@@ -54,7 +49,6 @@ const YearlyPlannerTable = () => {
     }, []);
     return uid;
   }
-
   // Called when page renders, reads user's plant selection in to yearly planner
   useEffect(() => {
     const getData = async () => {
@@ -81,24 +75,42 @@ const YearlyPlannerTable = () => {
   }, []);
 
   let mergeUserData = [];
+  // Data set/state
+  const [mergedPlants, setMergedPlants] = useState([]);
 
-  // ** TESTING how to compare doc id's and display info *** Debug needed
+  // ** TESTING how to compare doc id's and display info
   const DataMash = async () => {
     console.log("maybe...");
     for (var i = 0; i < plantData.length; i++) {
       for (var j = 0; j < userPlants.length; j++) {
         if (plantData[i].id == userPlants[j].name) {
           console.log("yusssssss");
-          console.log(plantData[i].id);
+          //console.log(plantData[i].id);
           //mergeUserData = plantData[i].id;
-          mergeUserData.push(plantData[i].id);
-
+          mergeUserData.push(
+            plantData[i].id,
+            plantData[i].roundimage,
+            plantData[i].jan,
+            plantData[i].feb,
+            plantData[i].mar,
+            plantData[i].apr,
+            plantData[i].may,
+            plantData[i].jun,
+            plantData[i].jul,
+            plantData[i].aug,
+            plantData[i].sep,
+            plantData[i].oct,
+            plantData[i].nov,
+            plantData[i].dec,
+            plantData[i].harvest
+          );
           console.log(mergeUserData);
         } else {
           console.log("nope");
         }
       }
     }
+    setMergedPlants(mergeUserData);
   };
 
   // Output
@@ -130,7 +142,7 @@ const YearlyPlannerTable = () => {
                 <TableCell className="plantName">
                   <div className="imageAndNameContainer">
                     <img src={""} alt="" className="imageContainer" />
-                    {plant.name}
+                    {plant.id}
                   </div>
                 </TableCell>
                 <TableCell className="monthlyPlant">
@@ -178,6 +190,5 @@ const YearlyPlannerTable = () => {
     </>
   );
 };
-
 // Export from module
 export default YearlyPlannerTable;
