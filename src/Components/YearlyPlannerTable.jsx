@@ -26,11 +26,10 @@ import {
 } from "@mui/material";
 // Infile CSS & Component Imports
 import "./YearlyPlannerTable.css";
+import { useMemo } from "react";
 // Component for yearly planner view
 // Displays user's selected plants, ideal planting months, and estimated harvesting times
 const YearlyPlannerTable = () => {
-  // Data set/state
-  const [userPlants, setUserPlants] = useState([]);
   // Filter data set/state
   const [data, setData] = useState(plantData);
 
@@ -49,7 +48,12 @@ const YearlyPlannerTable = () => {
     }, []);
     return uid;
   }
-  // Called when page renders, reads user's plant selection in to yearly planner
+
+  let [userPlants, setUserPlants] = useState([]); // array to store users plant selection from Firestore
+  let mergeUserData = []; // array to store any matched data from Firestore and JSON
+  let [mergedPlants, setMergedPlants] = useState([]); // set above [] into mergedPlants which is called in HTML
+
+  // Called when page renders, reads user's plant selection in to userPlants[] and calls DataMash() function
   useEffect(() => {
     const getData = async () => {
       const q = query(collection(db, "users"));
@@ -66,56 +70,53 @@ const YearlyPlannerTable = () => {
           id: doc.id,
         }));
         setUserPlants(planner);
-        //console.log(userPlants);
-        //console.log(plantData);
+        console.log(userPlants);
       });
     };
     getData();
+    console.log("getting data");
     DataMash();
   }, []);
 
-  let mergeUserData = [];
-  // Data set/state
-  const [mergedPlants, setMergedPlants] = useState([]);
-
-  // ** TESTING how to compare doc id's and display info
-  function DataMash(){
-    console.log("maybe...");
-    for (var i = 0; i < plantData.length; i++) {
-      for (var j = 0; j < userPlants.length; j++) {
-        if (plantData[i].id == userPlants[j].name) {
-          console.log("yusssssss");
-          //console.log(plantData[i].id);
-          //mergeUserData = plantData[i].id;
-          mergeUserData.push([
-            plantData[i].id,
-            plantData[i].roundimage,
-            plantData[i].jan,
-            plantData[i].feb,
-            plantData[i].mar,
-            plantData[i].apr,
-            plantData[i].may,
-            plantData[i].jun,
-            plantData[i].jul,
-            plantData[i].aug,
-            plantData[i].sep,
-            plantData[i].oct,
-            plantData[i].nov,
-            plantData[i].dec,
-            plantData[i].harvest
-          ]);
-          console.log(mergeUserData);
-        } else {
-          console.log("nope");
+  // ** TESTING how to compare firestore and JSON doc id's and display info
+  function DataMash() {
+    console.log("DataMash Run...");
+    if (userPlants[0] != null) {
+      console.log(" Run FOR LOOP...");
+      for (let i = 0; i < plantData.length; i++) {
+        for (let j = 0; j < userPlants.length; j++) {
+          if (plantData[i].id === userPlants[j].name) {
+            mergeUserData.push([
+              plantData[i].id,
+              plantData[i].roundimage,
+              plantData[i].jan,
+              plantData[i].feb,
+              plantData[i].mar,
+              plantData[i].apr,
+              plantData[i].may,
+              plantData[i].jun,
+              plantData[i].jul,
+              plantData[i].aug,
+              plantData[i].sep,
+              plantData[i].oct,
+              plantData[i].nov,
+              plantData[i].dec,
+              plantData[i].harvest,
+            ]);
+            //console.log(mergeUserData);
+          } else {
+            console.log("IF statement complete");
+          }
         }
       }
+      const temp = [...mergeUserData];
+      setMergedPlants(temp);
+      console.log(temp);
+      //console.log(mergedPlants)
+    } else {
+      console.log("userPlants[0] == null"); // no data currently stored in userPlants[] array
     }
-    const temp = [...mergeUserData];
-    setMergedPlants(temp);
-    console.log(temp)
-    console.log("fuck")
-    //console.log(mergedPlants)
-  };
+  }
 
   // Output
   return (
