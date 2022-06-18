@@ -15,7 +15,7 @@ import {
   setDoc,
 } from "firebase/firestore";
 // MUI Library & Component Imports
-import { Button, Tab, Box, Hidden } from "@mui/material";
+import { Button, Tab, Box, Hidden, TextField } from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 // Infile CSS & Component Imports
 import "./PlantSelection.css";
@@ -31,32 +31,11 @@ function PlantSelection() {
   const [data, setData] = useState(plantData);
   // Data set/state
   const [plants, setPlants] = useState([]);
-  // Firestore database variable
-  const plantCollectionRef = collection(db, "plants");
+
   // Tab selection set/state
   const [value, setValue] = useState("1");
-
-  // Filter data function
-  const filterResult = (plantTypes) => {
-    const result = plantData.filter((currentData) => {
-      return currentData.type === plantTypes;
-    });
-    setData(result);
-  };
-
-  // Called when page renders
-  /*useEffect(() => {
-    const fetchPlants = async () => {
-      const data = await getDocs(plantCollectionRef);
-      setPlants(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-    fetchPlants();
-  }, []);*/
-
-  // Tab selection change handler function
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  // State Variable
+  const [searchTerm, setSearchTerm] = useState("");
 
   // Get current user id and return in to const
   const uid = GetUserUid();
@@ -143,76 +122,74 @@ function PlantSelection() {
         <div className="layout-main">
           <TabContext value={value}>
             <Box>
-              <TabList onChange={handleChange}>
-                <Tab label="ALL" value="1" onClick={() => setData(plantData)} />
+              <TabList>
                 <Tab
-                  label="VEGETABLE"
-                  value="2"
-                  onClick={() => filterResult("vegetable")}
+                  label="ALL PLANTS"
+                  value="1"
+                  onClick={() => setData(plantData)}
                 />
-                <Tab
-                  label="FRUIT"
-                  value="3"
-                  //onClick={() => filterResult("fruit")}
-                />
-                <Tab
-                  label="HERB"
-                  value="4"
-                  //onClick={() => filterResult("herb")}
-                />
+                <div className="layout-right">
+                  <TextField
+                    // SEARCH BAR
+                    className="searchBar"
+                    id="searchInput"
+                    type="text"
+                    placeholder="Search..."
+                    onChange={(event) => {
+                      setSearchTerm(event.target.value);
+                    }}
+                  />
+                </div>
               </TabList>
             </Box>
             <TabPanel value="1">
               <div className="plantContainer">
-                {data.map((values) => {
-                  return (
-                    <PlantCard
-                      plantImage={values.image}
-                      plantName={values.id}
-                      plantRoundImage={values.roundimage}
-                      plantType={values.type}
-                      plantHarvest={values.harvest}
-                      plantJanImage={values.jan}
-                      plantFebImage={values.feb}
-                      plantMarImage={values.mar}
-                      plantAprImage={values.apr}
-                      plantMayImage={values.may}
-                      plantJunImage={values.jun}
-                      plantJulImage={values.jul}
-                      plantAugImage={values.aug}
-                      plantSepImage={values.sep}
-                      plantOctImage={values.oct}
-                      plantNovImage={values.nov}
-                      plantDecImage={values.dec}
-                      plantRecc={values.plantingRecommendation}
-                      plantInfo1={values.generalInfo1}
-                      plantInfo2={values.generalInfo2}
-                      plantInfo3={values.generalInfo3}
-                      plantInfo4={values.generalInfo4}
-                      addToPlanner={addToPlanner}
-                    />
-                  );
-                })}
+                {
+                  // Searchbar method
+                  plantData
+                    .filter((val) => {
+                      // Show all plants if search field empty
+                      if (searchTerm === "") {
+                        return val;
+                      }
+                      // Else-if will return any matching data searched
+                      else if (
+                        val.id.toLowerCase().includes(searchTerm.toLowerCase())
+                      ) {
+                        return val;
+                      }
+                    })
+                    .map((data) => {
+                      return (
+                        <PlantCard
+                          plantImage={data.image}
+                          plantName={data.id}
+                          plantRoundImage={data.roundimage}
+                          plantType={data.type}
+                          plantHarvest={data.harvest}
+                          plantJanImage={data.jan}
+                          plantFebImage={data.feb}
+                          plantMarImage={data.mar}
+                          plantAprImage={data.apr}
+                          plantMayImage={data.may}
+                          plantJunImage={data.jun}
+                          plantJulImage={data.jul}
+                          plantAugImage={data.aug}
+                          plantSepImage={data.sep}
+                          plantOctImage={data.oct}
+                          plantNovImage={data.nov}
+                          plantDecImage={data.dec}
+                          plantRecc={data.plantingRecommendation}
+                          plantInfo1={data.generalInfo1}
+                          plantInfo2={data.generalInfo2}
+                          plantInfo3={data.generalInfo3}
+                          plantInfo4={data.generalInfo4}
+                          addToPlanner={addToPlanner}
+                        />
+                      );
+                    })
+                }
               </div>
-            </TabPanel>
-            <TabPanel value="2">
-              <div className="plantContainer">
-                {data.map((values) => {
-                  return (
-                    <PlantCard
-                      plantImage={values.image}
-                      plantName={values.id}
-                      addToPlanner={addToPlanner}
-                    />
-                  );
-                })}
-              </div>
-            </TabPanel>
-            <TabPanel value="3">
-              <div className="plantContainer"></div>
-            </TabPanel>
-            <TabPanel value="4">
-              <div className="plantContainer"></div>
             </TabPanel>
           </TabContext>
           <div className="layout-right">

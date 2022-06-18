@@ -14,3 +14,16 @@
   justify-content: right;
   padding-right: 20px;
 }
+
+.searchBar {
+  width: 500px;
+  padding-right: 40px !important;
+}
+
+@media screen and (max-width: 750px) {
+  .searchBar {
+    width: 250px;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+}
