@@ -74,14 +74,56 @@ function PlantSelection() {
 
   // Add selected plant to user's planner collection
 
-  const addToPlanner = async (plant, plantImage, plantRoundImage) => {
+  const addToPlanner = async (
+    plant,
+    plantImage,
+    plantRoundImage,
+    plantType,
+    plantHarvest,
+    plantJanImage,
+    plantFebImage,
+    plantMarImage,
+    plantAprImage,
+    plantMayImage,
+    plantJunImage,
+    plantJulImage,
+    plantAugImage,
+    plantSepImage,
+    plantOctImage,
+    plantNovImage,
+    plantDecImage,
+    plantRecc,
+    plantInfo1,
+    plantInfo2,
+    plantInfo3,
+    plantInfo4
+  ) => {
     try {
-      console.log(plant, plantImage, plantRoundImage);
+      console.log(plant);
 
       await setDoc(doc(db, "users", uid, "planner", plant), {
         name: plant,
         image: plantImage,
         roundimage: plantRoundImage,
+        type: plantType,
+        harvest: plantHarvest,
+        jan: plantJanImage,
+        feb: plantFebImage,
+        mar: plantMarImage,
+        apr: plantAprImage,
+        may: plantMayImage,
+        jun: plantJunImage,
+        jul: plantJulImage,
+        aug: plantAugImage,
+        sep: plantSepImage,
+        oct: plantOctImage,
+        nov: plantNovImage,
+        dec: plantDecImage,
+        plantingRecc: plantRecc,
+        plantInfo1: plantInfo1,
+        plantInfo2: plantInfo2,
+        plantInfo3: plantInfo3,
+        plantInfo4: plantInfo4,
       }).then(() => {
         onSnapshot(doc(db, "users", uid, "planner", plant), (doc) => {
           console.log("record added");
@@ -127,8 +169,27 @@ function PlantSelection() {
                     <PlantCard
                       plantImage={values.image}
                       plantName={values.id}
-                      addToPlanner={addToPlanner}
                       plantRoundImage={values.roundimage}
+                      plantType={values.type}
+                      plantHarvest={values.harvest}
+                      plantJanImage={values.jan}
+                      plantFebImage={values.feb}
+                      plantMarImage={values.mar}
+                      plantAprImage={values.apr}
+                      plantMayImage={values.may}
+                      plantJunImage={values.jun}
+                      plantJulImage={values.jul}
+                      plantAugImage={values.aug}
+                      plantSepImage={values.sep}
+                      plantOctImage={values.oct}
+                      plantNovImage={values.nov}
+                      plantDecImage={values.dec}
+                      plantRecc={values.plantingRecommendation}
+                      plantInfo1={values.generalInfo1}
+                      plantInfo2={values.generalInfo2}
+                      plantInfo3={values.generalInfo3}
+                      plantInfo4={values.generalInfo4}
+                      addToPlanner={addToPlanner}
                     />
                   );
                 })}
