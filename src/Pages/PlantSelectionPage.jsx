@@ -13,6 +13,7 @@ import {
   getDocs,
   onSnapshot,
   setDoc,
+  deleteDoc,
 } from "firebase/firestore";
 // MUI Library & Component Imports
 import { Button, Tab, Box, Hidden, TextField } from "@mui/material";
@@ -69,6 +70,17 @@ function PlantSelection() {
     }
   };
 
+  // Remove selected plant from user's planner collection
+  const removeFromPlanner = (plant) => {
+    try {
+      deleteDoc(doc(db, `users/${uid}/planner/${plant}`));
+      console.log("plant deleted");
+    } catch (error) {
+      // Waiting to catch errors
+      console.error(error);
+    }
+  };
+
   // Output
   return (
     <div className="layout-container">
@@ -120,6 +132,7 @@ function PlantSelection() {
                           plantImage={data.image}
                           plantName={data.id}
                           addToPlanner={addToPlanner}
+                          removeFromPlanner={removeFromPlanner}
                         />
                       );
                     })

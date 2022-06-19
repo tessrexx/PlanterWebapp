@@ -57,6 +57,12 @@ table {
   background-color: #5e875d !important;
 }
 
+.removeButton {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
 /* Responsive css */
 @media screen and (max-width: 1300px) {
   /* Plant name and image container css */

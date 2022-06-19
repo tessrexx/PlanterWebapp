@@ -6,15 +6,7 @@ import plantData from "../Data/PlantInfo.json";
 // Firebase/Firestore Import
 import { auth, db } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
-import {
-  collection,
-  doc,
-  getDocs,
-  onSnapshot,
-  setDoc,
-  query,
-  where,
-} from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 // MUI Library & Component Imports
 import {
   TableContainer,
@@ -31,6 +23,8 @@ import "./YearlyPlannerTable.css";
 // Component for yearly planner view
 // Displays user's selected plants, ideal planting months, and estimated harvesting times
 const YearlyPlannerTable = () => {
+  // Filter data set/state
+  //const [data, setData] = useState(plantData);
   let [userPlants, setUserPlants] = useState([]); // array to store users plant selection from Firestore
   let mergeUserData = []; // array to store any matched data from Firestore and JSON
   let [mergedPlants, setMergedPlants] = useState([]); // set above [] into mergedPlants which is called in HTML
@@ -50,8 +44,7 @@ const YearlyPlannerTable = () => {
     return uid;
   }
 
-  // Called when page renders, reads user's plant selection in to userPlants[] and calls CombineData() function
-
+  // Called when page renders, reads user's plant selection in to userPlants[]
   useEffect(() => {
     const getData = async () => {
       console.log("get data running");
@@ -61,7 +54,7 @@ const YearlyPlannerTable = () => {
         ...doc.data(),
         id: doc.id,
       }));
-
+      // getting plant data from matching user
       for (let i = 0; i < data.length; i++) {
         console.log("for loop starting");
         if (data[i].id === uid) {
@@ -84,9 +77,10 @@ const YearlyPlannerTable = () => {
     getData();
   }, [uid]);
 
+  // Called when page renders, calls CombineData() when userPlants[] != null
   useEffect(() => CombineData(), [userPlants]);
 
-  // ** TESTING how to compare firestore and JSON doc id's and display info
+  // Function to compare firestore and JSON doc id's and store needed info
   function CombineData() {
     console.log("CombineData Run...");
     if (userPlants[0] != null) {
