@@ -53,56 +53,12 @@ function PlantSelection() {
 
   // Add selected plant to user's planner collection
 
-  const addToPlanner = async (
-    plant,
-    plantImage,
-    plantRoundImage,
-    plantType,
-    plantHarvest,
-    plantJanImage,
-    plantFebImage,
-    plantMarImage,
-    plantAprImage,
-    plantMayImage,
-    plantJunImage,
-    plantJulImage,
-    plantAugImage,
-    plantSepImage,
-    plantOctImage,
-    plantNovImage,
-    plantDecImage,
-    plantRecc,
-    plantInfo1,
-    plantInfo2,
-    plantInfo3,
-    plantInfo4
-  ) => {
+  const addToPlanner = async (plant) => {
     try {
       console.log(plant);
 
       await setDoc(doc(db, "users", uid, "planner", plant), {
         name: plant,
-        image: plantImage,
-        roundimage: plantRoundImage,
-        type: plantType,
-        harvest: plantHarvest,
-        jan: plantJanImage,
-        feb: plantFebImage,
-        mar: plantMarImage,
-        apr: plantAprImage,
-        may: plantMayImage,
-        jun: plantJunImage,
-        jul: plantJulImage,
-        aug: plantAugImage,
-        sep: plantSepImage,
-        oct: plantOctImage,
-        nov: plantNovImage,
-        dec: plantDecImage,
-        plantingRecc: plantRecc,
-        plantInfo1: plantInfo1,
-        plantInfo2: plantInfo2,
-        plantInfo3: plantInfo3,
-        plantInfo4: plantInfo4,
       }).then(() => {
         onSnapshot(doc(db, "users", uid, "planner", plant), (doc) => {
           console.log("record added");
@@ -164,26 +120,6 @@ function PlantSelection() {
                         <PlantCard
                           plantImage={data.image}
                           plantName={data.id}
-                          plantRoundImage={data.roundimage}
-                          plantType={data.type}
-                          plantHarvest={data.harvest}
-                          plantJanImage={data.jan}
-                          plantFebImage={data.feb}
-                          plantMarImage={data.mar}
-                          plantAprImage={data.apr}
-                          plantMayImage={data.may}
-                          plantJunImage={data.jun}
-                          plantJulImage={data.jul}
-                          plantAugImage={data.aug}
-                          plantSepImage={data.sep}
-                          plantOctImage={data.oct}
-                          plantNovImage={data.nov}
-                          plantDecImage={data.dec}
-                          plantRecc={data.plantingRecommendation}
-                          plantInfo1={data.generalInfo1}
-                          plantInfo2={data.generalInfo2}
-                          plantInfo3={data.generalInfo3}
-                          plantInfo4={data.generalInfo4}
                           addToPlanner={addToPlanner}
                         />
                       );
