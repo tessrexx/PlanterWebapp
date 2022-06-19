@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// Temp Plant Data File Import
+// Plant Data File Import
 import plantData from "../Data/PlantInfo.json";
 // Firebase/Firestore Import
 import { auth, db } from "../firebase";
@@ -52,7 +52,6 @@ function PlantSelection() {
   }
 
   // Add selected plant to user's planner collection
-
   const addToPlanner = async (plant) => {
     try {
       console.log(plant);

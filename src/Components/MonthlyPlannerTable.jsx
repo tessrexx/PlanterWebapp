@@ -1,8 +1,20 @@
 // API Imports
 import React from "react";
-import { useState } from "react";
-// Temp Plant Data File Import
+import { useState, useEffect } from "react";
+// Plant Data File Import
 import plantData from "../Data/PlantInfo.json";
+// Firebase/Firestore Import
+import { auth, db } from "../firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import {
+  collection,
+  doc,
+  getDocs,
+  onSnapshot,
+  setDoc,
+  query,
+  where,
+} from "firebase/firestore";
 // MUI Library & Component Imports
 import {
   TableContainer,
@@ -26,6 +38,93 @@ import "./YearlyPlannerTable.css";
 const MonthlyPlannerTable = () => {
   // Filter data set/state
   const [data, setData] = useState(plantData);
+  let [userPlants, setUserPlants] = useState([]); // array to store users plant selection from Firestore
+  let mergeUserData = []; // array to store any matched data from Firestore and JSON
+  let [mergedPlants, setMergedPlants] = useState([]); // set above [] into mergedPlants which is called in HTML
+  let [userData, setUserData] = useState([]); // store current user's firebase id
+
+  // Get current user id and return in to const
+  const uid = GetUserUid();
+  function GetUserUid() {
+    const [uid, setUid] = useState("");
+    useEffect(() => {
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          setUid(user.uid);
+        }
+      });
+    }, []);
+    return uid;
+  }
+
+  // Called when page renders, reads user's plant selection in to userPlants[]
+  useEffect(() => {
+    const getData = async () => {
+      console.log("get data running");
+      const q = query(collection(db, "users"), where("userID", "==", `${uid}`));
+      const snapshot = await getDocs(q);
+      const data = snapshot.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      // getting plant data from matching user
+      for (let i = 0; i < data.length; i++) {
+        console.log("for loop starting");
+        if (data[i].id === uid) {
+          setUserData(uid);
+          console.log("userData test", userData);
+          data.map(async (elem) => {
+            console.log("get data map running");
+            const plantQ = query(collection(db, `users/${elem.id}/planner`));
+            const plannerDetails = await getDocs(plantQ);
+            const planner = plannerDetails.docs.map((doc) => ({
+              ...doc.data(),
+              id: doc.id,
+            }));
+            setUserPlants(planner);
+            console.log(userPlants);
+          });
+        }
+      }
+    };
+    getData();
+  }, [uid]);
+
+  // Function to compare firestore and JSON doc id's and store needed info
+  function CombineData() {
+    console.log("CombineData Run...");
+    if (userPlants[0] != null) {
+      console.log(" Run FOR LOOP...");
+      for (let i = 0; i < plantData.length; i++) {
+        for (let j = 0; j < userPlants.length; j++) {
+          if (plantData[i].id === userPlants[j].name) {
+            mergeUserData.push([
+              plantData[i].id,
+              plantData[i].roundimage,
+              plantData[i].plantingRecommendation,
+              plantData[i].generalInfo1,
+              plantData[i].generalInfo2,
+              plantData[i].generalInfo3,
+              plantData[i].generalInfo4,
+              plantData[i].harvest,
+            ]);
+            //console.log(mergeUserData);
+          } else {
+            console.log("IF statement complete");
+          }
+        }
+      }
+      const temp = [...mergeUserData];
+      setMergedPlants(temp);
+      console.log(temp);
+      //console.log(mergedPlants)
+    } else {
+      console.log("userPlants[0] == null"); // no data currently stored in userPlants[] array
+    }
+  }
+
+  // Called when page renders, calls CombineData() when userPlants[] != null
+  useEffect(() => CombineData(), [userPlants]);
 
   // Output
   return (
@@ -42,17 +141,12 @@ const MonthlyPlannerTable = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {data.map((row) => (
+            {mergedPlants.map((column) => (
               <TableRow>
                 <TableCell className="plantName">
                   <div className="imageAndNameContainer">
-                    <img
-                      src={row.roundimage}
-                      alt=""
-                      className="imageContainer"
-                    />
-
-                    {row.id}
+                    <img src={column[1]} alt="" className="imageContainer" />
+                    {column[0]}
                   </div>
                 </TableCell>
                 <TableCell className="plantTips">
@@ -61,25 +155,24 @@ const MonthlyPlannerTable = () => {
                       className="plantTips"
                       expandIcon={<ExpandMoreIcon />}
                     >
-                      {row.plantingRecommendation}
+                      {column[2]}
                     </AccordionSummary>
                     <AccordionDetails className="plantTips">
                       <Divider>
                         <h3 className="helpfulTitle">HELPFUL TIPS</h3>
                       </Divider>
-                      {row.generalInfo1}
+                      {column[3]}
                       <Divider className="tipDiv" />
-                      {row.generalInfo2}
+                      {column[4]}
                       <Divider variant="middle" className="tipDiv" />
-                      {row.generalInfo3}
+                      {column[5]}
                       <Divider variant="middle" className="tipDiv" />
-                      {row.generalInfo4}
+                      {column[6]}
                       <Divider variant="middle" className="tipDiv" />
-                      {row.generalInfo5}
                     </AccordionDetails>
                   </Accordion>
                 </TableCell>
-                <TableCell className="harvestTime">{row.harvest}</TableCell>
+                <TableCell className="harvestTime">{column[7]}</TableCell>
               </TableRow>
             ))}
           </TableBody>

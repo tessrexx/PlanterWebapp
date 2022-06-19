@@ -31,11 +31,11 @@ import "./YearlyPlannerTable.css";
 // Component for yearly planner view
 // Displays user's selected plants, ideal planting months, and estimated harvesting times
 const YearlyPlannerTable = () => {
-  // Filter data set/state
-  const [data, setData] = useState(plantData);
+  let [userPlants, setUserPlants] = useState([]); // array to store users plant selection from Firestore
+  let mergeUserData = []; // array to store any matched data from Firestore and JSON
+  let [mergedPlants, setMergedPlants] = useState([]); // set above [] into mergedPlants which is called in HTML
+  let [userData, setUserData] = useState([]); // store current user's firebase id
 
-  // Firestore database variable
-  const plantCollectionRef = collection(db, "plants");
   // Get current user id and return in to const
   const uid = GetUserUid();
   function GetUserUid() {
@@ -50,12 +50,7 @@ const YearlyPlannerTable = () => {
     return uid;
   }
 
-  let [userPlants, setUserPlants] = useState([]); // array to store users plant selection from Firestore
-  let mergeUserData = []; // array to store any matched data from Firestore and JSON
-  let [mergedPlants, setMergedPlants] = useState([]); // set above [] into mergedPlants which is called in HTML
-  let [userData, setUserData] = useState([]); // **NEW
-
-  // Called when page renders, reads user's plant selection in to userPlants[] and calls DataMash() function
+  // Called when page renders, reads user's plant selection in to userPlants[] and calls CombineData() function
 
   useEffect(() => {
     const getData = async () => {
@@ -89,11 +84,11 @@ const YearlyPlannerTable = () => {
     getData();
   }, [uid]);
 
-  useEffect(() => DataMash(), [userPlants]);
+  useEffect(() => CombineData(), [userPlants]);
 
   // ** TESTING how to compare firestore and JSON doc id's and display info
-  function DataMash() {
-    console.log("DataMash Run...");
+  function CombineData() {
+    console.log("CombineData Run...");
     if (userPlants[0] != null) {
       console.log(" Run FOR LOOP...");
       for (let i = 0; i < plantData.length; i++) {
