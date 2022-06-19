@@ -35,7 +35,7 @@ const PlantCard = ({
         <IconButton
           className="removeButton"
           aria-label="remove"
-          onClick={removeFromPlanner}
+          onClick={handleRemoveFromPlanner}
         >
           <RemoveCircleIcon color="secondary" />
         </IconButton>

@@ -14,6 +14,8 @@ import {
   onSnapshot,
   setDoc,
   deleteDoc,
+  updateDoc,
+  deleteField,
 } from "firebase/firestore";
 // MUI Library & Component Imports
 import { Button, Tab, Box, Hidden, TextField } from "@mui/material";
@@ -24,6 +26,9 @@ import "../Components/PageLayout.css";
 import PlantCard from "../Components/PlantCard";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
+// Toastify Alerts
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // Function for page /plantselection
 // Contains plants that users can select for their planner along with category filter tabs
@@ -55,13 +60,19 @@ function PlantSelection() {
   // Add selected plant to user's planner collection
   const addToPlanner = async (plant) => {
     try {
-      console.log(plant);
-
       await setDoc(doc(db, "users", uid, "planner", plant), {
         name: plant,
       }).then(() => {
         onSnapshot(doc(db, "users", uid, "planner", plant), (doc) => {
-          console.log("record added");
+          toast.success("Added to planner!", {
+            position: "top-right",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+          });
         });
       });
       // Waiting to catch errors
@@ -69,13 +80,15 @@ function PlantSelection() {
       console.error(error);
     }
   };
-
-  // Remove selected plant from user's planner collection
-  const removeFromPlanner = (plant) => {
+ 
+  // Remove selected plant from user's planner collection **IN PROGRESS
+  function removeFromPlanner(plantName) {
     try {
-      deleteDoc(doc(db, `users/${uid}/planner/${plant}`));
-      console.log("plant deleted");
-    } catch (error) {
+       deleteDoc(doc(db, "users", uid, "planner", plantName), {
+      })
+      console.log("record removed")
+    }
+      catch (error) {
       // Waiting to catch errors
       console.error(error);
     }
@@ -85,6 +98,17 @@ function PlantSelection() {
   return (
     <div className="layout-container">
       <Navbar />
+      <ToastContainer
+        position="top-right"
+        theme="colored"
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        pauseOnHover={false}
+      />
       <div>
         <div className="layout-main">
           <TabContext value={value}>
