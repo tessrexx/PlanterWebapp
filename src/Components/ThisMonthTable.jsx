@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 // Plant Data File Import
 import plantData from "../Data/PlantInfo.json";
 // Firebase/Firestore Import
-import { auth, db } from "../firebase";
+import { auth, db } from "../Firebase/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import {
   collection,
@@ -35,7 +35,7 @@ import "./YearlyPlannerTable.css";
 
 // Component for monthly planner view
 // Displays user's selected plants, ideal planting months, and estimated harvesting times
-const MonthlyPlannerTable = () => {
+const ThisMonthTable = () => {
   // Filter data set/state
   const [data, setData] = useState(plantData);
   let [userPlants, setUserPlants] = useState([]); // array to store users plant selection from Firestore
@@ -90,6 +90,18 @@ const MonthlyPlannerTable = () => {
     getData();
   }, [uid]);
 
+  const thisMonth = GetCurrentMonth();
+  function GetCurrentMonth(){
+    const [thisMonth, setThisMonth] = useState("");
+    useEffect(() => {
+      const month = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+      const d = new Date();
+      setThisMonth(month[d.getMonth()]);  
+      console.log(thisMonth) // reading jun
+      },[]);
+    return thisMonth;
+  }
+
   // Function to compare firestore and JSON doc id's and store needed info
   function CombineData() {
     console.log("CombineData Run...");
@@ -97,7 +109,7 @@ const MonthlyPlannerTable = () => {
       console.log(" Run FOR LOOP...");
       for (let i = 0; i < plantData.length; i++) {
         for (let j = 0; j < userPlants.length; j++) {
-          if (plantData[i].id === userPlants[j].name) {
+          if (plantData[i].id === userPlants[j].name && plantData[i].plantingMonth === thisMonth) {
             mergeUserData.push([
               plantData[i].id,
               plantData[i].roundimage,
@@ -106,7 +118,7 @@ const MonthlyPlannerTable = () => {
               plantData[i].generalInfo2,
               plantData[i].generalInfo3,
               plantData[i].generalInfo4,
-              plantData[i].harvest,
+              plantData[i].harvest
             ]);
             //console.log(mergeUserData);
           } else {
@@ -183,4 +195,4 @@ const MonthlyPlannerTable = () => {
 };
 
 // Export from module
-export default MonthlyPlannerTable;
+export default ThisMonthTable;

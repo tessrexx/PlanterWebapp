@@ -9,7 +9,7 @@ import SignInPage from "./Pages/SignInPage";
 import PlantSelection from "./Pages/PlantSelectionPage";
 import Planner from "./Pages/PlannerViewPage";
 import UserDetails from "./Pages/UserDetails";
-import { AuthContextProvider } from "./Contexts/AuthContext";
+import { AuthContextProvider } from "./Firebase/AuthContext";
 
 // App function
 // Contains routing for each page used in app

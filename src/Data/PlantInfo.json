@@ -112,7 +112,9 @@
     "generalInfo1": "Plant a combination of blueberry varieties of the same type to ensure good cross pollination",
     "generalInfo2": "Blueberries can be planted year-round. The better the soil, the better your berries will grow. Blueberries prefer a free draining, more acidic soil with a high proportion of organic matter",
     "generalInfo3": "They are best planted in a sheltered, well drained position in full sun",
-    "generalInfo4": "Feed blueberries in spring and summer with citrus food, and prune dead or diseased wood and branches in winter"
+    "generalInfo4": "Feed blueberries in spring and summer with citrus food, and prune dead or diseased wood and branches in winter",
+    "plantingMonth": "jun",
+    "plantingMonths": ["may", "jun", "jul"]
   },
   {
     "id": "BokChoi",
@@ -613,7 +615,9 @@
     "generalInfo1": "Sow radish seeds in full sun, in rows approximately 30cm apart",
     "generalInfo2": "They mature in four to six weeks and can be grown year-round, so with frequent sowings they will provide a constant supply",
     "generalInfo3": "Keep the soil moist throughout the growing season. Radish is a reasonably tolerant crop that will cope with drier periods once established, but it doesn't like wet or shady soils",
-    "generalInfo4": "Easy to harvest, radish can be pulled once they are bigger than a marble. Harvest within a month or so. If left in the ground too long they can become too tough"
+    "generalInfo4": "Easy to harvest, radish can be pulled once they are bigger than a marble. Harvest within a month or so. If left in the ground too long they can become too tough",
+    "plantingMonth": "jun",
+    "plantingMonth2": "jul"
   },
   {
     "id": "Raspberry",

@@ -1,12 +1,20 @@
 // API Imports
 import React from "react";
 import { useState, useEffect } from "react";
-// Temp Plant Data File Import
+// Plant Data File Import
 import plantData from "../Data/PlantInfo.json";
 // Firebase/Firestore Import
 import { auth, db } from "../Firebase/firebase";
 import { onAuthStateChanged } from "firebase/auth";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDocs,
+  onSnapshot,
+  setDoc,
+  query,
+  where,
+} from "firebase/firestore";
 // MUI Library & Component Imports
 import {
   TableContainer,
@@ -16,15 +24,20 @@ import {
   TableCell,
   Paper,
   TableRow,
+  Accordion,
+  Divider,
 } from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
 // Infile CSS & Component Imports
 import "./YearlyPlannerTable.css";
 
-// Component for yearly planner view
+// Component for monthly planner view
 // Displays user's selected plants, ideal planting months, and estimated harvesting times
-const YearlyPlannerTable = () => {
+const NextMonthTable = () => {
   // Filter data set/state
-  //const [data, setData] = useState(plantData);
+  const [data, setData] = useState(plantData);
   let [userPlants, setUserPlants] = useState([]); // array to store users plant selection from Firestore
   let mergeUserData = []; // array to store any matched data from Firestore and JSON
   let [mergedPlants, setMergedPlants] = useState([]); // set above [] into mergedPlants which is called in HTML
@@ -77,8 +90,17 @@ const YearlyPlannerTable = () => {
     getData();
   }, [uid]);
 
-  // Called when page renders, calls CombineData() when userPlants[] != null
-  useEffect(() => CombineData(), [userPlants]);
+  const nextMonth = GetNextMonth();
+  function GetNextMonth(){
+    const [nextMonth, setNextMonth] = useState("");
+    useEffect(() => {
+      const month = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+      const d = new Date();
+      setNextMonth(month[d.getMonth()+1]);  
+      console.log(nextMonth) // reading jun
+      },[]);
+    return nextMonth;
+  }
 
   // Function to compare firestore and JSON doc id's and store needed info
   function CombineData() {
@@ -87,23 +109,16 @@ const YearlyPlannerTable = () => {
       console.log(" Run FOR LOOP...");
       for (let i = 0; i < plantData.length; i++) {
         for (let j = 0; j < userPlants.length; j++) {
-          if (plantData[i].id === userPlants[j].name) {
+          if (plantData[i].id === userPlants[j].name && plantData[i].plantingMonth2 === nextMonth) {
             mergeUserData.push([
               plantData[i].id,
               plantData[i].roundimage,
-              plantData[i].jan,
-              plantData[i].feb,
-              plantData[i].mar,
-              plantData[i].apr,
-              plantData[i].may,
-              plantData[i].jun,
-              plantData[i].jul,
-              plantData[i].aug,
-              plantData[i].sep,
-              plantData[i].oct,
-              plantData[i].nov,
-              plantData[i].dec,
-              plantData[i].harvest,
+              plantData[i].plantingRecommendation,
+              plantData[i].generalInfo1,
+              plantData[i].generalInfo2,
+              plantData[i].generalInfo3,
+              plantData[i].generalInfo4,
+              plantData[i].harvest
             ]);
             //console.log(mergeUserData);
           } else {
@@ -120,6 +135,9 @@ const YearlyPlannerTable = () => {
     }
   }
 
+  // Called when page renders, calls CombineData() when userPlants[] != null
+  useEffect(() => CombineData(), [userPlants]);
+
   // Output
   return (
     <>
@@ -128,67 +146,45 @@ const YearlyPlannerTable = () => {
           <TableHead>
             <TableRow>
               <TableCell className="headerLabels">PLANTS</TableCell>
-              <TableCell className="centerLabels">JAN</TableCell>
-              <TableCell className="centerLabels">FEB</TableCell>
-              <TableCell className="centerLabels">MAR</TableCell>
-              <TableCell className="centerLabels">APR</TableCell>
-              <TableCell className="centerLabels">MAY</TableCell>
-              <TableCell className="centerLabels">JUN</TableCell>
-              <TableCell className="centerLabels">JUL</TableCell>
-              <TableCell className="centerLabels">AUG</TableCell>
-              <TableCell className="centerLabels">SEP</TableCell>
-              <TableCell className="centerLabels">OCT</TableCell>
-              <TableCell className="centerLabels">NOV</TableCell>
-              <TableCell className="centerLabels">DEC</TableCell>
+              <TableCell className="centerLabels">
+                PLANTING RECOMMENDATION
+              </TableCell>
               <TableCell className="headerLabels">HARVEST</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {mergedPlants.map((plant) => (
+            {mergedPlants.map((column) => (
               <TableRow>
                 <TableCell className="plantName">
                   <div className="imageAndNameContainer">
-                    <img src={plant[1]} alt="" className="imageContainer" />
-                    {plant[0]}
+                    <img src={column[1]} alt="" className="imageContainer" />
+                    {column[0]}
                   </div>
                 </TableCell>
-                <TableCell className="monthlyPlant">
-                  <img src={plant[2]} alt="" />
+                <TableCell className="plantTips">
+                  <Accordion>
+                    <AccordionSummary
+                      className="plantTips"
+                      expandIcon={<ExpandMoreIcon />}
+                    >
+                      {column[2]}
+                    </AccordionSummary>
+                    <AccordionDetails className="plantTips">
+                      <Divider>
+                        <h3 className="helpfulTitle">HELPFUL TIPS</h3>
+                      </Divider>
+                      {column[3]}
+                      <Divider className="tipDiv" />
+                      {column[4]}
+                      <Divider variant="middle" className="tipDiv" />
+                      {column[5]}
+                      <Divider variant="middle" className="tipDiv" />
+                      {column[6]}
+                      <Divider variant="middle" className="tipDiv" />
+                    </AccordionDetails>
+                  </Accordion>
                 </TableCell>
-                <TableCell className="monthlyPlant">
-                  <img src={plant[3]} alt="" />
-                </TableCell>
-                <TableCell className="monthlyPlant">
-                  <img src={plant[4]} alt="" />
-                </TableCell>
-                <TableCell className="monthlyPlant">
-                  <img src={plant[5]} alt="" />
-                </TableCell>
-                <TableCell className="monthlyPlant">
-                  <img src={plant[6]} alt="" />
-                </TableCell>
-                <TableCell className="monthlyPlant">
-                  <img src={plant[7]} alt="" />
-                </TableCell>
-                <TableCell className="monthlyPlant">
-                  <img src={plant[8]} alt="" />
-                </TableCell>
-                <TableCell className="monthlyPlant">
-                  <img src={plant[9]} alt="" />
-                </TableCell>
-                <TableCell className="monthlyPlant">
-                  <img src={plant[10]} alt="" />
-                </TableCell>
-                <TableCell className="monthlyPlant">
-                  <img src={plant[11]} alt="" />
-                </TableCell>
-                <TableCell className="monthlyPlant">
-                  <img src={plant[12]} alt="" />
-                </TableCell>
-                <TableCell className="monthlyPlant">
-                  <img src={plant[13]} alt="" />
-                </TableCell>
-                <TableCell className="harvestTime">{plant[14]}</TableCell>
+                <TableCell className="harvestTime">{column[7]}</TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -197,5 +193,6 @@ const YearlyPlannerTable = () => {
     </>
   );
 };
+
 // Export from module
-export default YearlyPlannerTable;
+export default NextMonthTable;

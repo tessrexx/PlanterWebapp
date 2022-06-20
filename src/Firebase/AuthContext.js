@@ -8,7 +8,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth } from "./firebase";
 
 // AuthContext files handles user authentication throughout the app & firebase
 

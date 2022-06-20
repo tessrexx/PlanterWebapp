@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { getAuth, updateEmail } from "firebase/auth";
 // MUI Library & Component Imports
 import { TextField, Button } from "@mui/material";
-import { UserAuth } from "../Contexts/AuthContext";
+import { UserAuth } from "../Firebase/AuthContext";
 // In-file CSS & Component Imports
 import "./UserDetails.css";
 import Navbar from "../Components/Navbar";

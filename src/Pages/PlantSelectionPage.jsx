@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 // Plant Data File Import
 import plantData from "../Data/PlantInfo.json";
 // Firebase/Firestore Import
-import { auth, db } from "../firebase";
+import { auth, db } from "../Firebase/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import {
   collection,

@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 // Infile CSS & Component Imports
 import "./Navbar.css";
-import { UserAuth } from "../Contexts/AuthContext";
+import { UserAuth } from "../Firebase/AuthContext";
 
 // Function for navbar component used at the top of each page
 // Allows user access to sign up & sign in pages, their details, and sign out

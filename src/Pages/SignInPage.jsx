@@ -5,7 +5,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { TextField, Button, Alert } from "@mui/material";
 // In-file CSS & Component Imports
 import "../Components/SignIn&UpForm.css";
-import { UserAuth } from "../Contexts/AuthContext";
+import { UserAuth } from "../Firebase/AuthContext";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { sendPasswordResetEmail } from "firebase/auth";

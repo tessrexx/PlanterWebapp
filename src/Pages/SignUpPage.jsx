@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 // MUI Library & Component Imports
-import { db } from "../firebase";
+import { db } from "../Firebase/firebase";
 import {
   collection,
   doc,
@@ -15,7 +15,7 @@ import {
 import { TextField, Button } from "@mui/material";
 // In-file CSS & Component Imports
 import "../Components/SignIn&UpForm.css";
-import { UserAuth } from "../Contexts/AuthContext";
+import { UserAuth } from "../Firebase/AuthContext";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 // Toastify Alerts
