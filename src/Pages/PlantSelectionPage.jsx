@@ -1,7 +1,6 @@
 // API Imports
-import React, { useEffect } from "react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 // Plant Data File Import
 import plantData from "../Data/PlantInfo.json";
 // Firebase/Firestore Import
@@ -42,6 +41,7 @@ function PlantSelection() {
   const [value, setValue] = useState("1");
   // State Variable
   const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
 
   // Get current user id and return in to const
   const uid = GetUserUid();
@@ -51,6 +51,10 @@ function PlantSelection() {
       onAuthStateChanged(auth, (user) => {
         if (user) {
           setUid(user.uid);
+        }
+        else{
+          // Redirects to /signin page so that selection can be stored in user account
+          navigate("/signin");
         }
       });
     }, []);
@@ -83,6 +87,9 @@ function PlantSelection() {
  
   // Remove selected plant from user's planner collection **IN PROGRESS
   function removeFromPlanner(plantName) {
+    if(plantName ){
+
+    }
     try {
        deleteDoc(doc(db, "users", uid, "planner", plantName), {
       })

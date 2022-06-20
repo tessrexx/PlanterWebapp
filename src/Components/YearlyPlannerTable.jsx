@@ -1,6 +1,7 @@
 // API Imports
 import React from "react";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 // Temp Plant Data File Import
 import plantData from "../Data/PlantInfo.json";
 // Firebase/Firestore Import
@@ -29,6 +30,7 @@ const YearlyPlannerTable = () => {
   let mergeUserData = []; // array to store any matched data from Firestore and JSON
   let [mergedPlants, setMergedPlants] = useState([]); // set above [] into mergedPlants which is called in HTML
   let [userData, setUserData] = useState([]); // store current user's firebase id
+  const navigate = useNavigate();
 
   // Get current user id and return in to const
   const uid = GetUserUid();
@@ -38,6 +40,10 @@ const YearlyPlannerTable = () => {
       onAuthStateChanged(auth, (user) => {
         if (user) {
           setUid(user.uid);
+        }
+        else{
+          // Redirects to /signin page so that data can be read from user account
+          navigate("/signin");
         }
       });
     }, []);

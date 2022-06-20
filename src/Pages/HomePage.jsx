@@ -22,17 +22,12 @@ function HomePage() {
         }}
       ></div>
       <Navbar />
+      <div className="infoBlurb">
       <h1>The New Zealand Plant Planner made for you</h1>
       <p className="blurb">
         Create your custom planter from our range of vegetable, fruit, and herb
         plants and view their ideal planting months in your own yearly planner
       </p>
-      <div className="buttonStart">
-        <Link to="/plantselection">
-          <Button variant="contained" color="secondary">
-            Start creating your yearly planner now!
-          </Button>
-        </Link>
       </div>
       <div className="cardContainer">
         <HomeCard
@@ -53,7 +48,7 @@ function HomePage() {
           image={"IconsandImages/monthlyplanner.png"}
           title={"MONTHLY PLANNING"}
           info={
-            "Sign in to your account to save your Planter and stay prepared for the months to come"
+            "View the current and next month's planting schedule along with some helpful tips"
           }
         />
       </div>
