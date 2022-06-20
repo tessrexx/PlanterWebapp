@@ -68,15 +68,15 @@ function PlantSelection() {
         name: plant,
       }).then(() => {
         onSnapshot(doc(db, "users", uid, "planner", plant), (doc) => {
-          toast.success("Added to planner!", {
-            position: "top-right",
-            autoClose: 1000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: false,
-            progress: undefined,
-          });
+        });
+        toast.success(plant + " added to planner!", {
+          position: "top-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
         });
       });
       // Waiting to catch errors
@@ -86,13 +86,19 @@ function PlantSelection() {
   };
  
   // Remove selected plant from user's planner collection **IN PROGRESS
-  function removeFromPlanner(plantName) {
-    if(plantName ){
-
-    }
+  function removeFromPlanner(plant) {
     try {
-       deleteDoc(doc(db, "users", uid, "planner", plantName), {
+       deleteDoc(doc(db, "users", uid, "planner", plant), {
       })
+      toast.error(plant + " removed from planner", {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+      });
       console.log("record removed")
     }
       catch (error) {
@@ -109,7 +115,8 @@ function PlantSelection() {
         position="top-right"
         theme="colored"
         hideProgressBar={false}
-        newestOnTop={true}
+        newestOnTop={false}
+        limit={1}
         closeOnClick
         rtl={false}
         pauseOnFocusLoss={false}
