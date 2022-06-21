@@ -16,7 +16,7 @@ import {
   updateDoc,
   deleteField,
   query,
-  where
+  where,
 } from "firebase/firestore";
 // MUI Library & Component Imports
 import { Button, Tab, Box, Hidden, TextField } from "@mui/material";
@@ -53,8 +53,7 @@ function PlantSelection() {
       onAuthStateChanged(auth, (user) => {
         if (user) {
           setUid(user.uid);
-        }
-        else{
+        } else {
           // Redirects to /signin page so that selection can be stored in user account
           navigate("/signin");
         }
@@ -101,22 +100,24 @@ function PlantSelection() {
     getData();
   }, [uid]);
 
+  let newPlant = ""; // variable to store matching plant into
   // Add selected plant to user's planner collection
   const addToPlanner = async (plant) => {
     //getData();
-    let newPlant = "" // variable to store matching plant into
-    for (let i = 0; i < userPlants.length; i++){
-      if(userPlants[i].name === plant)
-      {
-        plant = newPlant
+    for (let i = 0; i < userPlants.length; i++) {
+      if (userPlants[i].name === plant) {
+        newPlant = plant;
         break;
       }
     }
+    console.log(plant);
+    console.log(newPlant);
     // if plant name is already in the user planner, it'll trigger a warning
-    if (newPlant === plant){
+    if (newPlant === plant) {
+      console.log(newPlant);
       try {
         // warning alert
-        toast.warning("Already in planner", {
+        toast.warning(plant + " is already in your planter", {
           position: "top-right",
           autoClose: 1000,
           hideProgressBar: false,
@@ -125,74 +126,72 @@ function PlantSelection() {
           draggable: false,
           progress: undefined,
         });
-      // Waiting to catch errors
+        // Waiting to catch errors
       } catch (error) {
         console.error(error);
       }
     }
     // else, if plant name is not in the user planner, it'll add it to firestore doc
-    else{
+    else {
       try {
         // adding plcnt to dox
         await setDoc(doc(db, "users", uid, "planner", plant), {
           name: plant,
         }).then(() => {
-          onSnapshot(doc(db, "users", uid, "planner", plant), (doc) => {
-          });
+          onSnapshot(doc(db, "users", uid, "planner", plant), (doc) => {});
           // confirmation alert
-        toast.success(plant + " added to your planner!", {
-          position: "top-right",
-          autoClose: 1000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: false,
-          progress: undefined,
+          toast.success(plant + " added to your planter!", {
+            position: "top-right",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+          });
         });
-        });
-      // Waiting to catch errors
-    } catch (error) {
-      console.error(error);
-    }
-  }
-  };
- 
-  // Remove selected plant from user's planner collection **IN PROGRESS
-  function removeFromPlanner(plant) {
-    //getData();
-    let newPlant = "" // variable to store matching plant into
-    for (let i = 0; i < userPlants.length; i++){
-      if(userPlants[i].name === plant)
-      {
-        plant = newPlant
-        break;
+        // Waiting to catch errors
+      } catch (error) {
+        console.error(error);
       }
     }
+  };
+
+  // Remove selected plant from user's planner collection **IN PROGRESS
+  const removeFromPlanner = async (plant) => {
+    //getData();
+    for (let i = 0; i < userPlants.length; i++) {
+      if (userPlants[i].name === plant) {
+        newPlant = plant;
+      }
+    }
+    console.log(plant);
     // if plant name is in the user planner, it'll be removed from firestore doc
-    if(newPlant === plant){
+    if (newPlant === plant) {
       try {
-        deleteDoc(doc(db, "users", uid, "planner", plant), {
-       })
-       toast.error(plant + " removed from planner", {
-         position: "top-right",
-         autoClose: 1000,
-         hideProgressBar: false,
-         closeOnClick: true,
-         pauseOnHover: false,
-         draggable: false,
-         progress: undefined,
-       });
-       console.log("record removed")
-     }
-       catch (error) {
-       // Waiting to catch errors
-       console.error(error);
-     }}
-     // else, if plant name is not in the user planner, it'll trigger a warning
-    else{
+        deleteDoc(doc(db, "users", uid, "planner", plant));
+        {
+          toast.error(plant + " removed from planter", {
+            position: "top-right",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+          });
+        }
+        console.log("record removed");
+      } catch (error) {
+        // Waiting to catch errors
+        console.error(error);
+      }
+    }
+    // else, if plant name is not in the user planner, it'll trigger a warning
+    else {
       try {
         // warning alert
-        toast.warning(plant + " isn't in your planner, so cannot be removed", {
+        toast.warning(plant + " isn't in your planter, so cannot be removed", {
           position: "top-right",
           autoClose: 2000,
           hideProgressBar: false,
@@ -201,10 +200,10 @@ function PlantSelection() {
           draggable: false,
           progress: undefined,
         });
-      // Waiting to catch errors
-    } catch (error) {
-      console.error(error);
-    }
+        // Waiting to catch errors
+      } catch (error) {
+        console.error(error);
+      }
     }
   };
 
@@ -217,7 +216,7 @@ function PlantSelection() {
         theme="colored"
         hideProgressBar={false}
         newestOnTop={false}
-        limit={1}
+        limit={5}
         closeOnClick
         rtl={false}
         pauseOnFocusLoss={false}

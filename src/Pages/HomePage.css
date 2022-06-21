@@ -18,7 +18,7 @@ h1 {
   display: flex;
   justify-content: center;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 100px;
   padding: 15px, 15px, 15px, 15px;
   color: #ffffff;
 }
@@ -29,7 +29,7 @@ h1 {
   justify-content: center;
   text-align: center;
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 75px;
   padding: 15px, 15px, 15px, 15px;
   color: #ffffff;
   font-weight: 500;
@@ -51,4 +51,15 @@ h1 {
   display: flex;
   justify-content: space-between;
   justify-content: center;
+}
+
+.homeCardContainer {
+  margin-right: 100px;
+}
+
+/* Responsive css */
+@media screen and (max-width: 1700px) {
+  .homeCardContainer {
+    margin-right: 0px;
+  }
 }
