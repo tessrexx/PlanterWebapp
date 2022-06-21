@@ -23,15 +23,13 @@ import "react-toastify/dist/ReactToastify.css";
 // Contains form for user to sign in and be authenticated
 function SignInPage({ setIsAuth }) {
   // Setting user variables
-  const { signIn, auth } = UserAuth();
-  const emailRef = useRef("");
+  const { signIn, forgotPassword } = UserAuth();
+  const emailRef = useRef();
   const navigate = useNavigate();
   // Variables for sign up info
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  // Create state `open` with default as false
-  const [open, setOpen] = useState(false);
 
   /* START OF BACK-END FUNCTIONS */
 
@@ -66,16 +64,34 @@ function SignInPage({ setIsAuth }) {
     }
   }; // End of handleSubmit
 
-  // Forgot Password Function **IN PROGRESS
-  function forgotPasswordHandler() {
-    sendPasswordResetEmail(auth, email)
-      .then(() => {
-        console.log("success");
-      })
-      .catch(() => {
-        console.log("nope");
+  // forgotPasswordHandler function for user to have password reset email sent
+  const forgotPasswordHandler = async (err) => {
+    try {
+      // Gets email textfield value and if email is valid, sends email and triggers success alert
+      await forgotPassword(email).then(() => {
+        toast.success("Password reset sent. Please check your email.", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+        });
       });
-  }
+    } catch (err) {
+      // Catches invalid email address, triggers error alert and
+      toast.error("Invalid Email", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+      });
+    }
+  }; // End of forgotPasswordHandler
 
   /* END OF BACK-END FUNCTIONS */
 
@@ -130,34 +146,10 @@ function SignInPage({ setIsAuth }) {
             />
           </div>
           <div className="forgotPassword">
-            <Button disableRipple="true" onClick={() => setOpen(true)}>
+            <Button disableRipple="true" onClick={forgotPasswordHandler}>
               Forgot Password?
             </Button>
           </div>
-
-          {open && (
-            <div>
-              <div className="popupBackground" onClick={() => setOpen(false)} />
-              <div className="resetContainer">
-                <h3 className="resetTitle">RESET PASSWORD</h3>
-                <form className="resetModal">
-                  <TextField
-                    fullWidth
-                    placeholder="Email"
-                    type="email"
-                    ref={emailRef}
-                  />
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={forgotPasswordHandler}
-                  >
-                    Submit
-                  </Button>
-                </form>
-              </div>
-            </div>
-          )}
           <div className="submitButton">
             <Button variant="contained" color="secondary" type="submit">
               SIGN IN

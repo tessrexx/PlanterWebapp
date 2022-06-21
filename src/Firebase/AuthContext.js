@@ -38,23 +38,14 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   // Forgot Password
-  /*  const forgotPassword = (email) => {
+  const forgotPassword = (email) => {
     return sendPasswordResetEmail(auth, email);
-  };*/
+  };
 
   // Signs out user
   const logout = () => {
     return signOut(auth);
   };
-
-  /*useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-    });
-    return () => {
-      unsubscribe();
-    };
-  });*/
 
   // Sets user authenitcation as true
   useEffect(() => {
@@ -66,7 +57,9 @@ export const AuthContextProvider = ({ children }) => {
 
   return (
     // Export values
-    <UserContext.Provider value={{ createUser, user, signIn, logout }}>
+    <UserContext.Provider
+      value={{ createUser, user, signIn, logout, forgotPassword }}
+    >
       {children}
     </UserContext.Provider>
   );
