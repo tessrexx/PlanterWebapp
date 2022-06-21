@@ -1,10 +1,12 @@
+/* START OF IMPORTS */
+
 // API Imports
 import React, { useState, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 // MUI Library & Component Imports
-import { TextField, Button, Alert } from "@mui/material";
+import { TextField, Button } from "@mui/material";
 // In-file CSS & Component Imports
-import "../Components/SignIn&UpForm.css";
+import "./SignIn&Up.css";
 import { UserAuth } from "../Firebase/AuthContext";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
@@ -13,27 +15,32 @@ import { sendPasswordResetEmail } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// Function for /signin page
+/* END OF IMPORTS */
+
+// ***********************************************************
+
+/* START OF SignInPage() PAGE */
 // Contains form for user to sign in and be authenticated
 function SignInPage({ setIsAuth }) {
-  // Setting user
+  // Setting user variables
   const { signIn, auth } = UserAuth();
   const emailRef = useRef("");
-
   const navigate = useNavigate();
-  // States for sign up info
+  // Variables for sign up info
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
-  // create state `open` with default as false
+  // Create state `open` with default as false
   const [open, setOpen] = useState(false);
 
-  // Submission Errors or Redirection to Planner Page
+  /* START OF BACK-END FUNCTIONS */
+
+  // handleSubmit function handles submission errors or redirection to Planner Page
   const handleSubmit = async (err) => {
     err.preventDefault();
     setError("");
     try {
+      // Try sign in & if successful, trigger success alert and redirect to planner page
       await signIn(email, password);
       toast.success("Welcome back!", {
         position: "top-right",
@@ -46,6 +53,7 @@ function SignInPage({ setIsAuth }) {
       });
       navigate("/planner");
     } catch (err) {
+      // Catch unsuccessful sign in attempt and trigger error alert and allow user to retry
       toast.error(err.message, {
         position: "top-right",
         autoClose: 5000,
@@ -55,11 +63,10 @@ function SignInPage({ setIsAuth }) {
         draggable: false,
         progress: undefined,
       });
-      console.log(err.message);
     }
-  };
+  }; // End of handleSubmit
 
-  // Forgot Password Function
+  // Forgot Password Function **IN PROGRESS
   function forgotPasswordHandler() {
     sendPasswordResetEmail(auth, email)
       .then(() => {
@@ -70,7 +77,11 @@ function SignInPage({ setIsAuth }) {
       });
   }
 
-  // Output
+  /* END OF BACK-END FUNCTIONS */
+
+  // ***********************************************************
+
+  /* START OF FRONT-END OUTPUT */
   return (
     <div
       className="background"
@@ -158,6 +169,9 @@ function SignInPage({ setIsAuth }) {
     </div>
   );
 }
+/* START OF FRONT-END OUTPUT */
 
 // Export from module
 export default SignInPage;
+
+/* END OF SignInPage() PAGE */

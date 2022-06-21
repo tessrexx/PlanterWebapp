@@ -1,10 +1,12 @@
+/* START OF IMPORTS */
+
 // API Imports
 import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // Temp Plant Data File Import
 import plantData from "../Data/PlantInfo.json";
-// Firebase/Firestore Import
+// Firebase/Firestore Imports
 import { auth, db } from "../Firebase/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { collection, getDocs, query, where } from "firebase/firestore";
@@ -19,20 +21,29 @@ import {
   TableRow,
 } from "@mui/material";
 // Infile CSS & Component Imports
-import "./YearlyPlannerTable.css";
+import "./PlannerTables.css";
+
+/* END OF IMPORTS */
+
+// ***********************************************************
+
+/* START OF YearlyPlannerTable() COMPONENT */
 
 // Component for yearly planner view
 // Displays user's selected plants, ideal planting months, and estimated harvesting times
 const YearlyPlannerTable = () => {
-  // Filter data set/state
-  //const [data, setData] = useState(plantData);
-  let [userPlants, setUserPlants] = useState([]); // array to store users plant selection from Firestore
-  let mergeUserData = []; // array to store any matched data from Firestore and JSON
-  let [mergedPlants, setMergedPlants] = useState([]); // set above [] into mergedPlants which is called in HTML
-  let [userData, setUserData] = useState([]); // store current user's firebase id
+  // Array to store users plant selection from Firestore
+  let [userPlants, setUserPlants] = useState([]);
+  // Array to store any matched data from Firestore and JSON
+  let mergeUserData = [];
+  // Set above [] into mergedPlants which is called in HTML
+  let [mergedPlants, setMergedPlants] = useState([]);
+  // Page navigation variable
   const navigate = useNavigate();
 
-  // Get current user id and return in to const
+  /* START OF BACK-END FUNCTIONS */
+
+  // GetUserUid() function to get current user id and return in to uid variable
   const uid = GetUserUid();
   function GetUserUid() {
     const [uid, setUid] = useState("");
@@ -40,34 +51,30 @@ const YearlyPlannerTable = () => {
       onAuthStateChanged(auth, (user) => {
         if (user) {
           setUid(user.uid);
-        }
-        else{
+        } else {
           // Redirects to /signin page so that data can be read from user account
           navigate("/signin");
         }
       });
     }, []);
     return uid;
-  }
+  } // End of GetUserUid()
 
   // Called when page renders, reads user's plant selection in to userPlants[]
   useEffect(() => {
     const getData = async () => {
-      console.log("get data running");
+      // Variables that get user planner info
       const q = query(collection(db, "users"), where("userID", "==", `${uid}`));
       const snapshot = await getDocs(q);
       const data = snapshot.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
       }));
-      // getting plant data from matching user
+      // Getting plant data from matching user
       for (let i = 0; i < data.length; i++) {
-        console.log("for loop starting");
+        // Compare data ID to user ID, on match set userPlants[]
         if (data[i].id === uid) {
-          setUserData(uid);
-          console.log("userData test", userData);
           data.map(async (elem) => {
-            console.log("get data map running");
             const plantQ = query(collection(db, `users/${elem.id}/planner`));
             const plannerDetails = await getDocs(plantQ);
             const planner = plannerDetails.docs.map((doc) => ({
@@ -75,24 +82,23 @@ const YearlyPlannerTable = () => {
               id: doc.id,
             }));
             setUserPlants(planner);
-            console.log(userPlants);
           });
         }
       }
     };
     getData();
-  }, [uid]);
+  }, [uid]); // End of useEffect
 
   // Called when page renders, calls CombineData() when userPlants[] != null
   useEffect(() => CombineData(), [userPlants]);
 
   // Function to compare firestore and JSON doc id's and store needed info
   function CombineData() {
-    console.log("CombineData Run...");
+    // If userPlants array contains user's firestore info, compare plantData array with userPlant array
     if (userPlants[0] != null) {
-      console.log(" Run FOR LOOP...");
       for (let i = 0; i < plantData.length; i++) {
         for (let j = 0; j < userPlants.length; j++) {
+          // If plantData ID, userPlant name matches, grab & push matching info
           if (plantData[i].id === userPlants[j].name) {
             mergeUserData.push([
               plantData[i].id,
@@ -111,22 +117,19 @@ const YearlyPlannerTable = () => {
               plantData[i].dec,
               plantData[i].harvest,
             ]);
-            //console.log(mergeUserData);
-          } else {
-            console.log("IF statement complete");
           }
         }
       }
-      const temp = [...mergeUserData];
-      setMergedPlants(temp);
-      console.log(temp);
-      //console.log(mergedPlants)
-    } else {
-      console.log("userPlants[0] == null"); // no data currently stored in userPlants[] array
+      // Set mergedPlants array
+      setMergedPlants([...mergeUserData]);
     }
-  }
+  } // End of CombineData()
 
-  // Output
+  /* END OF BACK-END FUNCTIONS */
+
+  // ***********************************************************
+
+  /* START OF FRONT-END OUTPUT */
   return (
     <>
       <TableContainer component={Paper} sx={{ maxHeight: "70vh" }}>
@@ -203,5 +206,9 @@ const YearlyPlannerTable = () => {
     </>
   );
 };
+/* END OF FRONT-END OUTPUT */
+
 // Export from module
 export default YearlyPlannerTable;
+
+/* END OF YearlyPlannerTable() COMPONENT */

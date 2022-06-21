@@ -1,3 +1,5 @@
+/* START OF IMPORTS */
+
 // API Imports
 import React from "react";
 import { createContext, useContext, useEffect, useState } from "react";
@@ -10,7 +12,15 @@ import {
 } from "firebase/auth";
 import { auth } from "./firebase";
 
+/* END OF IMPORTS */
+
+// ***********************************************************
+
+/* START OF AuthContext FILE */
+
 // AuthContext files handles user authentication throughout the app & firebase
+
+/* START OF BACK-END FUNCTIONS */
 
 const UserContext = createContext();
 
@@ -62,7 +72,11 @@ export const AuthContextProvider = ({ children }) => {
   );
 };
 
+/* END OF BACK-END FUNCTIONS */
+
 // Makes context available throughout app
 export const UserAuth = () => {
   return useContext(UserContext);
 };
+
+/* END OF AuthContext FILE */

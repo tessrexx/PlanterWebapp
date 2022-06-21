@@ -1,3 +1,5 @@
+/* START OF IMPORTS */
+
 // API Imports
 import React from "react";
 import { Routes, Route } from "react-router-dom";
@@ -11,9 +13,14 @@ import Planner from "./Pages/PlannerViewPage";
 import UserDetails from "./Pages/UserDetails";
 import { AuthContextProvider } from "./Firebase/AuthContext";
 
-// App function
+/* END OF IMPORTS */
+
+// ***********************************************************
+
+/* START OF App() FILE */
 // Contains routing for each page used in app
 function App() {
+  /* START OF FRONT-END ROUTING OUTPUT */
   return (
     <div className="App">
       <AuthContextProvider>
@@ -29,5 +36,7 @@ function App() {
     </div>
   );
 }
+/* END  OF FRONT-END ROUTING OUTPUT */
 
 export default App;
+/* END OF App() FILE */

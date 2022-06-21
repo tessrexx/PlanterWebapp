@@ -1,6 +1,7 @@
+// MUI Library & Component Imports
 import { createTheme } from "@mui/material/styles";
 
-// App theme & overrides
+// App colour/font theme & MUI component overrides
 export const theme = createTheme({
   palette: {
     primary: {

@@ -1,9 +1,11 @@
+/* START OF IMPORTS */
+
 // API Imports
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 // Plant Data File Import
 import plantData from "../Data/PlantInfo.json";
-// Firebase/Firestore Import
+// Firebase/Firestore Imports
 import { auth, db } from "../Firebase/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import {
@@ -13,13 +15,11 @@ import {
   onSnapshot,
   setDoc,
   deleteDoc,
-  updateDoc,
-  deleteField,
   query,
   where,
 } from "firebase/firestore";
 // MUI Library & Component Imports
-import { Button, Tab, Box, Hidden, TextField } from "@mui/material";
+import { Button, Tab, Box, TextField } from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 // Infile CSS & Component Imports
 import "./PlantSelection.css";
@@ -27,64 +27,66 @@ import "../Components/PageLayout.css";
 import PlantCard from "../Components/PlantCard";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
-// Toastify Alerts
+// Toastify Alert Imports
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// Function for page /plantselection
+/* END OF IMPORTS */
+
+// ***********************************************************
+
+/* START OF PlantSelection() PAGE */
 // Contains plants that users can select for their planner along with category filter tabs
 function PlantSelection() {
-  // Filter data set/state
-  const [data, setData] = useState(plantData);
-  // Data set/state
-  const [plants, setPlants] = useState([]);
-
-  // Tab selection set/state
-  const [value, setValue] = useState("1");
-  // State Variable
+  // Set initial plant data variable
+  const [setData] = useState(plantData);
+  // Tab selection variable
+  const [value] = useState("1");
+  // Search bar variable
   const [searchTerm, setSearchTerm] = useState("");
+  // Page navigation variable
   const navigate = useNavigate();
-
-  // Get current user id and return in to const
+  // Get, Add, & Remove data variables/arrays
+  let [userPlants, setUserPlants] = useState([]);
+  // Variable to store matching userPlant into (addToPlanner & removeFromPlanner functions)
+  let newPlant = "";
+  // Get & store user ID variable
   const uid = GetUserUid();
+
+  /* START OF BACK-END FUNCTIONS */
+
+  // GetUserUid() function to get current user id and return in to uid variable
   function GetUserUid() {
     const [uid, setUid] = useState("");
     useEffect(() => {
       onAuthStateChanged(auth, (user) => {
         if (user) {
+          // If user is logged in, set user id to uid
           setUid(user.uid);
         } else {
-          // Redirects to /signin page so that selection can be stored in user account
+          // Else if user is not logged in, redirect to /signin page so that selection can be stored in user account
           navigate("/signin");
         }
       });
     }, []);
     return uid;
-  }
-
-  //useEffect(() => getData(), [uid]);
-
-  let [userPlants, setUserPlants] = useState([]);
-  let [userData, setUserData] = useState([]);
+  } // End of GetUserUid()
 
   // Called when page renders, reads user's plant selection in to userPlants[]
   useEffect(() => {
     const getData = async () => {
-      console.log("get data running");
+      // Variables that get user planner info
       const q = query(collection(db, "users"), where("userID", "==", `${uid}`));
       const snapshot = await getDocs(q);
       const data = snapshot.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
       }));
-      // getting plant data from matching user
+      // Getting plant data from matching user
       for (let i = 0; i < data.length; i++) {
-        console.log("for loop starting");
+        // Compare data ID to user ID, on match set userPlants[]
         if (data[i].id === uid) {
-          setUserData(uid);
-          console.log("userData test", userData);
           data.map(async (elem) => {
-            console.log("get data map running");
             const plantQ = query(collection(db, `users/${elem.id}/planner`));
             const plannerDetails = await getDocs(plantQ);
             const planner = plannerDetails.docs.map((doc) => ({
@@ -92,31 +94,53 @@ function PlantSelection() {
               id: doc.id,
             }));
             setUserPlants(planner);
-            console.log(userPlants);
           });
         }
       }
     };
     getData();
-  }, [uid]);
+  }, [uid]); // End of useEffect
 
-  let newPlant = ""; // variable to store matching plant into
-  // Add selected plant to user's planner collection
+  // GetData function called when add or remove functions called
+  // Same functionality as above function but calling this allows add/remove checks on up-to-date planners instead of just the initial data load
+  const GetData = async () => {
+    const q = query(collection(db, "users"), where("userID", "==", `${uid}`));
+    const snapshot = await getDocs(q);
+    const data = snapshot.docs.map((doc) => ({
+      ...doc.data(),
+      id: doc.id,
+    }));
+    // getting plant data from matching user
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].id === uid) {
+        data.map(async (elem) => {
+          const plantQ = query(collection(db, `users/${elem.id}/planner`));
+          const plannerDetails = await getDocs(plantQ);
+          const planner = plannerDetails.docs.map((doc) => ({
+            ...doc.data(),
+            id: doc.id,
+          }));
+          setUserPlants(planner);
+        });
+      }
+    }
+  }; // End of GetData
+
+  // addToPlanner function to add selected plant to user's planner collection
   const addToPlanner = async (plant) => {
-    //getData();
+    GetData(); // Calling to get up-to-date planner
+    // For/if loop to determine if selected plant is already in the user's planner
     for (let i = 0; i < userPlants.length; i++) {
       if (userPlants[i].name === plant) {
+        // If match is found, set newPlant to match plant and break loop
         newPlant = plant;
         break;
       }
     }
-    console.log(plant);
-    console.log(newPlant);
-    // if plant name is already in the user planner, it'll trigger a warning
+    // If plant name is already in the user planner, it'll trigger a warning
     if (newPlant === plant) {
-      console.log(newPlant);
       try {
-        // warning alert
+        // Warning alert
         toast.warning(plant + " is already in your planter", {
           position: "top-right",
           autoClose: 1000,
@@ -131,15 +155,15 @@ function PlantSelection() {
         console.error(error);
       }
     }
-    // else, if plant name is not in the user planner, it'll add it to firestore doc
+    // Else, if plant name is not in the user planner, it'll add it to firestore doc
     else {
       try {
-        // adding plcnt to dox
+        // Adding plant to user doc
         await setDoc(doc(db, "users", uid, "planner", plant), {
           name: plant,
         }).then(() => {
           onSnapshot(doc(db, "users", uid, "planner", plant), (doc) => {});
-          // confirmation alert
+          // Confirmation alert
           toast.success(plant + " added to your planter!", {
             position: "top-right",
             autoClose: 1000,
@@ -155,42 +179,43 @@ function PlantSelection() {
         console.error(error);
       }
     }
-  };
+  }; // End of addToPlanner
 
-  // Remove selected plant from user's planner collection **IN PROGRESS
+  // removeFromPlanner function to remove selected plant from user's planner collection
   const removeFromPlanner = async (plant) => {
-    //getData();
+    GetData(); // Calling to get up-to-date planner
+    // For/if loop to determine if selected plant is already in the user's planner
     for (let i = 0; i < userPlants.length; i++) {
       if (userPlants[i].name === plant) {
+        // If match is found, set newPlant to match plant and break loop
         newPlant = plant;
       }
     }
     console.log(plant);
-    // if plant name is in the user planner, it'll be removed from firestore doc
+    // If plant name is in the user planner, it'll be removed from firestore doc
     if (newPlant === plant) {
       try {
+        // Removing plant from user doc
         deleteDoc(doc(db, "users", uid, "planner", plant));
-        {
-          toast.error(plant + " removed from planter", {
-            position: "top-right",
-            autoClose: 1000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: false,
-            progress: undefined,
-          });
-        }
-        console.log("record removed");
+        // Confirmation alert
+        toast.error(plant + " removed from planter", {
+          position: "top-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+        });
       } catch (error) {
         // Waiting to catch errors
         console.error(error);
       }
     }
-    // else, if plant name is not in the user planner, it'll trigger a warning
+    // Else, if plant name is not in the user planner, it'll trigger a warning
     else {
       try {
-        // warning alert
+        // Warning alert
         toast.warning(plant + " isn't in your planter, so cannot be removed", {
           position: "top-right",
           autoClose: 2000,
@@ -200,14 +225,18 @@ function PlantSelection() {
           draggable: false,
           progress: undefined,
         });
-        // Waiting to catch errors
       } catch (error) {
+        // Waiting to catch errors
         console.error(error);
       }
     }
-  };
+  }; // End of removeFromPlanner
 
-  // Output
+  /* END OF BACK-END FUNCTIONS */
+
+  // ***********************************************************
+
+  /* START OF FRONT-END OUTPUT */
   return (
     <div className="layout-container">
       <Navbar />
@@ -291,6 +320,9 @@ function PlantSelection() {
     </div>
   );
 }
+/* END OF FRONT-END OUTPUT */
 
 // Export from module
 export default PlantSelection;
+
+/* END OF PlantSelection() PAGE */

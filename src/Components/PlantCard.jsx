@@ -1,13 +1,19 @@
+/* START OF IMPORTS */
+
 // API Imports
 import React from "react";
 // MUI Library & Component Imports
-import { Button, Checkbox, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 // Infile CSS Import
 import "./PlantCard.css";
+
+/* END OF IMPORTS */
+
+// ***********************************************************
+
+/* START OF PlantCard() COMPONENT */
 
 // Component for plant cards on selection page
 // Displays template for plants
@@ -17,20 +23,26 @@ const PlantCard = ({
   addToPlanner,
   removeFromPlanner,
 }) => {
-  // Called "Add" button clicked
+  /* START OF BACK-END FUNCTIONS */
+
+  // Called when "Add+" button clicked
   const handleAddToPlanner = () => {
     addToPlanner(plantName);
   };
 
-  // Called "Remove" button clicked
+  // Called when "Remove-" button clicked
   const handleRemoveFromPlanner = () => {
     removeFromPlanner(plantName);
   };
 
-  // Output
+  /* END OF BACK-END FUNCTIONS */
+
+  // ***********************************************************
+
+  /* START OF FRONT-END OUTPUT */
   return (
     <div className="card">
-      <img className="image" src={plantImage} alt="" />
+      <img className="image" src={plantImage} alt="plant" />
       <div className="details">
         <IconButton
           className="removeButton"
@@ -52,6 +64,9 @@ const PlantCard = ({
     </div>
   );
 };
+/* END OF FRONT-END OUTPUT */
 
 // Export from module
 export default PlantCard;
+
+/* END OF PlantCard() COMPONENT */

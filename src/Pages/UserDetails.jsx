@@ -1,3 +1,5 @@
+/* START OF IMPORTS */
+
 // API Imports
 import React, { useRef } from "react";
 import { getAuth, updateEmail } from "firebase/auth";
@@ -9,14 +11,21 @@ import "./UserDetails.css";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 
-// Function for /userdetails page
+/* END OF IMPORTS */
+
+// ***********************************************************
+
+/* START OF UserDetails() PAGE */
 // Contains users email address with an option to update this & their password
 function UserDetails() {
-  // User authentication state
+  // User authentication state AND VARIABLES
   const { user } = UserAuth();
   const emailRef = useRef("");
 
-  /*const auth = getAuth();
+  /* START OF BACK-END FUNCTIONS */
+
+  // Reset email function **IN PROGRESS
+  /*const auth = getAuth();   
   updateEmail(auth.currentUser, emailRef.current.value)
     .then(() => {
       // Email updated!
@@ -27,7 +36,11 @@ function UserDetails() {
       console.log("nope");
     });*/
 
-  // Output
+  /* END OF BACK-END FUNCTIONS */
+
+  // ***********************************************************
+
+  /* START OF FRONT-END OUTPUT */
   return (
     <div>
       <Navbar />
@@ -73,6 +86,9 @@ function UserDetails() {
     </div>
   );
 }
+/* START OF FRONT-END OUTPUT */
 
 // Export from module
 export default UserDetails;
+
+/* END OF UserDetails() PAGE */

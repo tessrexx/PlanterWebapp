@@ -1,3 +1,5 @@
+/* START OF IMPORTS */
+
 // API Imports
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -7,25 +9,39 @@ import { Button } from "@mui/material";
 import "./Navbar.css";
 import { UserAuth } from "../Firebase/AuthContext";
 
+/* END OF IMPORTS */
+
+// ***********************************************************
+
+/* START OF Navbar() COMPONENT */
+
 // Function for navbar component used at the top of each page
 // Allows user access to sign up & sign in pages, their details, and sign out
 function Navbar() {
-  // Consts for user authentication & navigation
+  // Variables for user authentication & navigation
   const { user, logout } = UserAuth();
   const navigate = useNavigate();
 
-  // Handles user logout and redirects to home page
+  /* START OF BACK-END FUNCTIONS */
+
+  // handleLogout function handle user redirection on Logout
   const handleLogout = async () => {
     try {
+      // Waits on logout() from AuthContext.js then redirects to home page
       await logout();
       navigate("/");
       console.log("Logged Out");
     } catch (e) {
+      // Waiting to catch errors
       console.log(e.message);
     }
-  };
+  }; // End of handleLogout
 
-  // Output
+  /* END OF BACK-END FUNCTIONS */
+
+  // ***********************************************************
+
+  /* START OF FRONT-END OUTPUT */
   return (
     <>
       <nav className="navbar">
@@ -77,6 +93,9 @@ function Navbar() {
     </>
   );
 }
+/* END OF FRONT-END OUTPUT */
 
 // Export from module
 export default Navbar;
+
+/* END OF Navbar() COMPONENT */
