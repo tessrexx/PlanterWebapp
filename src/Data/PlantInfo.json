@@ -14,7 +14,8 @@
     "generalInfo1": "Add a layer of citrus and fruit mix to plant into. In New Zealand winter is the optimum time to plant apple trees",
     "generalInfo2": "Feed your apples in spring and summer to encourage maximum flowering and fruiting",
     "generalInfo3": "Well watered, well nourished apple trees will have a better chance of keeping insect pests and diseases at bay",
-    "generalInfo4": "When pruning be sure to remove all diseased, damaged or dead wood. Remove any branches that are crossing or rubbing. Cut away any branches that are growing back into the center of the tree"
+    "generalInfo4": "When pruning be sure to remove all diseased, damaged or dead wood. Remove any branches that are crossing or rubbing. Cut away any branches that are growing back into the center of the tree",
+    "plantingMonths": "may, jun, jul, aug, sep"
   },
   {
     "id": "Asparagus",
@@ -30,7 +31,8 @@
     "generalInfo1": "Plant asparagus from July to December in warm areas and from September to December in cooler areas",
     "generalInfo2": "Feed asparagus in spring with vegetable food and water regularly",
     "generalInfo3": "If planting quite a few crowns, dig trenches in the soil to plant in. Plant crowns with their roots facing down 15cm deep and 30cm apart. Rows should be spaced at least 50cm apart",
-    "generalInfo4": "Cut asparagus off at ground level with a sharp knife. Don't be tempted to rip it out of the ground as you will more than likely pull out the whole crown"
+    "generalInfo4": "Cut asparagus off at ground level with a sharp knife. Don't be tempted to rip it out of the ground as you will more than likely pull out the whole crown",
+    "plantingMonths": "aug, sep, oct, nov"
   },
   {
     "id": "Basil",
@@ -46,7 +48,8 @@
     "generalInfo1": "Choose a sunny spot close to your kitchen for easy access. Basil is best planted in late spring, summer and autumn as it needs warmth",
     "generalInfo2": "Water your basil consistently and pick regularly to help avoid it going to seed",
     "generalInfo3": "Over summer basil is prone to go to seed. To avoid, water your basil consistently, regularly pick, remove flowers and remove parts of the plant that go to seed",
-    "generalInfo4": "If your basil does go to seed there is an upside – the flowers are great for beneficial insects like bees, and if you let them fully dry out you can collect the seeds for next season!"
+    "generalInfo4": "If your basil does go to seed there is an upside – the flowers are great for beneficial insects like bees, and if you let them fully dry out you can collect the seeds for next season!",
+    "plantingMonths": "jan, oct, nov, dec"
   },
   {
     "id": "Beetroot",
@@ -68,7 +71,8 @@
     "generalInfo1": "Plant beetroot in rows about 50cm apart",
     "generalInfo2": "Feed beetroot with vegetable food throughout the growing season",
     "generalInfo3": "Beetroot is a root crop that takes approximately three to four months to mature. Beetroot is a fairly easy crop to grow as long as the soil is well cultivated prior to planting. They don't enjoy wet, boggy or shady soils",
-    "generalInfo4": "Harvest when the beetroot is the size you like to eat. You can see how big the top of the beet is before you dig it up from the ground. Dig them gently out of the soil, harvesting at separate intervals down the rows to allow smaller beets to develop. If you leave beetroot to get too large it can become a little tough"
+    "generalInfo4": "Harvest when the beetroot is the size you like to eat. You can see how big the top of the beet is before you dig it up from the ground. Dig them gently out of the soil, harvesting at separate intervals down the rows to allow smaller beets to develop. If you leave beetroot to get too large it can become a little tough",
+    "plantingMonths": "jan, feb, mar, apr, may, jul, aug, sep, oct, nov, dec"
   },
   {
     "id": "Blackberry",
@@ -88,7 +92,8 @@
     "generalInfo1": "Blackberries are cold-hardy, and grow well in most areas of New Zealand. Plant in full sun for the best results. Blackberries are generally planted out in winter and spring",
     "generalInfo2": "Prune in late summer or autumn after fruiting. Cut out the weakest shoots, leaving no more than three per plant",
     "generalInfo3": "As they grow in the spring, blackberries can be trained up a trellis or on wires. Strong supports will be needed if they are to be contained above the ground as the brambles can get really heavy",
-    "generalInfo4": "Blackberries are a tall plant so choose an area in your garden away from strong winds, up against a fence on a north facing wall is a good option. A simple tee pee or pyramid system made from 3-5 straight branches is effective. Stakes, bamboo canes and trellis can be used as well"
+    "generalInfo4": "Blackberries are a tall plant so choose an area in your garden away from strong winds, up against a fence on a north facing wall is a good option. A simple tee pee or pyramid system made from 3-5 straight branches is effective. Stakes, bamboo canes and trellis can be used as well",
+    "plantingMonths": "may, jun, jul, aug, sep, oct, nov, dec"
   },
   {
     "id": "Blueberry",
@@ -114,7 +119,7 @@
     "generalInfo3": "They are best planted in a sheltered, well drained position in full sun",
     "generalInfo4": "Feed blueberries in spring and summer with citrus food, and prune dead or diseased wood and branches in winter",
     "plantingMonth": "jun",
-    "plantingMonths": ["may", "jun", "jul"]
+    "plantingMonths": "jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec"
   },
   {
     "id": "BokChoi",
@@ -132,7 +137,8 @@
     "generalInfo1": "Find a full sun, sheltered position to plant and space at least 20cm-25cm apart, to ensure the crops can fully mature and are not fighting for space, fertiliser and water",
     "generalInfo2": "The best times to plant are early in the morning or late in the day, so the plants aren’t exposed to the hot sun straight away",
     "generalInfo3": "Bok choi will often regrow if you cut off at ground level with a sharp knife but it won’t be as sweet",
-    "generalInfo4": "If you planted bok choi last year, don’t grow them in the same spot as pests and diseases can be lingering in the soil"
+    "generalInfo4": "If you planted bok choi last year, don’t grow them in the same spot as pests and diseases can be lingering in the soil",
+    "plantingMonths": "mar, apr, aug, sep, oct, nov"
   },
   {
     "id": "BroadBean",
@@ -149,7 +155,8 @@
     "generalInfo1": "Broad beans like well-dug soil enriched with plenty of compost. Avoid over-watering them",
     "generalInfo2": "Broad beans grow best in sunny locations, but they will tolerate some shade",
     "generalInfo3": "Find a full sun, sheltered position to plant and space at least 20cm-25cm apart, to ensure the crops can fully mature and are not fighting for space, fertiliser and water.",
-    "generalInfo4": "Broad beans are pollinated by bees, so it could be a good idea to plan to have some plants nearby that will attract bees to the garden"
+    "generalInfo4": "Broad beans are pollinated by bees, so it could be a good idea to plan to have some plants nearby that will attract bees to the garden",
+    "plantingMonths": "mar, apr, may, jun, jul"
   },
   {
     "id": "Broccoli",
@@ -167,7 +174,8 @@
     "generalInfo1": "Find a full sun, sheltered position to plant and space at least 50cm-70cm apart, to ensure the crops can fully mature and are not fighting for space",
     "generalInfo2": "Add a layer of vegetable mix to plant into. Broccoli can be planted in autumn, early winter and early spring in New Zealand, depending on your region",
     "generalInfo3": "Harvest broccoli when the heads are still tight, once they start spreading they lose flavour. Cut off the head before you pull out the root, otherwise you could end up with dirt all through the head",
-    "generalInfo4": "If you leave the plant in, new and smaller heads will appear in a few weeks below the first one and continue to sprout for the rest of the season"
+    "generalInfo4": "If you leave the plant in, new and smaller heads will appear in a few weeks below the first one and continue to sprout for the rest of the season",
+    "plantingMonths": "feb, mar, apr, sep, oct, nov"
   },
   {
     "id": "Capsicum",
@@ -182,7 +190,8 @@
     "generalInfo1": "Sun, sun and more sun is the key to growing capsicums, along with high temperatures. They are frost-tender, so in cold areas don’t even think about planting them outdoors until November. This isn’t too late, as they take only three months to mature",
     "generalInfo2": "If growing from seed, seeds are best raised under glass as they need high temperatures to germinate. Sow in trays in spring and transplant into the garden once the plant is at least 5cm tall and the soil has warmed",
     "generalInfo3": "As they mature the colour and taste of capsicums change, so they can be picked for the flavour required and eaten cooked or raw. Cut capsicums off the plants when they are ready. Don't pull them off the vine as they will often rip and won't keep as long without the stem",
-    "generalInfo4": "Stake taller plants and those grown in wind-prone areas"
+    "generalInfo4": "Stake taller plants and those grown in wind-prone areas",
+    "plantingMonths": "oct, nov, dec"
   },
   {
     "id": "Carrot",
@@ -200,7 +209,8 @@
     "generalInfo1": "Carrot seeds can be sown in spring, summer and autumn in New Zealand. Seeds should be sown directly in soil, as carrots don't like being transplanted. Always use fresh seed",
     "generalInfo2": "Thin out rows of carrots to enable good-sized, even roots to develop. This will help stop the carrots becoming crowded (meaning straighter carrots) and susceptible to disease and rot. After thinning, space long, thin varieties out 2-3cm. For bigger main crop varieties space out 5cm",
     "generalInfo3": "Carrots like a loose, free-draining, fertile soil. Water carrots regularly and deeply, particularly in dry periods",
-    "generalInfo4": "Feed carrots with a phosphorus rich fertiliser like potato food"
+    "generalInfo4": "Feed carrots with a phosphorus rich fertiliser like potato food",
+    "plantingMonths": "jan, feb, sep, oct, nov, dec"
   },
   {
     "id": "Cauliflower",
@@ -218,7 +228,8 @@
     "generalInfo1": "Find a full sun, sheltered position to plant and space at least 50cm-70cm apart, to ensure the crops can fully mature and are not fighting for space",
     "generalInfo2": "It takes slightly longer from sowing to harvest then other brassicas (approximately three to four months)",
     "generalInfo3": "As the heads develop, fold over the outer leaves to protect the centers from being burnt",
-    "generalInfo4": "Harvest cauliflower when the heads are still tight, once they start spreading they lose flavour. Cut off the head before you pull out the root, otherwise you could end up with dirt all through the head! If you leave the plant in new, smaller heads will appear in a few weeks below the first one and continue to sprout for the rest of the season"
+    "generalInfo4": "Harvest cauliflower when the heads are still tight, once they start spreading they lose flavour. Cut off the head before you pull out the root, otherwise you could end up with dirt all through the head! If you leave the plant in new, smaller heads will appear in a few weeks below the first one and continue to sprout for the rest of the season",
+    "plantingMonths": "feb, mar, apr, aug, sep, oct"
   },
   {
     "id": "Celery",
@@ -235,7 +246,8 @@
     "generalInfo1": "Celery requires a deeply worked and moist soil. Full sun is essential for best crop, plant about 30 cm apart in rows",
     "generalInfo2": "Celery enjoys a cool climate but doesn’t really like frosts. As the stems are made up of so much water, long periods of frost tend to turn them to mulch",
     "generalInfo3": "All part of celery can be used, from the leaves to the stems and the roots",
-    "generalInfo4": "Young celery has a sweeter flavour and is often used fresh, while the older stems and leaves are more often cooked"
+    "generalInfo4": "Young celery has a sweeter flavour and is often used fresh, while the older stems and leaves are more often cooked",
+    "plantingMonths": "jan, sep, oct, nov, dec"
   },
   {
     "id": "Coriander",
@@ -252,7 +264,8 @@
     "generalInfo1": "Choose a sunny or partially shady spot close to your kitchen for easy access. Coriander is best planted in autumn, spring and winter as it tends to bolt and go to seed in summer",
     "generalInfo2": "Coriander will happily grow in almost any well-dug soil in both sun and a little shade (one of the few crops that will). Note, however, that it has a delicate root system and doesn’t like to be disturbed, so be careful it you have to move young plants about",
     "generalInfo3": "Add a layer of herb mix to plant into",
-    "generalInfo4": "Coriander is prone to go to seed if the soil gets dry, particularly over summer. To avoid, water your coriander consistently, regularly pick, remove flowers and remove parts of the plant that go to seed. Apply compost around plants to hold on to more moisture. If your coriander does go to seed there is an upside – the flowers are great for beneficial insects like bees, and if you let them fully dry out you can collect the seeds for next season"
+    "generalInfo4": "Coriander is prone to go to seed if the soil gets dry, particularly over summer. To avoid, water your coriander consistently, regularly pick, remove flowers and remove parts of the plant that go to seed. Apply compost around plants to hold on to more moisture. If your coriander does go to seed there is an upside – the flowers are great for beneficial insects like bees, and if you let them fully dry out you can collect the seeds for next season",
+    "plantingMonths": "jan, sep, oct, nov, dec"
   },
   {
     "id": "Courgette",
@@ -268,7 +281,8 @@
     "generalInfo1": "Plant courgette seedlings about 50 – 80cm apart as the leaves can get quite big and mildew can be a problem as they grow",
     "generalInfo2": "Add a layer of vegetable mix to plant into",
     "generalInfo3": "If you are sowing from seed, seeds are best raised under glass in the spring and summer as they prefer heat to germinate. Once the seedlings are about 5cm tall and have a few leaves, transplant them into pots or into the garden once frosts have passed",
-    "generalInfo4": "Harvest courgettes when they are 15-20cm long. Once they get beyond this they become a marrow. Make sure you cut the courgettes off the plant rather than snapping them off as this can rip the main trunk of the plant"
+    "generalInfo4": "Harvest courgettes when they are 15-20cm long. Once they get beyond this they become a marrow. Make sure you cut the courgettes off the plant rather than snapping them off as this can rip the main trunk of the plant",
+    "plantingMonths": "jan, oct, nov, dec"
   },
   {
     "id": "Cucumber",
@@ -284,7 +298,8 @@
     "generalInfo1": "Water and feed your cucumbers regularly as they grow in spring and summer. Also ensure good ventilation around plants",
     "generalInfo2": "Cucumbers grow on a vigorous vine that is best trained up a supporting structure or frame. Cucumber can rot quickly when they touch the soil, hence the need to get them off the ground to ensure they ripen evenly and healthily",
     "generalInfo3": "Cucumbers can be prone to damping-off caused by poor drainage and lack of air movement. Therefore free draining soils and good ventilation are key to a healthy crop",
-    "generalInfo4": "Harvest cucumbers regularly to encourage more flowering and fruiting. Ensure you cut them from the vine rather than pulling them off to avoid disease entering the vine. Cucumbers can be stored in the fridge for up to a month"
+    "generalInfo4": "Harvest cucumbers regularly to encourage more flowering and fruiting. Ensure you cut them from the vine rather than pulling them off to avoid disease entering the vine. Cucumbers can be stored in the fridge for up to a month",
+    "plantingMonths": "jan, oct, nov, dec"
   },
   {
     "id": "Eggplant",
@@ -300,7 +315,8 @@
     "generalInfo1": "Feed every four weeks with vegetable food",
     "generalInfo2": "Add a layer of mulch and keep your eggplants well watered",
     "generalInfo3": "Staking may be required for taller plants and if the amount of fruit is causing them to struggle to hold themselves up",
-    "generalInfo4": "Harvest your eggplants when the skin is shiny and the fruit is fully coloured. They will start to taste bitter when the skin colour turns dull"
+    "generalInfo4": "Harvest your eggplants when the skin is shiny and the fruit is fully coloured. They will start to taste bitter when the skin colour turns dull",
+    "plantingMonths": "sep, oct, nov, dec"
   },
   {
     "id": "Feijoa",
@@ -319,7 +335,8 @@
     "generalInfo1": "They make a fantastic hedge that will tolerate wind and coastal conditions. When planting a feijoa hedge space your feijoa plants approximately 1-1.5m apart depending on the variety",
     "generalInfo2": "Feed fejioas regularly from spring to harvest",
     "generalInfo3": "Feijoas are fairly hardy plants once established however they will struggle during long dry periods if not supplemented with watering. It is especially important to water deeply and regularly from mid to late summer when the fruit is developing and ripening. Don’t over water though as it will plump up the fruit but lose the flavour",
-    "generalInfo4": "Feijoas will ripen a little once picked but are best left on the tree to ripen naturally. When picking, select fruit that is slightly soft to the touch"
+    "generalInfo4": "Feijoas will ripen a little once picked but are best left on the tree to ripen naturally. When picking, select fruit that is slightly soft to the touch",
+    "plantingMonths": "mar, apr, may, aug, sep, oct, nov"
   },
   {
     "id": "Garlic",
@@ -334,7 +351,8 @@
     "generalInfo1": "Keep your garlic well watered particularly as the bulbs form in November and December",
     "generalInfo2": "Feed every four weeks during key growth periods",
     "generalInfo3": "Harvest in summer once the tops start to die back. Don’t be tempted to pull the bulbs out by the leaves, dig up with a fork and leave to dry on the top of the ground for a day or so (as long as it isn't raining, sun is preferred), then plait and store somewhere dry away from direct sunlight",
-    "generalInfo4": "Keep a few good heads of your own garlic to use as the stock of next year’s crop. You can expect about 150 plants from a dozen heads of garlic"
+    "generalInfo4": "Keep a few good heads of your own garlic to use as the stock of next year’s crop. You can expect about 150 plants from a dozen heads of garlic",
+    "plantingMonths": "may, jun, jul"
   },
   {
     "id": "Kale",
@@ -353,7 +371,8 @@
     "generalInfo1": "Seed can be sown directly in beds if soil has been well-prepared, sow seeds a finger tip deep and thin them down to about a forearm apart as they sprout and form leaves",
     "generalInfo2": "Seedlings should be planted out when they have six or so leaves and look well-rooted and stable in their punnets",
     "generalInfo3": "Kale is not too fussy and can grow in full sun as well as partial shade. Plants grow to around knee height depending on soil and variety",
-    "generalInfo4": "Pick leaves from leafy varieties of brassicas like kale as required, the plant will keep producing leaves throughout the season"
+    "generalInfo4": "Pick leaves from leafy varieties of brassicas like kale as required, the plant will keep producing leaves throughout the season",
+    "plantingMonths": "mar, apr, may, jun, jul, aug, sep"
   },
   {
     "id": "Lemon",
@@ -372,7 +391,8 @@
     "generalInfo1": "Add a layer of citrus and fruit mix to plant into. In New Zealand plant lemons in spring, autumn and winter (only where frosts aren't prevalent)",
     "generalInfo2": "Mulch and water well, particularly over the warmer months",
     "generalInfo3": "Feed your lemons in spring and summer to encourage maximum flowering and fruiting",
-    "generalInfo4": "Magnesium deficiencies can be common in citrus, shown by yellowing leaves. Apply epsom salts around the drip line of the lemon tree (where the leaves extend to), to correct the deficiency"
+    "generalInfo4": "Magnesium deficiencies can be common in citrus, shown by yellowing leaves. Apply epsom salts around the drip line of the lemon tree (where the leaves extend to), to correct the deficiency",
+    "plantingMonths": "mar, apr, may, aug, sep, oct, nov"
   },
   {
     "id": "Lettuce",
@@ -393,7 +413,8 @@
     "generalInfo1": "Lettuces require full sun, plant them in soil that is rich in compost and make sure the soil drains quickly as they dislike having wet feet for any length of time",
     "generalInfo2": "Add a layer of vegetable mix to plant into. Lettuce can generally be grown year-round in New Zealand",
     "generalInfo3": "Feed every four weeks during key growth periods with vegetable food for plenty of leafy growth",
-    "generalInfo4": "With lettuce you can harvest a leaf at a time, and they will regrow. If you start picking leaves early enough and leave enough of the plant in the ground, you should be able to harvest for a number of weeks"
+    "generalInfo4": "With lettuce you can harvest a leaf at a time, and they will regrow. If you start picking leaves early enough and leave enough of the plant in the ground, you should be able to harvest for a number of weeks",
+    "plantingMonths": "jan, feb, mar, apr, may, sep, oct, nov, dec"
   },
   {
     "id": "Lime",
@@ -412,7 +433,8 @@
     "generalInfo1": "Add a layer of citrus and fruit mix to plant into. In New Zealand plant limes during late autumn throughout spring in warm areas",
     "generalInfo2": "Mulch and water well, particularly over the warmer months",
     "generalInfo3": "Feed your lime tree in spring and summer to encourage maximum fruiting and flowering. Citrus require higher levels of potassium and magnesium",
-    "generalInfo4": "Limes prefer a warm situation and are sensitive to heavy frosts. Generally, all varieties grow best where they can be protected from winter frosts. They also need plenty of sunlight for adequate growth. Lime trees have a very deep root base"
+    "generalInfo4": "Limes prefer a warm situation and are sensitive to heavy frosts. Generally, all varieties grow best where they can be protected from winter frosts. They also need plenty of sunlight for adequate growth. Lime trees have a very deep root base",
+    "plantingMonths": "mar, apr, may, aug, sep, oct, nov"
   },
   {
     "id": "Mandarin",
@@ -431,7 +453,8 @@
     "generalInfo1": "In the first year after planting your mandarin tree, remove any fruit that sets. This allows the tree to establish itself and encourages better fruiting in the following seasons",
     "generalInfo2": "Feed your mandarin tree in spring and summer to encourage maximum fruiting and flowering. Citrus require higher levels of potassium and magnesium",
     "generalInfo3": "Mandarin trees are the most cold-resistant of the citrus trees. Their fruit, however, is thin-skinned and small in size, which makes them more susceptible to cold damage than the larger orange and grapefruit. Mandarins grow better when the weather is hot and humid. The trees need protection from frost",
-    "generalInfo4": "If you are pruning avoid September/October as you run the risk of lemon tree borer laying eggs in the fresh cuts"
+    "generalInfo4": "If you are pruning avoid September/October as you run the risk of lemon tree borer laying eggs in the fresh cuts",
+    "plantingMonths": "mar, apr, may, aug, spe, oct, nov"
   },
   {
     "id": "Mesclun",
@@ -451,7 +474,8 @@
     "generalInfo1": "Mesclun seed should be sown directly.  Prepare your garden patch with minimal effort - a bit of compost may be required but is not necessary",
     "generalInfo2": "Find a full sun, sheltered position to plant and space at least two hand spaces apart, to ensure the crops can fully mature and are not fighting for space",
     "generalInfo3": "Coming into winter it is important to protect your plants from the colder weather with layers of mulch",
-    "generalInfo4": "You should be able to harvest within 3-4 weeks when the leaf is a small seedling and the flavour can be more intense at this young stage"
+    "generalInfo4": "You should be able to harvest within 3-4 weeks when the leaf is a small seedling and the flavour can be more intense at this young stage",
+    "plantingMonths": "jan, feb, mar, apr, sep, oct, nov, dec"
   },
   {
     "id": "Onion",
@@ -470,7 +494,8 @@
     "generalInfo1": "Choose a sunny spot to plant your onions. In New Zealand onion planting time is March-September, depending on region",
     "generalInfo2": "Keep your onions well watered particularly as the bulbs form in November and December",
     "generalInfo3": "Main crop onions are sown in late winter/early spring ready for harvest in late summer to autumn. Onions can be sown in autumn, however won't be ready until the following summer, and will need protecting over winter in very cold areas",
-    "generalInfo4": "Onions will happily grow in pots and containers providing they have a soil depth of at least 20cm"
+    "generalInfo4": "Onions will happily grow in pots and containers providing they have a soil depth of at least 20cm",
+    "plantingMonths": "feb, mar, apr, may, jun, jul, sep"
   },
   {
     "id": "Orange",
@@ -489,7 +514,8 @@
     "generalInfo1": "Add a layer of citrus and fruit mix to plant into. In New Zealand plant oranges in spring, autumn and winter (only where frosts aren't prevalent)",
     "generalInfo2": "Feed your orange tree in spring and summer to encourage maximum fruiting and flowering. Citrus require higher levels of potassium and magnesium",
     "generalInfo3": "Magnesium deficiencies can be common in citrus, shown by yellowing leaves. Use epsom salts to correct the deficiency",
-    "generalInfo4": "Oranges are ready for harvesting around early spring through to late autumn depending on the variety. Oranges are best left on the tree to ripen - once fruit sets it takes around nine months to mature"
+    "generalInfo4": "Oranges are ready for harvesting around early spring through to late autumn depending on the variety. Oranges are best left on the tree to ripen - once fruit sets it takes around nine months to mature",
+    "plantingMonths": "mar, apr, may, aug, sep, oct, nov"
   },
   {
     "id": "Parsley",
@@ -509,7 +535,8 @@
     "generalInfo1": "Parsley can be grown from seed, but in winter is takes a while to germinate, so it’s best to plant seedlings or young plants from the garden center in winter",
     "generalInfo2": "Don’t be shy when planting herbs as they quite like close neighbours, and you can always plant herbs in between other plants as they make great space fillers and companion plants",
     "generalInfo3": "Over summer parsley is prone to go to seed. To avoid, water your parsley consistently, regularly pick, remove flowers and remove parts of the plant that go to seed",
-    "generalInfo4": "If your parsley does go to seed there is an upside – the flowers are great for beneficial insects like bees, and if you let them fully dry out you can collect the seeds for next season"
+    "generalInfo4": "If your parsley does go to seed there is an upside – the flowers are great for beneficial insects like bees, and if you let them fully dry out you can collect the seeds for next season",
+    "plantingMonths": "jan, feb, mar, apr, sep, oct, nov, dec"
   },
   {
     "id": "Passionfruit",
@@ -524,7 +551,8 @@
     "generalInfo1": "Choose a spot in full sun except in very hot areas, where partial shade is preferable",
     "generalInfo2": "Feed regularly through spring and summer with a balanced fertiliser, one not too rich in nitrogen",
     "generalInfo3": "Passionfruit is a vigorous, climbing vine that clings by curly tendrils to almost any support. It can grow very quickly under good conditions - up to six metres in one year",
-    "generalInfo4": "Once your passionfruit vine has finished flowering, collect up fallen leaves and remove brown leaves off the vine. If left these could harbour pests and diseases which overwinter in the soil and create a problem next season"
+    "generalInfo4": "Once your passionfruit vine has finished flowering, collect up fallen leaves and remove brown leaves off the vine. If left these could harbour pests and diseases which overwinter in the soil and create a problem next season",
+    "plantingMonths": "oct, nov, dec"
   },
   {
     "id": "Peas",
@@ -542,7 +570,8 @@
     "generalInfo1": "Choose a spot in full sun away from strong winds",
     "generalInfo2": "Add a layer of vegetable mix to plant into. Peas are best planted in late winter/early spring in New Zealand",
     "generalInfo3": "Use stakes, trellis or a tepee to keep the crop off the ground and provide a growing structure",
-    "generalInfo4": "Pick pods when they look large and feel full to touch. When peas are finished, you can dig the plants back into the soil to break down and release the nitrogen stored in them"
+    "generalInfo4": "Pick pods when they look large and feel full to touch. When peas are finished, you can dig the plants back into the soil to break down and release the nitrogen stored in them",
+    "plantingMonths": "may, jun, jul, aug, sep, oct"
   },
   {
     "id": "Pear",
@@ -559,7 +588,8 @@
     "generalInfo1": "Feed your pears in spring and summer to encourage maximum flowering and fruiting",
     "generalInfo2": "They tolerate a wide range of soil conditions and wetter conditions than apples",
     "generalInfo3": "The southern regions may not have success with pears, unless a very hardy rootstock is planted",
-    "generalInfo4": "A central-leader pruning system works best. Be sure to remove all diseased, damaged or dead wood. Remove any branches that are crossing or rubbing. Cut away any branches that are growing back into the centre of the tree. Thin over crowded area of your tree’s canopy and shape according to its variety"
+    "generalInfo4": "A central-leader pruning system works best. Be sure to remove all diseased, damaged or dead wood. Remove any branches that are crossing or rubbing. Cut away any branches that are growing back into the centre of the tree. Thin over crowded area of your tree’s canopy and shape according to its variety",
+    "plantingMonths": "may, jun, jul, aug, sep"
   },
   {
     "id": "Potato",
@@ -576,7 +606,8 @@
     "generalInfo1": "Buy your seed potatoes at least a month before planting, to enable them to sprout. Remove them from the bag and place in trays in a dry, airy spot away from direct sunlight, until sprouts are approximately 20-40mm long",
     "generalInfo2": "Mound your potatoes as shoots grow, until they are approximately 300mm tall to protect them and encourage further development",
     "generalInfo3": "Potatoes are gross feeders, feed every three to four weeks during key growth periods",
-    "generalInfo4": "Don't plant potatoes in the same place each year, and avoid planting them where tomatoes have been planted the previous season, to reduce the risk of spreading disease"
+    "generalInfo4": "Don't plant potatoes in the same place each year, and avoid planting them where tomatoes have been planted the previous season, to reduce the risk of spreading disease",
+    "plantingMonths": "jan, sep, oct, nov, dec"
   },
   {
     "id": "Pumpkin",
@@ -591,7 +622,8 @@
     "generalInfo1": "If left to their own devices pumpkins will happily scramble almost anywhere, and sometime even sprout up by themselves in the compost heap. If space is an issue, you can grow pumpkins in containers",
     "generalInfo2": "Pumpkins need a long growing season of approximately four to six months depending on where you live. Plant out as soon as frosts are over and keep well-watered while the plant is establishing itself",
     "generalInfo3": "Pinch out the main stems once growth starts; this will encourage more lateral stems and give you a heavier crop of fruit. To encourage large pumpkins, allow only two to three to develop on each plant",
-    "generalInfo4": "A general rule is to harvest pumpkins after the first frost. If you live in a mild climate, pick them once they have coloured up and sound hollow when you knock the shell. If the skin of the pumpkin is hard and doesn't leave a dent when knocked, it is ripe. Another indication they are ripe is when the leaves die away"
+    "generalInfo4": "A general rule is to harvest pumpkins after the first frost. If you live in a mild climate, pick them once they have coloured up and sound hollow when you knock the shell. If the skin of the pumpkin is hard and doesn't leave a dent when knocked, it is ripe. Another indication they are ripe is when the leaves die away",
+    "plantingMonths": "oct, nov, dec"
   },
   {
     "id": "Radish",
@@ -616,8 +648,7 @@
     "generalInfo2": "They mature in four to six weeks and can be grown year-round, so with frequent sowings they will provide a constant supply",
     "generalInfo3": "Keep the soil moist throughout the growing season. Radish is a reasonably tolerant crop that will cope with drier periods once established, but it doesn't like wet or shady soils",
     "generalInfo4": "Easy to harvest, radish can be pulled once they are bigger than a marble. Harvest within a month or so. If left in the ground too long they can become too tough",
-    "plantingMonth": "jun",
-    "plantingMonth2": "jul"
+    "plantingMonths": "jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec"
   },
   {
     "id": "Raspberry",
@@ -636,7 +667,8 @@
     "generalInfo1": "Add a layer of strawberry mix to plant into. Raspberries can be planted from autumn through to spring in New Zealand",
     "generalInfo2": "Berries require a position in full sun to thrive - no sun equals little or no flavour. Like other berries, raspberries will do best in areas that have cold weather through the winter",
     "generalInfo3": "Raspberries are a tall plant so choose an area in your garden away from strong winds, up against a fence on a north facing wall is a good option. A simple tee pee or pyramid system made from 3-5 straight branches is effective. Stakes, bamboo canes and trellis can be used as well",
-    "generalInfo4": "Prune in winter to remove all wood, keeping 6-8 new seasons canes for the current season’s crop"
+    "generalInfo4": "Prune in winter to remove all wood, keeping 6-8 new seasons canes for the current season’s crop",
+    "plantingMonths": "may, jun, jul, aug, sep, oct, nov"
   },
   {
     "id": "Silverbeet",
@@ -656,7 +688,8 @@
     "generalInfo1": "In the garden choose a position in full sun. Silverbeet is tolerant of a wide range of soils, but does best in one that is fertile, well worked and retains moisture",
     "generalInfo2": "Add a layer of vegetable mix to plant into. Silverbeet grows year-round in New Zealand",
     "generalInfo3": "Silverbeet grows year-round, thriving in both the heat of summer and cold of winter, and is equally happy in containers and garden beds",
-    "generalInfo4": "Another bonus is that you don’t need to grow too many plants as a few will feed a family for months"
+    "generalInfo4": "Another bonus is that you don’t need to grow too many plants as a few will feed a family for months",
+    "plantingMonths": "jan, feb, mar, aug, sep, oct, nov, dec"
   },
   {
     "id": "Spinach",
@@ -675,7 +708,8 @@
     "generalInfo1": "Spinach enjoys full sun and a soil that is rich in compost or other organic matter",
     "generalInfo2": "Add a layer of vegetable mix to plant into. Spinach can be grown year-round in most parts of New Zealand",
     "generalInfo3": "Feed every four weeks during key growth periods with vegetable food for plenty of leafy green growth",
-    "generalInfo4": "Spinach can be harvested a leaf at a time - so you can pick as you need. This will also encourage fresh new growth"
+    "generalInfo4": "Spinach can be harvested a leaf at a time - so you can pick as you need. This will also encourage fresh new growth",
+    "plantingMonths": "mar, apr, may, jun, jul, aug, sep"
   },
   {
     "id": "SpringOnion",
@@ -690,7 +724,8 @@
     "generalInfo1": "Spring onions are relatively easy to grow, and just take a few months to mature, compared with twice this for bulb onions. Spring onions require full sun and well-cultivated fertile soil",
     "generalInfo2": "Add a layer of vegetable mix to plant into. Spring onions grow well planted in spring and autumn, and year-round in some regions of New Zealand",
     "generalInfo3": "Keep your spring onions well watered and leave the roots in the ground after harvesting to regrow",
-    "generalInfo4": "Snip spring onions at the base when you are ready to harvest"
+    "generalInfo4": "Snip spring onions at the base when you are ready to harvest",
+    "plantingMonths": "oct, nov, dec"
   },
   {
     "id": "Strawberry",
@@ -707,7 +742,8 @@
     "generalInfo1": "Add a layer of strawberry mix to plant into. Strawberry planting time is from June-November in New Zealand",
     "generalInfo2": "Planting strawberries in New Zealand's winter temperatures will produce a larger crop over the season, so don't be afraid to plant early",
     "generalInfo3": "A good rule is to plant five strawberry plants for each member of the household",
-    "generalInfo4": "At the end of fruiting, remove runners and then plant them out for next season's crop"
+    "generalInfo4": "At the end of fruiting, remove runners and then plant them out for next season's crop",
+    "plantingMonths": "jul, aug, sep, oct, nov"
   },
   {
     "id": "Sweetcorn",
@@ -722,7 +758,8 @@
     "generalInfo1": "As corn is a tall crop, it needs protection from strong prevailing winds. Planting it against a sunny fence or beside a glasshouse is idea",
     "generalInfo2": "Sweetcorn is wind pollinated from plant to plant so you don't want to plant them too far apart. It will depend on the variety you choose, but on average 50cm between plants seems to work well for most varieties",
     "generalInfo3": "Sweetcorn happily grows in containers or raised beds as long as there is enough room for its roots to anchor themselves into the soil - they need a soil depth of a least 30cm, ideally 50cm",
-    "generalInfo4": "As the cobs develop, they sit very upright close to the main stem of the plant, and as they ripen they begin to move away from the main stem to allow the kernels room to ripen evenly"
+    "generalInfo4": "As the cobs develop, they sit very upright close to the main stem of the plant, and as they ripen they begin to move away from the main stem to allow the kernels room to ripen evenly",
+    "plantingMonths": "oct, nov, dec"
   },
   {
     "id": "Tomato",
@@ -738,6 +775,7 @@
     "generalInfo1": "Labour weekend is known as the traditional tomato planting time but tomato seedlings are usually available in garden centres from August",
     "generalInfo2": "If you’re growing from seed rather than seedlings, you’ll need to get started about a month earlier to give your seeds time to grow",
     "generalInfo3": "As your tomatoes grow, remove the laterals to encourage bigger and better fruit. Laterals are the shoots that grow out from the side of the stem",
-    "generalInfo4": "To reduce the chance of blight, avoid watering plant foliage"
+    "generalInfo4": "To reduce the chance of blight, avoid watering plant foliage",
+    "plantingMonths": "jan, oct, nov, dec"
   }
 ]

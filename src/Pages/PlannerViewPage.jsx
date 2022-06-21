@@ -29,7 +29,7 @@ function Planner() {
   /* START OF BACK-END FUNCTIONS */
 
   // handleChange function handles when yearly or monthly planner tabs clicked
-  const handleChange = (newValue) => {
+  const handleChange = (event, newValue) => {
     setValue(newValue);
   }; // End of handleChange
 

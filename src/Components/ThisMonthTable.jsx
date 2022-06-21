@@ -135,7 +135,7 @@ const ThisMonthTable = () => {
           // If plantData ID, userPlant name matches, & the current month matches the plants planting month, grab & push matching info
           if (
             plantData[i].id === userPlants[j].name &&
-            plantData[i].plantingMonth === thisMonth
+            plantData[i].plantingMonths.includes(thisMonth)
           ) {
             mergeUserData.push([
               plantData[i].id,
