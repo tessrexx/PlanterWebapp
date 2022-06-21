@@ -15,6 +15,8 @@ import {
   deleteDoc,
   updateDoc,
   deleteField,
+  query,
+  where
 } from "firebase/firestore";
 // MUI Library & Component Imports
 import { Button, Tab, Box, Hidden, TextField } from "@mui/material";
@@ -61,15 +63,60 @@ function PlantSelection() {
     return uid;
   }
 
+  //useEffect(() => getData(), [uid]);
+
+  let [userPlants, setUserPlants] = useState([]);
+  let [userData, setUserData] = useState([]);
+
+  // Called when page renders, reads user's plant selection in to userPlants[]
+  useEffect(() => {
+    const getData = async () => {
+      console.log("get data running");
+      const q = query(collection(db, "users"), where("userID", "==", `${uid}`));
+      const snapshot = await getDocs(q);
+      const data = snapshot.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      // getting plant data from matching user
+      for (let i = 0; i < data.length; i++) {
+        console.log("for loop starting");
+        if (data[i].id === uid) {
+          setUserData(uid);
+          console.log("userData test", userData);
+          data.map(async (elem) => {
+            console.log("get data map running");
+            const plantQ = query(collection(db, `users/${elem.id}/planner`));
+            const plannerDetails = await getDocs(plantQ);
+            const planner = plannerDetails.docs.map((doc) => ({
+              ...doc.data(),
+              id: doc.id,
+            }));
+            setUserPlants(planner);
+            console.log(userPlants);
+          });
+        }
+      }
+    };
+    getData();
+  }, [uid]);
+
   // Add selected plant to user's planner collection
   const addToPlanner = async (plant) => {
-    try {
-      await setDoc(doc(db, "users", uid, "planner", plant), {
-        name: plant,
-      }).then(() => {
-        onSnapshot(doc(db, "users", uid, "planner", plant), (doc) => {
-        });
-        toast.success(plant + " added to planner!", {
+    //getData();
+    let newPlant = "" // variable to store matching plant into
+    for (let i = 0; i < userPlants.length; i++){
+      if(userPlants[i].name === plant)
+      {
+        plant = newPlant
+        break;
+      }
+    }
+    // if plant name is already in the user planner, it'll trigger a warning
+    if (newPlant === plant){
+      try {
+        // warning alert
+        toast.warning("Already in planner", {
           position: "top-right",
           autoClose: 1000,
           hideProgressBar: false,
@@ -78,32 +125,86 @@ function PlantSelection() {
           draggable: false,
           progress: undefined,
         });
-      });
+      // Waiting to catch errors
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    // else, if plant name is not in the user planner, it'll add it to firestore doc
+    else{
+      try {
+        // adding plcnt to dox
+        await setDoc(doc(db, "users", uid, "planner", plant), {
+          name: plant,
+        }).then(() => {
+          onSnapshot(doc(db, "users", uid, "planner", plant), (doc) => {
+          });
+          // confirmation alert
+        toast.success(plant + " added to your planner!", {
+          position: "top-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+        });
+        });
       // Waiting to catch errors
     } catch (error) {
       console.error(error);
     }
+  }
   };
  
   // Remove selected plant from user's planner collection **IN PROGRESS
   function removeFromPlanner(plant) {
-    try {
-       deleteDoc(doc(db, "users", uid, "planner", plant), {
-      })
-      toast.error(plant + " removed from planner", {
-        position: "top-right",
-        autoClose: 1000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        progress: undefined,
-      });
-      console.log("record removed")
+    //getData();
+    let newPlant = "" // variable to store matching plant into
+    for (let i = 0; i < userPlants.length; i++){
+      if(userPlants[i].name === plant)
+      {
+        plant = newPlant
+        break;
+      }
     }
-      catch (error) {
+    // if plant name is in the user planner, it'll be removed from firestore doc
+    if(newPlant === plant){
+      try {
+        deleteDoc(doc(db, "users", uid, "planner", plant), {
+       })
+       toast.error(plant + " removed from planner", {
+         position: "top-right",
+         autoClose: 1000,
+         hideProgressBar: false,
+         closeOnClick: true,
+         pauseOnHover: false,
+         draggable: false,
+         progress: undefined,
+       });
+       console.log("record removed")
+     }
+       catch (error) {
+       // Waiting to catch errors
+       console.error(error);
+     }}
+     // else, if plant name is not in the user planner, it'll trigger a warning
+    else{
+      try {
+        // warning alert
+        toast.warning(plant + " isn't in your planner, so cannot be removed", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+        });
       // Waiting to catch errors
+    } catch (error) {
       console.error(error);
+    }
     }
   };
 

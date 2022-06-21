@@ -108,8 +108,9 @@ const ThisMonthTable = () => {
     if (userPlants[0] != null) {
       console.log(" Run FOR LOOP...");
       for (let i = 0; i < plantData.length; i++) {
-        for (let j = 0; j < userPlants.length; j++) {
-          if (plantData[i].id === userPlants[j].name && plantData[i].plantingMonth === thisMonth) {
+        for (let k = 0; k < plantData.plantingMonths.length; k++){
+          for (let j = 0; j < userPlants.length; j++) {
+           if (plantData[i].id === userPlants[j].name && plantData[k].plantingMonths[k] === thisMonth) {
             mergeUserData.push([
               plantData[i].id,
               plantData[i].roundimage,
@@ -126,6 +127,7 @@ const ThisMonthTable = () => {
           }
         }
       }
+    }
       const temp = [...mergeUserData];
       setMergedPlants(temp);
       console.log(temp);
