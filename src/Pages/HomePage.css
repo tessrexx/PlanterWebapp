@@ -31,7 +31,7 @@ h1 {
   justify-content: center;
   text-align: center;
   margin-top: 30px;
-  margin-bottom: 75px;
+  margin-bottom: 65px;
   padding: 15px, 15px, 15px, 15px;
   color: #ffffff;
   font-weight: 500;
@@ -42,9 +42,19 @@ h1 {
 .buttonStart {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 80px;
+  margin-top: 20px;
   margin-left: -20px;
+}
+
+/* Guest Description css */
+.guestBlurb {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 100px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 /* Feature cards container css */
@@ -56,13 +66,36 @@ h1 {
   justify-content: center;
 }
 
+/*Feature Card Container*/
 .homeCardContainer {
   margin-right: 100px;
 }
 
 @media screen and (max-width: 2095px) {
+  /* Heading css */
+  h1 {
+    margin-top: 60px;
+  }
+
+  /*Feature Card Container*/
   .homeCardContainer {
     margin-right: 50px;
+  }
+
+  /* Start planner button css */
+  .buttonStart {
+    margin-bottom: 0px;
+  }
+
+  /* Guest Description css */
+  .guestBlurb {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 18px;
   }
 }
 

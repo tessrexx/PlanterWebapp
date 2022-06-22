@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 // In-file CSS & Component Imports
 import "./App.css";
 import HomePage from "./Pages/HomePage";
+import GuestPlannerPage from "./Pages/GuestPlannerPage";
 import SignUpPage from "./Pages/SignUpPage";
 import SignInPage from "./Pages/SignInPage";
 import PlantSelection from "./Pages/PlantSelectionPage";
@@ -29,6 +30,7 @@ function App() {
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/plantselection" element={<PlantSelection />} />
           <Route path="/planner" element={<Planner />} />
+          <Route path="/guestplanner" element={<GuestPlannerPage />} />
         </Routes>
       </AuthContextProvider>
     </div>

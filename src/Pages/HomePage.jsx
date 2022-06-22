@@ -2,6 +2,9 @@
 
 // API Imports
 import React from "react";
+import { Link } from "react-router-dom";
+// MUI Library & Component Imports
+import { Button } from "@mui/material";
 // In-file CSS & Component Imports
 import "./HomePage.css";
 import Navbar from "../Components/Navbar";
@@ -27,9 +30,9 @@ function HomePage() {
       <div className="infoBlurb">
         <h1>The New Zealand Plant Planner made for you</h1>
         <p className="blurb">
-          Create your custom planter from our range of vegetable, fruit, and
-          herb plants and view their ideal planting months in your own yearly
-          planner
+          Make an account today to create your own custom planter from our range
+          of vegetable, fruit, and herb plants and view their ideal planting
+          months in your own yearly planner
         </p>
       </div>
       <div className="cardContainer">
@@ -58,6 +61,14 @@ function HomePage() {
             "View the current and next month's planting schedule along with some helpful tips"
           }
         />
+      </div>
+      <p className="guestBlurb">Don't want to make an account just yet?</p>
+      <div className="buttonStart">
+        <Link to="/guestplanner">
+          <Button variant="contained" color="secondary">
+            VIEW OUR YEARLY PLANNER
+          </Button>
+        </Link>
       </div>
       <Footer />
     </>
