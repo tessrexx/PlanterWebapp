@@ -1,3 +1,5 @@
+/* START OF IMPORTS */
+
 // API Imports
 import React from "react";
 import { useState } from "react";
@@ -16,12 +18,19 @@ import {
 // Infile CSS & Component Imports
 import "./PlannerTables.css";
 
-// Component for yearly planner view
-// Displays user's selected plants, ideal planting months, and estimated harvesting times
+/* END OF IMPORTS */
+
+// ***********************************************************
+
+/* START OF GuestPlannerTable() COMPONENT */
+
+// Component for guest planner view
+// Displays all plants, ideal planting months, and estimated harvesting times
 const GuestPlannerTable = () => {
   // Filter data set/state
   const [data, setData] = useState(plantData);
 
+  /* START OF FRONT-END OUTPUT */
   return (
     <TableContainer component={Paper} sx={{ maxHeight: "70vh" }}>
       <Table stickyHeader>
@@ -96,5 +105,8 @@ const GuestPlannerTable = () => {
     </TableContainer>
   );
 };
+/* END OF FRONT-END OUTPUT */
 
 export default GuestPlannerTable;
+
+/* END OF GuestPlannerTable() COMPONENT */

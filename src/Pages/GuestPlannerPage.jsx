@@ -17,7 +17,7 @@ import Footer from "../Components/Footer";
 // ***********************************************************
 
 /* START OF GuestPlanner() PAGE */
-// Contains the users selected plants and displays them in a yearly & monthly view
+// Contains all plants and displays them in a yearly view
 function GuestPlanner() {
   // Tab selection set/state
   const [value, setValue] = useState("1");
