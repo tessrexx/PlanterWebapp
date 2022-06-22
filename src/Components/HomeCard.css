@@ -3,8 +3,8 @@
 /* Card container css */
 .infoCard {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
-  width: 470px;
-  height: 400px;
+  width: 570px;
+  height: 490px;
   background-color: #5e865d;
   display: flex;
   flex-direction: column;
@@ -12,6 +12,8 @@
   margin-left: 1rem;
   margin-right: 1rem;
   border-radius: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 /* Card title css */
@@ -19,11 +21,16 @@
   color: #ffffff;
   margin-left: 15px;
   margin-bottom: 10px;
+  align-self: center;
 }
 
 /* Card image css */
-.infoImage {
+.featureImage {
   display: flex;
+  width: 100%;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
   margin: 15px 10px 0px 10px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
@@ -33,6 +40,22 @@
 /* Card info blurb css */
 .info {
   color: #ffffff;
-  margin-left: 15px;
   margin-top: 0px;
+  text-align: center;
+}
+
+@media screen and (max-width: 2095px) {
+  /* Card container css */
+  .infoCard {
+    width: 500px;
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 1780px) {
+  /* Card container css */
+  .infoCard {
+    width: 470px;
+    height: 420px;
+  }
 }

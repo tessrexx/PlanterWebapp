@@ -17,9 +17,9 @@ const HomeCard = ({ title, image, info }) => {
   /* START OF FRONT-END OUTPUT */
   return (
     <div className="infoCard">
-      <img className="infoImage" src={image} alt="app features" />
+      <img className="featureImage" src={image} alt="app features" />
       <h3 className="title">{title}</h3>
-      <p className="info">{info}</p>{" "}
+      <p className="info">{info}</p>
     </div>
   );
 };

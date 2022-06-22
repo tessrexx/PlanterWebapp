@@ -45,9 +45,9 @@ function HomePage() {
         <div className="homeCardContainer">
           <HomeCard
             image={"IconsandImages/selection.png"}
-            title={"EDIT AND SORT"}
+            title={"EDIT AND SEARCH"}
             info={
-              "Edit your Planter at any time and sort through our simple lists to find the plants you want"
+              "Edit your Planter at any time and use the search bar to find the plants you want"
             }
           />
         </div>

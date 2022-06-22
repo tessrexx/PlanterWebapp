@@ -69,7 +69,7 @@ function SignInPage({ setIsAuth }) {
     try {
       // Gets email textfield value and if email is valid, sends email and triggers success alert
       await forgotPassword(email).then(() => {
-        toast.success("Password reset sent. Please check your email.", {
+        toast.success("Password reset sent. Please check your email", {
           position: "top-right",
           autoClose: 2000,
           hideProgressBar: false,
