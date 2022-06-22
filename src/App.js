@@ -10,7 +10,6 @@ import SignUpPage from "./Pages/SignUpPage";
 import SignInPage from "./Pages/SignInPage";
 import PlantSelection from "./Pages/PlantSelectionPage";
 import Planner from "./Pages/PlannerViewPage";
-import UserDetails from "./Pages/UserDetails";
 import { AuthContextProvider } from "./Firebase/AuthContext";
 
 /* END OF IMPORTS */
@@ -30,7 +29,6 @@ function App() {
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/plantselection" element={<PlantSelection />} />
           <Route path="/planner" element={<Planner />} />
-          <Route path="/userdetails" element={<UserDetails />} />
         </Routes>
       </AuthContextProvider>
     </div>

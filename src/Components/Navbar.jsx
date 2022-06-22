@@ -4,7 +4,9 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 // MUI Library & Component Imports
-import { Button } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
+import LogoutIcon from "@mui/icons-material/Logout";
+import GrassIcon from "@mui/icons-material/Grass";
 // Infile CSS & Component Imports
 import "./Navbar.css";
 import { UserAuth } from "../Firebase/AuthContext";
@@ -54,20 +56,29 @@ function Navbar() {
             <>
               <li className="user-nav">
                 <Link to="/planner">
-                  <img src="IconsandImages/planter.png" alt="" />
+                  <Button variant="contained">
+                    <GrassIcon
+                      className="icon"
+                      color="#ffffff"
+                      fontSize="medium"
+                    />
+                    Planter
+                  </Button>
                 </Link>
               </li>
               <li className="user-nav">
-                <Link to="/userdetails">
-                  <img src="IconsandImages/details.png" alt="" />
-                </Link>
-              </li>
-              <li className="user-nav">
-                <img
-                  src="IconsandImages/signout.png"
-                  alt=""
+                <Button
+                  variant="contained"
+                  color="secondary"
                   onClick={handleLogout}
-                />
+                >
+                  <LogoutIcon
+                    className="icon"
+                    color="#ffffff"
+                    fontSize="medium"
+                  />
+                  Sign Out
+                </Button>
               </li>
             </>
           ) : (

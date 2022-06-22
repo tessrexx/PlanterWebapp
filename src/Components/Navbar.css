@@ -32,12 +32,15 @@ body {
 /* Nav logged in menu css */
 .user-nav {
   cursor: pointer;
-  padding-left: 20px;
 }
 
 /* Removes link underline */
 a:link {
   text-decoration: none;
+}
+
+.icon {
+  margin-right: 10px !important;
 }
 
 /* Responsive css */
